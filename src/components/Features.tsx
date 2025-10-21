@@ -1,5 +1,6 @@
 import { Calculator, Utensils, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 // Free stock images from Unsplash
 const calculatorImg = "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80";
@@ -48,9 +49,9 @@ const Features = () => {
 
         <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <a
+            <Link
               key={index}
-              href={feature.link}
+              to={feature.link}
               className="group block"
             >
               <Card className="h-full overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
@@ -75,7 +76,7 @@ const Features = () => {
                   </p>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
