@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Apple Green - Primary brand color */
+    --primary: 130 61% 49%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light green background for cards */
+    --primary-light: 130 61% 95%;
+
+    /* Warm Orange - Accent/motivation color */
+    --secondary: 29 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 29 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 130 61% 49%;
+
+    --radius: 1.25rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(130 61% 49%) 0%, hsl(130 61% 39%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(29 100% 50%) 0%, hsl(29 100% 40%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(130 61% 49% / 0.1);
+    --shadow-hover: 0 8px 30px -6px hsl(130 61% 49% / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 130 61% 49%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 130 61% 15%;
+
+    --secondary: 29 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 29 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 130 61% 49%;
+    
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 30px -6px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
