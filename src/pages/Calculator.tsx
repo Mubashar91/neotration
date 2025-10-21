@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AdSense from "@/components/AdSense";
+// import AdSense from "@/components/AdSense"; // Uncomment when AdSense is approved
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -862,12 +862,12 @@ const Calculator = () => {
               </div>
             </div>
 
-            {/* AdSense Ad - After Results */}
-            {result !== null && (
+            {/* AdSense Ad - After Results (uncomment after AdSense approval) */}
+            {/* {result !== null && (
               <div className="mt-8">
                 <AdSense adSlot="1122334455" adFormat="auto" />
               </div>
-            )}
+            )} */}
 
             {/* Calorie Tracking Section */}
             {result !== null && (

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
-import AdSense from "@/components/AdSense";
+// import AdSense from "@/components/AdSense"; // Uncomment when AdSense is approved
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -38,17 +38,17 @@ const Index = () => {
         {/* Main Features - Calculator, Food Guide, Success Stories */}
         <Features />
         
-        {/* AdSense Ad - Top of Page */}
-        <section className="py-6 bg-background">
+        {/* AdSense Ad - Top of Page (uncomment after AdSense approval) */}
+        {/* <section className="py-6 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <AdSense adSlot="1234567890" adFormat="auto" />
           </div>
-        </section>
+        </section> */}
         
         {/* Blog Preview Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
               <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
                 Latest from Our{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
@@ -60,7 +60,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
               {blogPosts.map((post, index) => (
                 <Card key={index} className="group overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
                   <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
@@ -100,7 +100,7 @@ const Index = () => {
         </section>
         
         {/* Stats Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-background border-b border-border">
+        <section className="py-8 sm:py-12 md:py-16 bg-background border-b border-border">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
               <Card className="border-2 border-border shadow-card text-center">
@@ -136,9 +136,9 @@ const Index = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
               <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
                 How It{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
@@ -199,17 +199,17 @@ const Index = () => {
           </div>
         </section>
         
-        {/* AdSense Ad - Mid Page */}
-        <section className="py-6 bg-background">
+        {/* AdSense Ad - Mid Page (uncomment after AdSense approval) */}
+        {/* <section className="py-6 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <AdSense adSlot="9876543210" adFormat="auto" />
           </div>
-        </section>
+        </section> */}
         
         {/* Testimonials Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-primary-light/50">
+        <section className="py-8 sm:py-12 md:py-16 bg-primary-light/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 space-y-3 sm:space-y-4">
               <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
                 What Our{" "}
                 <span className="bg-gradient-hero bg-clip-text text-transparent">

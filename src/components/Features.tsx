@@ -32,9 +32,9 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-background">
+    <section className="py-6 sm:py-10 md:py-12 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10 space-y-2 sm:space-y-3">
           <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Everything You Need to{" "}
             <span className="bg-gradient-hero bg-clip-text text-transparent">
@@ -46,7 +46,7 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <a
               key={index}
@@ -61,16 +61,16 @@ const Features = () => {
                     className="w-full h-full object-cover transition-transform group-hover:scale-110"
                   />
                 </div>
-                <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
+                <CardContent className="p-4 sm:p-5 space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-primary-light p-3">
-                      <feature.icon className="h-6 w-6 text-primary" />
+                    <div className="rounded-xl bg-primary-light p-2.5">
+                      <feature.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground">
+                    <h3 className="font-poppins text-base sm:text-lg font-bold text-foreground">
                       {feature.title}
                     </h3>
                   </div>
-                  <p className="font-lato text-sm sm:text-base text-muted-foreground">
+                  <p className="font-lato text-sm text-muted-foreground">
                     {feature.description}
                   </p>
                 </CardContent>

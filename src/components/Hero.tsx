@@ -7,11 +7,11 @@ const heroImage = "https://images.unsplash.com/photo-1490645935967-10de6ba17061?
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-primary-light py-12 sm:py-16 md:py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-primary-light py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-6 sm:space-y-8 animate-fade-in">
+          <div className="space-y-4 sm:space-y-6 animate-fade-in">
             <h1 className="font-poppins text-3xl sm:text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
               Find Your Perfect{" "}
               <span className="bg-gradient-hero bg-clip-text text-transparent">
