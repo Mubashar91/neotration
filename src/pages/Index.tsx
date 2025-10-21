@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
+import AdSense from "@/components/AdSense";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -36,6 +37,13 @@ const Index = () => {
         
         {/* Main Features - Calculator, Food Guide, Success Stories */}
         <Features />
+        
+        {/* AdSense Ad - Top of Page */}
+        <section className="py-6 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <AdSense adSlot="1234567890" adFormat="auto" />
+          </div>
+        </section>
         
         {/* Blog Preview Section */}
         <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
@@ -188,6 +196,13 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
+        
+        {/* AdSense Ad - Mid Page */}
+        <section className="py-6 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <AdSense adSlot="9876543210" adFormat="auto" />
           </div>
         </section>
         
