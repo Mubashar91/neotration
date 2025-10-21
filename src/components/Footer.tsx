@@ -49,20 +49,23 @@ const Footer = () => {
 
           {/* Resources */}
           <div className="space-y-3 sm:space-y-4">
-            <h4 className="font-poppins text-base font-semibold text-foreground">Resources</h4>
+            <h4 className="font-poppins text-base font-semibold text-foreground">Company</h4>
             <nav className="flex flex-col gap-2">
-              <a href="#" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/about" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
                 About Us
-              </a>
-              <a href="#" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
-                FAQ
-              </a>
-              <a href="#" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/contact" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact Us
+              </Link>
+              <Link to="/privacy" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
-              </a>
+              </Link>
+              <Link to="/disclaimer" className="font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+                Disclaimer
+              </Link>
             </nav>
           </div>
 
@@ -82,9 +85,22 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-border">
-          <p className="font-lato text-center text-sm text-muted-foreground">
-            © 2025 FitJourney USA. All rights reserved. Made with ❤️ for a healthier America.
-          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="font-lato text-center text-sm text-muted-foreground">
+              © 2025 FitJourney USA. All rights reserved.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs">
+              <Link to="/privacy" className="font-lato text-muted-foreground hover:text-primary transition-colors">
+                Privacy
+              </Link>
+              <Link to="/terms" className="font-lato text-muted-foreground hover:text-primary transition-colors">
+                Terms
+              </Link>
+              <Link to="/disclaimer" className="font-lato text-muted-foreground hover:text-primary transition-colors">
+                Disclaimer
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

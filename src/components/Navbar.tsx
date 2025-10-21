@@ -28,6 +28,12 @@ const Navbar = () => {
           <Link to="/success-stories" className="font-lato text-base font-medium text-foreground transition-colors hover:text-primary">
             Success Stories
           </Link>
+          <Link to="/about" className="font-lato text-base font-medium text-foreground transition-colors hover:text-primary">
+            About Us
+          </Link>
+          <Link to="/contact" className="font-lato text-base font-medium text-foreground transition-colors hover:text-primary">
+            Contact Us
+          </Link>
           <Link to="/calculator">
             <Button className="bg-gradient-hero font-lato font-semibold shadow-card transition-all hover:shadow-hover">
               Get Started
@@ -75,6 +81,20 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Success Stories
+            </Link>
+            <Link
+              to="/about"
+              className="font-lato text-base font-medium text-foreground transition-colors hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              className="font-lato text-base font-medium text-foreground transition-colors hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Us
             </Link>
             <Link to="/calculator" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-gradient-hero font-lato font-semibold">
