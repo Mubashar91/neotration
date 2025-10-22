@@ -163,7 +163,7 @@ const Disclaimer = () => {
                   <h2 className="font-poppins text-2xl font-bold text-foreground mb-4">Questions or Concerns</h2>
                   <p className="font-lato text-muted-foreground">
                     If you have questions about this disclaimer or concerns about the information on our website, 
-                    please contact us at legal@fitjourneyusa.com
+                    please contact us at mmubasharshahzad40@gamil.com
                   </p>
                 </div>
 

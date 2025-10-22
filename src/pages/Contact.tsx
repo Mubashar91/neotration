@@ -120,8 +120,8 @@ const Contact = () => {
                       <div>
                         <h3 className="font-poppins text-lg font-bold text-foreground mb-2">Email Us</h3>
                         <p className="font-lato text-muted-foreground mb-2">Our team is here to help</p>
-                        <a href="mailto:support@fitjourneyusa.com" className="font-lato text-primary hover:underline">
-                          support@fitjourneyusa.com
+                        <a href="mailto:mmubasharshahzad40@gamil.com" className="font-lato text-primary hover:underline">
+                          mmubasharshahzad40@gamil.com
                         </a>
                       </div>
                     </div>

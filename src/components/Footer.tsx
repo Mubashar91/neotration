@@ -73,9 +73,9 @@ const Footer = () => {
           <div className="space-y-3 sm:space-y-4">
             <h4 className="font-poppins text-base font-semibold text-foreground">Get in Touch</h4>
             <div className="space-y-3">
-              <a href="mailto:hello@fitjourneyusa.com" className="flex items-center gap-2 font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:mmubasharshahzad40@gamil.com" className="flex items-center gap-2 font-lato text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
-                hello@fitjourneyusa.com
+                mmubasharshahzad40@gamil.com
               </a>
               <p className="font-lato text-sm text-muted-foreground">
                 Have questions? We're here to help you on your fitness journey!

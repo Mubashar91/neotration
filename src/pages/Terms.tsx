@@ -133,7 +133,7 @@ const Terms = () => {
                     If you have any questions about these Terms, please contact us:
                   </p>
                   <ul className="list-none font-lato text-muted-foreground space-y-2 mt-3">
-                    <li>Email: legal@fitjourneyusa.com</li>
+                    <li>Email: mmubasharshahzad40@gamil.com</li>
                     <li>Phone: +1 (800) 348-5687</li>
                     <li>Address: 123 Health Street, San Francisco, CA 94102, United States</li>
                   </ul>
