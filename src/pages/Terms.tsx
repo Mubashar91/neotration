@@ -1,10 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Terms of Service - FitJourney USA"
+        description="Read FitJourney USA's terms of service to understand the rules and guidelines for using our platform."
+        keywords="terms of service, user agreement, terms and conditions"
+        canonicalUrl="/terms"
+        noindex={true}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

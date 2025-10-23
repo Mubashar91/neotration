@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 // import AdSense from "@/components/AdSense"; // Uncomment when AdSense is approved
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,6 +17,19 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 
 const Calculator = () => {
   const { toast } = useToast();
+  
+  const calculatorSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Calorie Calculator - FitJourney USA',
+    applicationCategory: 'HealthApplication',
+    description: 'Free calorie calculator to determine your daily caloric needs based on your age, weight, height, activity level, and goals.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  };
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -590,6 +604,13 @@ const Calculator = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Free Calorie Calculator - FitJourney USA"
+        description="Calculate your daily calorie needs based on your age, weight, height, activity level, and goals. Get personalized meal plans and track your nutrition."
+        keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner"
+        canonicalUrl="/calculator"
+        structuredData={[calculatorSchema]}
+      />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

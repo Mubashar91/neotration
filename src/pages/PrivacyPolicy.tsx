@@ -1,10 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Privacy Policy - FitJourney USA"
+        description="Read FitJourney USA's privacy policy to understand how we collect, use, and protect your personal information."
+        keywords="privacy policy, data protection, user privacy"
+        canonicalUrl="/privacy"
+        noindex={true}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

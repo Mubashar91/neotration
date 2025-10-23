@@ -1,12 +1,21 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { foodData } from "@/data/foodData";
 
 const FoodGuide = () => {
   const [filter, setFilter] = useState("all");
+  
+  const foodGuideSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Healthy Food Guide',
+    description: 'Comprehensive guide to healthy foods with nutritional information',
+    numberOfItems: foodData.length,
+  };
 
   const filteredFoods = filter === "all" 
     ? foodData 
@@ -14,6 +23,13 @@ const FoodGuide = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Healthy Food Guide - FitJourney USA"
+        description="Browse our comprehensive database of healthy foods with detailed nutritional information. Learn about calories, proteins, carbs, and fats for hundreds of foods."
+        keywords="healthy food guide, nutrition database, food calories, protein foods, healthy eating, nutritional information"
+        canonicalUrl="/food"
+        structuredData={[foodGuideSchema]}
+      />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

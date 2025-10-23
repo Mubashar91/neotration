@@ -1,11 +1,19 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";
 
 const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Disclaimer - FitJourney USA"
+        description="Important disclaimer about health and medical advice. FitJourney USA provides educational information only."
+        keywords="disclaimer, health disclaimer, medical advice"
+        canonicalUrl="/disclaimer"
+        noindex={true}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 // import AdSense from "@/components/AdSense"; // Uncomment when AdSense is approved
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Clock } from "lucide-react";
@@ -29,8 +30,29 @@ const blogPosts = [
 ];
 
 const Index = () => {
+  const homePageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'FitJourney USA Calorie Calculator',
+    description: 'Free calorie calculator and personalized nutrition planner for Americans',
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background font-lato">
+      <SEO
+        title="FitJourney USA - Your Personal Nutrition & Calorie Calculator"
+        description="Find your perfect nutrition plan with our smart calorie calculator and personalized food recommendations. Real success stories from everyday Americans."
+        keywords="calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator, American diet plan 2025, free calorie tracker"
+        canonicalUrl="/"
+        structuredData={[homePageSchema]}
+      />
       <Navbar />
       <main>
         <Hero />

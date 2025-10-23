@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,14 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
+  
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact FitJourney USA',
+    description: 'Get in touch with FitJourney USA for support and inquiries',
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,6 +38,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Contact Us - FitJourney USA"
+        description="Get in touch with FitJourney USA for support, questions, or feedback. We're here to help you on your fitness journey."
+        keywords="contact fitjourney, support, customer service, help"
+        canonicalUrl="/contact"
+        structuredData={[contactSchema]}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

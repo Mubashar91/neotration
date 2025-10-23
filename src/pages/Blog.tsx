@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
 
@@ -49,8 +50,22 @@ const blogArticles = [
 ];
 
 const Blog = () => {
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'FitJourney USA Blog',
+    description: 'Expert advice on nutrition, weight loss, and healthy living',
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Blog - FitJourney USA"
+        description="Read expert articles on nutrition, weight loss, meal planning, and healthy living. Get evidence-based tips and practical advice for your fitness journey."
+        keywords="nutrition blog, weight loss tips, healthy eating articles, meal planning guide, fitness blog"
+        canonicalUrl="/blog"
+        structuredData={[blogSchema]}
+      />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

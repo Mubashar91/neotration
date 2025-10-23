@@ -1,11 +1,26 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Users, Heart, Award } from "lucide-react";
 
 const About = () => {
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About FitJourney USA',
+    description: 'Learn about our mission to empower Americans to achieve their health and fitness goals',
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About Us - FitJourney USA"
+        description="Learn about FitJourney USA's mission to empower Americans with personalized nutrition guidance and support for achieving their health and fitness goals."
+        keywords="about fitjourney, nutrition guidance, health goals, fitness mission"
+        canonicalUrl="/about"
+        structuredData={[aboutSchema]}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

@@ -2,6 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Home, Search, Calculator, BookOpen } from "lucide-react";
 
@@ -14,6 +15,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO
+        title="Page Not Found - FitJourney USA"
+        description="The page you're looking for could not be found. Return to FitJourney USA home page."
+        noindex={true}
+      />
       <Navbar />
       <main className="flex-grow flex items-center justify-center px-4 py-12">
         <div className="container mx-auto max-w-3xl text-center">

@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, ArrowRight } from "lucide-react";
 import { successStories } from "@/data/successStories";
 
 const SuccessStories = () => {
+  const successStoriesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Success Stories - FitJourney USA',
+    description: 'Real transformation stories from real people who achieved their fitness goals',
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Success Stories - FitJourney USA"
+        description="Read inspiring transformation stories from real Americans who achieved their weight loss and fitness goals with FitJourney USA. Real people, real results."
+        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials"
+        canonicalUrl="/success-stories"
+        structuredData={[successStoriesSchema]}
+      />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

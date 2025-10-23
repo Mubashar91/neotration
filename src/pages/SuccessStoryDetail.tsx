@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star, TrendingDown, Calendar, Target, Dumbbell, Apple } from "lucide-react";
@@ -25,8 +26,26 @@ const SuccessStoryDetail = () => {
     );
   }
 
+  const storySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${story.name}'s Weight Loss Success Story`,
+    description: story.quote,
+    author: {
+      '@type': 'Person',
+      name: story.name,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${story.name}'s Success Story - FitJourney USA`}
+        description={story.quote}
+        keywords={`${story.name} weight loss, transformation story, ${story.location}, fitness success`}
+        canonicalUrl={`/success-stories/${story.id}`}
+        structuredData={[storySchema]}
+      />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
