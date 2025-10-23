@@ -13,13 +13,13 @@ const Hero = () => {
           {/* Text Content */}
           <div className="space-y-4 sm:space-y-6 animate-fade-in">
             <h1 className="font-poppins text-3xl sm:text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              Unlock Your Personalized{" "}
+              Free Calorie Calculator &{" "}
               <span className="bg-gradient-hero bg-clip-text text-transparent">
-                Nutrition Plan
+                Nutrition Planner
               </span>
             </h1>
             <p className="font-lato text-base sm:text-lg text-muted-foreground md:text-xl max-w-xl">
-              Simple, effective tools to help you reach your health and fitness goals
+              Calculate daily calorie needs, get personalized meal plans, and track your weight loss journey with our free nutrition tools
             </p>
             <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
               <Link to="/calculator" className="w-full sm:w-auto">

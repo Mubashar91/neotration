@@ -47,9 +47,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-lato">
       <SEO
-        title="FitJourney USA - Your Personal Nutrition & Calorie Calculator"
-        description="Unlock your personalized wellness journey with our intelligent nutrition calculator and custom meal guidance. Authentic transformation stories from real users."
-        keywords="calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator, American diet plan 2025, free calorie tracker"
+        title="Free Calorie Calculator & Nutrition Planner | FitJourney USA 2025"
+        description="Free calorie calculator with personalized meal plans for Americans. Get custom nutrition recommendations, track daily calories, and achieve your weight loss goals in 2025."
+        keywords="free calorie calculator, nutrition planner, meal plan generator, weight loss calculator, daily calorie needs, healthy eating plan, fitness tracker USA, diet calculator 2025"
         canonicalUrl="/"
         structuredData={[homePageSchema]}
       />
