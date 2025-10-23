@@ -10,22 +10,22 @@ const successImg = "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b
 const features = [
   {
     icon: Calculator,
-    title: "Personalized Calorie Calculator",
-    description: "Get accurate daily calorie recommendations based on your goals, activity level, and body metrics.",
+    title: "Custom Nutrition Calculator",
+    description: "Receive tailored daily nutrition targets that align with your unique lifestyle, preferences, and wellness objectives.",
     image: calculatorImg,
     link: "/calculator"
   },
   {
     icon: Utensils,
-    title: "Smart Food Suggestions",
-    description: "Discover the perfect foods for your nutrition plan with detailed calorie breakdowns and health benefits.",
+    title: "Intelligent Meal Planning",
+    description: "Access curated food recommendations with comprehensive nutritional insights designed for your specific needs.",
     image: foodImg,
     link: "/food"
   },
   {
     icon: Star,
-    title: "Real Success Stories",
-    description: "Get inspired by real Americans who transformed their health using FitJourney's personalized approach.",
+    title: "Community Transformations",
+    description: "Draw motivation from authentic stories of individuals who achieved lasting wellness through our platform.",
     image: successImg,
     link: "/success-stories"
   }

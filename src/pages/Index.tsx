@@ -10,22 +10,22 @@ import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
-    title: "How to Eat Healthy on a Budget in 2025",
-    excerpt: "Discover practical tips for maintaining a nutritious diet without breaking the bank.",
-    category: "Nutrition Tips",
-    readTime: "5 min read"
+    title: "Smart Grocery Shopping for Better Nutrition",
+    excerpt: "Master the art of selecting quality ingredients that support your wellness goals while staying within budget.",
+    category: "Shopping Guide",
+    readTime: "6 min read"
   },
   {
-    title: "Top 10 U.S. Superfoods You Should Be Eating",
-    excerpt: "Learn about nutrient-dense foods that are easily available across America.",
-    category: "Food Guide",
-    readTime: "7 min read"
-  },
-  {
-    title: "How to Lose Weight Safely and Sustainably",
-    excerpt: "Evidence-based strategies for healthy, long-term weight management.",
-    category: "Weight Loss",
+    title: "Building Sustainable Eating Habits That Last",
+    excerpt: "Transform your relationship with food through simple, science-backed approaches that fit your lifestyle.",
+    category: "Lifestyle",
     readTime: "8 min read"
+  },
+  {
+    title: "Understanding Your Body's Nutritional Needs",
+    excerpt: "Decode the signals your body sends and learn how to respond with the right nutritional choices.",
+    category: "Health Science",
+    readTime: "7 min read"
   }
 ];
 
@@ -48,7 +48,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-lato">
       <SEO
         title="FitJourney USA - Your Personal Nutrition & Calorie Calculator"
-        description="Find your perfect nutrition plan with our smart calorie calculator and personalized food recommendations. Real success stories from everyday Americans."
+        description="Unlock your personalized wellness journey with our intelligent nutrition calculator and custom meal guidance. Authentic transformation stories from real users."
         keywords="calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator, American diet plan 2025, free calorie tracker"
         canonicalUrl="/"
         structuredData={[homePageSchema]}
@@ -180,10 +180,10 @@ const Index = () => {
                 <CardContent className="p-6 sm:p-8 space-y-3 sm:space-y-4">
                   <CheckCircle className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                   <h3 className="font-poppins text-xl sm:text-2xl font-bold text-foreground">
-                    Calculate Your Needs
+                    Define Your Profile
                   </h3>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                    Enter your personal information including age, weight, height, activity level, and goals to get your personalized calorie target.
+                    Share your basic details and wellness aspirations to receive nutrition recommendations tailored specifically for your journey.
                   </p>
                 </CardContent>
               </Card>
@@ -195,10 +195,10 @@ const Index = () => {
                 <CardContent className="p-6 sm:p-8 space-y-3 sm:space-y-4">
                   <CheckCircle className="h-10 w-10 sm:h-12 sm:w-12 text-secondary" />
                   <h3 className="font-poppins text-xl sm:text-2xl font-bold text-foreground">
-                    Track Your Intake
+                    Monitor Your Progress
                   </h3>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                    Log your daily meals and track your current calorie consumption to stay on target with your nutrition goals.
+                    Record your food choices and observe how they align with your wellness targets through our intuitive tracking system.
                   </p>
                 </CardContent>
               </Card>
@@ -210,10 +210,10 @@ const Index = () => {
                 <CardContent className="p-6 sm:p-8 space-y-3 sm:space-y-4">
                   <CheckCircle className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                   <h3 className="font-poppins text-xl sm:text-2xl font-bold text-foreground">
-                    Download Your Plan
+                    Access Your Blueprint
                   </h3>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                    Get a personalized meal plan and prescription that you can download, print, and follow anywhere.
+                    Receive your custom nutrition blueprint in a convenient format that travels with you wherever life takes you.
                   </p>
                 </CardContent>
               </Card>
@@ -252,11 +252,11 @@ const Index = () => {
                     ))}
                   </div>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground italic">
-                    "FitJourney USA changed my life! The calorie calculator and meal tracking made it so easy to stay on track. Lost 30 pounds in 4 months!"
+                    "I never thought tracking my nutrition could be this straightforward. The daily meal guidance helped me build confidence in my food choices. My doctor is thrilled with my health improvements!"
                   </p>
                   <div className="pt-4 border-t border-border">
-                    <p className="font-poppins text-base font-bold text-foreground">Sarah M.</p>
-                    <p className="font-lato text-sm text-muted-foreground">Los Angeles, CA</p>
+                    <p className="font-poppins text-base font-bold text-foreground">Rachel H.</p>
+                    <p className="font-lato text-sm text-muted-foreground">Seattle, WA</p>
                   </div>
                 </CardContent>
               </Card>
@@ -269,11 +269,11 @@ const Index = () => {
                     ))}
                   </div>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground italic">
-                    "The downloadable meal plans are a game changer. I can take them to the grocery store and follow along easily. Highly recommend!"
+                    "As a working parent, I needed something quick and reliable. This tool transformed how I approach family meals while keeping everyone healthy and satisfied. Game changer for our household!"
                   </p>
                   <div className="pt-4 border-t border-border">
-                    <p className="font-poppins text-base font-bold text-foreground">Mike T.</p>
-                    <p className="font-lato text-sm text-muted-foreground">New York, NY</p>
+                    <p className="font-poppins text-base font-bold text-foreground">Carlos M.</p>
+                    <p className="font-lato text-sm text-muted-foreground">Miami, FL</p>
                   </div>
                 </CardContent>
               </Card>
@@ -286,11 +286,11 @@ const Index = () => {
                     ))}
                   </div>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground italic">
-                    "Finally found a nutrition app that's simple and effective. The calorie tracking feature helps me stay accountable every day."
+                    "The step-by-step approach made everything feel manageable. Instead of overwhelming diet rules, I got practical guidance that fits my lifestyle. My confidence around food has completely transformed!"
                   </p>
                   <div className="pt-4 border-t border-border">
-                    <p className="font-poppins text-base font-bold text-foreground">Jessica R.</p>
-                    <p className="font-lato text-sm text-muted-foreground">Chicago, IL</p>
+                    <p className="font-poppins text-base font-bold text-foreground">Jennifer W.</p>
+                    <p className="font-lato text-sm text-muted-foreground">Nashville, TN</p>
                   </div>
                 </CardContent>
               </Card>
