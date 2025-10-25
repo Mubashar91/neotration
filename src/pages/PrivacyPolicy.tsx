@@ -7,8 +7,8 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Privacy Policy - Neotration"
-        description="Read Neotration's privacy policy to understand how we collect, use, and protect your personal information."
+        title="Privacy Policy - FitJourney USA"
+        description="Read FitJourney USA's privacy policy to understand how we collect, use, and protect your personal information."
         keywords="privacy policy, data protection, user privacy"
         canonicalUrl="/privacy"
         noindex={true}

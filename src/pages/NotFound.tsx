@@ -16,8 +16,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEO
-        title="Page Not Found - Neotration"
-        description="The page you're looking for could not be found. Return to Neotration home page."
+        title="Page Not Found - FitJourney USA"
+        description="The page you're looking for could not be found. Return to FitJourney USA home page."
         noindex={true}
       />
       <Navbar />

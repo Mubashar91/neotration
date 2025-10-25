@@ -10,15 +10,15 @@ const SuccessStories = () => {
   const successStoriesSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Success Stories - Neotration',
-    description: 'Real results from AI-personalized nutrition with Neotration',
+    name: 'Success Stories - FitJourney USA',
+    description: 'Real transformation stories from real people who achieved their fitness goals',
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Success Stories | Neotration"
-        description="Real-world results from AI-personalized nutrition. Explore transformation stories and outcomes achieved with Neotration."
+        title="Success Stories - FitJourney USA"
+        description="Read inspiring transformation stories from real Americans who achieved their weight loss and fitness goals with FitJourney USA. Real people, real results."
         keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials"
         canonicalUrl="/success-stories"
         structuredData={[successStoriesSchema]}

@@ -13,9 +13,9 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Neotration — AI-Powered Personalized Nutrition',
-  description = 'Transform your diet with AI—personalized plans, habit tracking, and real-time optimization tailored to your goals.',
-  keywords = 'AI nutrition coach, personalized diet plans, AI health optimization, smart meal planning, nutrition analytics',
+  title = 'FitJourney USA - Your Personal Nutrition & Calorie Calculator',
+  description = 'Find your perfect nutrition plan with our smart calorie calculator and personalized food recommendations. Real success stories from everyday Americans.',
+  keywords = 'calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator, American diet plan 2025',
   canonicalUrl,
   ogType = 'website',
   ogImage,
@@ -25,17 +25,16 @@ const SEO = ({
 }: SEOProps) => {
   const siteUrl = 'https://neotration.vercel.app';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
-  const brand = 'Neotration';
-  const fullTitle = title.includes(brand) ? title : `${title} | ${brand}`;
+  const fullTitle = title.includes('FitJourney USA') ? title : `${title} | FitJourney USA`;
 
   // Default Organization Structured Data
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Neotration',
+    name: 'FitJourney USA',
     url: siteUrl,
-    logo: `${siteUrl}/favicon.ico`,
-    description: 'AI-powered personalized nutrition that adapts to your goals',
+    logo: `${siteUrl}/placeholder.svg`,
+    description: 'Your trusted partner for personalized nutrition and calorie tracking',
     sameAs: [
       // Add your social media URLs when available
     ],
@@ -45,7 +44,7 @@ const SEO = ({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Neotration',
+    name: 'FitJourney USA',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',
@@ -72,7 +71,7 @@ const SEO = ({
       <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:site_name" content="Neotration" />
+      <meta property="og:site_name" content="FitJourney USA" />
       {ogImage && <meta property="og:image" content={`${siteUrl}${ogImage}`} />}
       {ogImage && <meta property="og:image:width" content="1200" />}
       {ogImage && <meta property="og:image:height" content="630" />}
@@ -85,7 +84,7 @@ const SEO = ({
       {ogImage && <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />}
       
       {/* Additional Meta */}
-      <meta name="author" content="Neotration" />
+      <meta name="author" content="FitJourney USA" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       
@@ -100,4 +99,3 @@ const SEO = ({
 };
 
 export default SEO;
-

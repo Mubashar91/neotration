@@ -21,9 +21,9 @@ const Calculator = () => {
   const calculatorSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'AI Calorie & Macros Calculator — Neotration',
+    name: 'Calorie Calculator - FitJourney USA',
     applicationCategory: 'HealthApplication',
-    description: 'AI-powered calorie and macronutrient calculator with goal-based adjustments and personalized recommendations.',
+    description: 'Free calorie calculator to determine your daily caloric needs based on your age, weight, height, activity level, and goals.',
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -605,9 +605,9 @@ const Calculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="AI Calorie & Macros Calculator | Neotration"
-        description="Instant calorie and macro targets with AI-driven adjustments based on your profile and goals."
-        keywords="AI calorie calculator, macros calculator, personalized diet plan, TDEE calculator, AI nutrition coach"
+        title="Free Calorie Calculator - FitJourney USA"
+        description="Calculate your daily calorie needs based on your age, weight, height, activity level, and goals. Get personalized meal plans and track your nutrition."
+        keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner"
         canonicalUrl="/calculator"
         structuredData={[calculatorSchema]}
       />
