@@ -17,7 +17,7 @@ import Terms from "./pages/Terms";
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
-import BlogDetail from "./pages/BlogDetail";
+import BlogDetail from "./pages/BlogDetail.tsx";
 import GlobalSchema from "./components/GlobalSchema";
 
 const queryClient = new QueryClient();
