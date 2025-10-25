@@ -53,16 +53,16 @@ const Blog = () => {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'FitJourney USA Blog',
-    description: 'Expert advice on nutrition, weight loss, and healthy living',
+    name: 'Neotration Blog',
+    description: 'AI-powered nutrition, optimization insights, and healthy habits',
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Blog - FitJourney USA"
-        description="Read expert articles on nutrition, weight loss, meal planning, and healthy living. Get evidence-based tips and practical advice for your fitness journey."
-        keywords="nutrition blog, weight loss tips, healthy eating articles, meal planning guide, fitness blog"
+        title="Neotration Blog | AI Nutrition Insights"
+        description="Evidence-based articles on AI-powered nutrition, optimization, and healthy habits."
+        keywords="AI nutrition blog, personalized diet insights, nutrition analytics, smart meal planning"
         canonicalUrl="/blog"
         structuredData={[blogSchema]}
       />

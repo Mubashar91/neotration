@@ -24,9 +24,9 @@ const FoodGuide = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Healthy Food Guide - FitJourney USA"
-        description="Browse our comprehensive database of healthy foods with detailed nutritional information. Learn about calories, proteins, carbs, and fats for hundreds of foods."
-        keywords="healthy food guide, nutrition database, food calories, protein foods, healthy eating, nutritional information"
+        title="Smart Meal Planning & Food Guide | Neotration"
+        description="Smart meal plans, substitutions, and nutrition insights powered by AI. Browse foods with calories, macros, and benefits."
+        keywords="smart meal planning, food guide, nutrition database, AI meal planning, calories and macros"
         canonicalUrl="/food"
         structuredData={[foodGuideSchema]}
       />

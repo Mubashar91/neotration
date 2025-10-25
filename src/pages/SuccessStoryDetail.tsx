@@ -40,7 +40,7 @@ const SuccessStoryDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${story.name}'s Success Story - FitJourney USA`}
+        title={`${story.name}'s Success Story | Neotration`}
         description={story.quote}
         keywords={`${story.name} weight loss, transformation story, ${story.location}, fitness success`}
         canonicalUrl={`/success-stories/${story.id}`}

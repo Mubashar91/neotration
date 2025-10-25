@@ -33,8 +33,8 @@ const Index = () => {
   const homePageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'FitJourney USA Calorie Calculator',
-    description: 'Free calorie calculator and personalized nutrition planner for Americans',
+    name: 'Neotration — AI Nutrition Coach',
+    description: 'AI-powered personalized nutrition, smart meal planning, and real-time optimization',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any',
     offers: {
@@ -47,9 +47,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-lato">
       <SEO
-        title="Free Calorie Calculator & Nutrition Planner | FitJourney USA 2025"
-        description="Free calorie calculator with personalized meal plans for Americans. Get custom nutrition recommendations, track daily calories, and achieve your weight loss goals in 2025."
-        keywords="free calorie calculator, nutrition planner, meal plan generator, weight loss calculator, daily calorie needs, healthy eating plan, fitness tracker USA, diet calculator 2025"
+        title="Neotration | AI-Powered Personalized Nutrition"
+        description="Transform your diet with AI—personalized plans, habit tracking, and real-time optimization tailored to your goals."
+        keywords="AI nutrition coach, personalized diet plans, AI health optimization, smart meal planning, nutrition analytics"
         canonicalUrl="/"
         structuredData={[homePageSchema]}
       />

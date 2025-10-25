@@ -16,8 +16,8 @@ const Contact = () => {
   const contactSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact FitJourney USA',
-    description: 'Get in touch with FitJourney USA for support and inquiries',
+    name: 'Contact Neotration',
+    description: 'Get in touch with Neotration for support and inquiries',
   };
 
   const [formData, setFormData] = useState({
@@ -39,9 +39,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact Us - FitJourney USA"
-        description="Get in touch with FitJourney USA for support, questions, or feedback. We're here to help you on your fitness journey."
-        keywords="contact fitjourney, support, customer service, help"
+        title="Contact Neotration"
+        description="Get in touch with Neotration for support, questions, or feedback. We're here to help you."
+        keywords="contact neotration, support, customer service, help"
         canonicalUrl="/contact"
         structuredData={[contactSchema]}
       />

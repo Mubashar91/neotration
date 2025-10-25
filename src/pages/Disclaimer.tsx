@@ -8,8 +8,8 @@ const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Disclaimer - FitJourney USA"
-        description="Important disclaimer about health and medical advice. FitJourney USA provides educational information only."
+        title="Disclaimer - Neotration"
+        description="Important disclaimer about health and medical advice. Neotration provides educational information only."
         keywords="disclaimer, health disclaimer, medical advice"
         canonicalUrl="/disclaimer"
         noindex={true}
