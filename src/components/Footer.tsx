@@ -16,13 +16,13 @@ const Footer = () => {
               Your trusted partner for personalized nutrition and healthy living. Empowering Americans to reach their health goals.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/fitjourneyusa" target="_blank" rel="nofollow noopener" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/fitjourneyusa" target="_blank" rel="nofollow noopener" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://twitter.com/fitjourneyusa" target="_blank" rel="nofollow noopener" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
             </div>

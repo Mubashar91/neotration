@@ -1,6 +1,9 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+# Explicitly allow assets required for rendering
+Allow: /*.css$
+Allow: /*.js$
 
 # Sitemap location
 Sitemap: https://neotration.vercel.app/sitemap.xml
