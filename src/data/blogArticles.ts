@@ -5,6 +5,8 @@ import loseWeightSafely from "@/content/blog/lose-weight-safely-sustainably.txt?
 import mealPrepBeginners from "@/content/blog/meal-prep-for-beginners.txt?raw";
 import macrosExplained from "@/content/blog/macros-explained.txt?raw";
 import prePostWorkout from "@/content/blog/pre-post-workout-nutrition.txt?raw";
+import hydrationMyths from "@/content/blog/hydration-myths-debunked.txt?raw";
+import beginnerStrength4Weeks from "@/content/blog/beginner-strength-training-4-weeks.txt?raw";
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -108,5 +110,32 @@ export const blogArticles: BlogArticle[] = [
       "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&h=400&q=80",
     content: `${prePostWorkout}\n\nSimple timing rules:\n- <60 min to train: small snack (fruit + whey)\n- >90 min: fuller meal (protein + carbs)\n\nRecovery add‑ons: chocolate milk, yogurt bowls, or rice + lean meat.\n\nTiming Tips:\n- Experiment with different timing strategies.\n- Listen to your body and adjust.\n- Prioritize post-workout nutrition for optimal recovery.`,
     keywords: "pre workout nutrition, post workout meal, workout fuel, recovery nutrition, protein after workout"
+  }
+  ,
+  {
+    slug: "hydration-myths-debunked",
+    title: "Hydration Myths Debunked: How Much Water Do You Really Need?",
+    excerpt:
+      "Forget the one-size-fits-all 8 cups rule. Learn how to personalize hydration based on body size, climate, and training.",
+    category: "Wellness",
+    readTime: "6 min read",
+    date: "Jan 20, 2025",
+    image:
+      "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=600&h=400&q=80",
+    content: `${hydrationMyths}\n\nCoach tip: Pair hydration with sodium and potassium when sweating heavily to maintain performance.`,
+    keywords: "hydration, water intake, electrolytes, wellness, performance, sweat, urine color"
+  },
+  {
+    slug: "beginner-strength-training-4-weeks",
+    title: "Beginner Strength Training: A Simple 4‑Week Plan",
+    excerpt:
+      "Build confidence and momentum with three full-body sessions per week, progressive overload, and solid recovery.",
+    category: "Training",
+    readTime: "9 min read",
+    date: "Jan 22, 2025",
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&h=400&q=80",
+    content: `${beginnerStrength4Weeks}\n\nSafety first: master technique, control tempo, and progress gradually for sustainable strength.`,
+    keywords: "beginner strength training, full body workout, progressive overload, gym routine, muscle, recovery"
   }
 ];
