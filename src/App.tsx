@@ -17,6 +17,7 @@ import Terms from "./pages/Terms";
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
+import BlogDetail from "./pages/BlogDetail";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/food" element={<FoodGuide />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/success-stories/:id" element={<SuccessStoryDetail />} />
             <Route path="/contact" element={<Contact />} />

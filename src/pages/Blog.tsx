@@ -3,51 +3,8 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
-
-const blogArticles = [
-  {
-    title: "How to Eat Healthy on a Budget in 2025",
-    excerpt: "Discover practical tips and strategies for maintaining a nutritious diet using a <strong>calorie calculator</strong> or <strong>nutrition tracker app</strong> without breaking the bank.",
-    category: "Nutrition Tips",
-    readTime: "5 min read",
-    date: "Jan 15, 2025"
-  },
-  {
-    title: "Top 10 U.S. Superfoods You Should Be Eating",
-    excerpt: "Learn about nutrient-dense foods that are easily available across America and how to incorporate them into your daily meals for maximum health benefits.",
-    category: "Food Guide",
-    readTime: "7 min read",
-    date: "Jan 12, 2025"
-  },
-  {
-    title: "How to Lose Weight Safely and Sustainably",
-    excerpt: "Evidence-based strategies for healthy, long-term weight management that actually work. Avoid fad diets and learn the science of sustainable weight loss.",
-    category: "Weight Loss",
-    readTime: "8 min read",
-    date: "Jan 10, 2025"
-  },
-  {
-    title: "The Complete Guide to Meal Prepping for Beginners",
-    excerpt: "Master the art of meal preparation with our step-by-step guide. Save time, money, and stay on track with your nutrition goals effortlessly.",
-    category: "Meal Planning",
-    readTime: "10 min read",
-    date: "Jan 8, 2025"
-  },
-  {
-    title: "Understanding Macros: Protein, Carbs, and Fats Explained",
-    excerpt: "Demystify macronutrients and learn how to balance your diet for optimal health and performance. Get the facts without the complicated science jargon.",
-    category: "Nutrition Science",
-    readTime: "6 min read",
-    date: "Jan 5, 2025"
-  },
-  {
-    title: "Best Pre and Post-Workout Nutrition Strategies",
-    excerpt: "Maximize your workout results with proper nutrition timing. Learn what to eat before and after exercise for better performance and recovery.",
-    category: "Fitness Nutrition",
-    readTime: "7 min read",
-    date: "Jan 3, 2025"
-  }
-];
+import { Link } from "react-router-dom";
+import { blogArticles } from "@/data/blogArticles";
 
 const Blog = () => {
   const blogSchema = {
@@ -82,9 +39,15 @@ const Blog = () => {
           {/* Featured Post */}
           <Card className="mb-8 sm:mb-12 overflow-hidden border-2 border-primary shadow-hover animate-scale-in">
             <div className="grid md:grid-cols-2 gap-0 md:gap-6">
-              <div className="h-48 sm:h-64 md:h-auto bg-gradient-to-br from-primary-light to-primary/30 flex items-center justify-center">
-                <p className="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-primary">Featured</p>
-              </div>
+              <Link to={`/blog/${blogArticles[0].slug}`} className="h-48 sm:h-64 md:h-auto overflow-hidden block">
+                <img
+                  src={blogArticles[0].image}
+                  alt={blogArticles[0].title}
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                />
+              </Link>
               <CardContent className="p-6 sm:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-2">
                   <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
@@ -95,29 +58,35 @@ const Blog = () => {
                     8 min read
                   </span>
                 </div>
-                <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground">
-                  The Ultimate Guide to Starting Your Health Journey in 2025
-                </h2>
+                <Link to={`/blog/${blogArticles[0].slug}`} className="group inline-block">
+                  <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {blogArticles[0].title}
+                  </h2>
+                </Link>
                 <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                  Everything you need to know about setting realistic health goals, creating sustainable habits, and staying motivated throughout your fitness transformation.
+                  {blogArticles[0].excerpt}
                 </p>
-                <button className="inline-flex items-center gap-2 font-lato text-sm sm:text-base font-semibold text-primary hover:gap-3 transition-all">
+                <Link to={`/blog/${blogArticles[0].slug}`} className="inline-flex items-center gap-2 font-lato text-sm sm:text-base font-semibold text-primary hover:gap-3 transition-all">
                   Read Full Article
                   <ArrowRight className="h-5 w-5" />
-                </button>
+                </Link>
               </CardContent>
             </div>
           </Card>
 
           {/* Blog Grid */}
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogArticles.map((article, index) => (
+            {blogArticles.slice(1).map((article, index) => (
               <Card key={index} className="group overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
-                <div className="h-40 sm:h-48 bg-gradient-to-br from-primary-light via-primary/10 to-secondary/10 flex items-center justify-center">
-                  <p className="font-poppins text-4xl sm:text-5xl font-bold text-primary/40">
-                    {article.category.charAt(0)}
-                  </p>
-                </div>
+                <Link to={`/blog/${article.slug}`} className="h-40 sm:h-48 overflow-hidden block">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </Link>
                 <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
@@ -127,9 +96,11 @@ const Blog = () => {
                       {article.date}
                     </span>
                   </div>
-                  <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
+                  <Link to={`/blog/${article.slug}`} className="group inline-block">
+                    <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
+                  </Link>
                   <p className="font-lato text-sm text-muted-foreground">
                     {article.excerpt}
                   </p>
@@ -138,10 +109,10 @@ const Blog = () => {
                       <Clock className="h-3 w-3" />
                       {article.readTime}
                     </span>
-                    <button className="inline-flex items-center gap-2 font-lato text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                    <Link to={`/blog/${article.slug}`} className="inline-flex items-center gap-2 font-lato text-sm font-semibold text-primary group-hover:gap-3 transition-all">
                       Read More
                       <ArrowRight className="h-4 w-4" />
-                    </button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
