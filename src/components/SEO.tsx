@@ -72,7 +72,12 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="FitJourney USA" />
-      {ogImage && <meta property="og:image" content={`${siteUrl}${ogImage}`} />}
+      {ogImage && (
+        <meta
+          property="og:image"
+          content={/^https?:\/\//.test(ogImage) ? ogImage : `${siteUrl}${ogImage}`}
+        />
+      )}
       {ogImage && <meta property="og:image:width" content="1200" />}
       {ogImage && <meta property="og:image:height" content="630" />}
       
@@ -81,7 +86,12 @@ const SEO = ({
       <meta name="twitter:url" content={fullCanonicalUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />}
+      {ogImage && (
+        <meta
+          name="twitter:image"
+          content={/^https?:\/\//.test(ogImage) ? ogImage : `${siteUrl}${ogImage}`}
+        />
+      )}
       
       {/* Additional Meta */}
       <meta name="author" content="FitJourney USA" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const GlobalSchema = () => {
-  const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://fitjourney.example";
+  const siteUrl = "https://neotration.vercel.app";
 
   const organization = {
     "@context": "https://schema.org",
@@ -11,11 +11,9 @@ const GlobalSchema = () => {
     url: siteUrl,
     logo: `${siteUrl}/favicon.ico`,
     sameAs: [
-      // Add your real profiles here
-      "https://www.facebook.com/",
-      "https://www.instagram.com/",
-      "https://x.com/",
-      "https://www.linkedin.com/"
+      "https://www.facebook.com/fitjourneyusa",
+      "https://www.instagram.com/fitjourneyusa",
+      "https://twitter.com/fitjourneyusa"
     ],
     contactPoint: [{
       "@type": "ContactPoint",

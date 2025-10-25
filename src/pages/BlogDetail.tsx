@@ -25,12 +25,18 @@ const BlogDetail = () => {
     );
   }
 
+  const siteUrl = "https://neotration.vercel.app";
+  const fullUrl = `${siteUrl}/blog/${article.slug}`;
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.excerpt,
     datePublished: new Date(article.date).toISOString(),
+    dateModified: new Date(article.date).toISOString(),
+    url: fullUrl,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
     image: article.image,
     author: { '@type': 'Organization', name: 'FitJourney USA' }
   };
@@ -51,6 +57,7 @@ const BlogDetail = () => {
         description={article.excerpt}
         keywords={article.keywords}
         canonicalUrl={`/blog/${article.slug}`}
+        ogImage={article.image}
         structuredData={[articleSchema, breadcrumbSchema]}
       />
       <Navbar />
