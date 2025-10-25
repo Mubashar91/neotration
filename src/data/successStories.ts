@@ -216,3 +216,30 @@ export const successStories: SuccessStory[] = [
     exerciseRoutine: "Cycling to work, gym 4x per week, rock climbing on weekends"
   }
 ];
+
+// Reusable, deduplicated keywords related to success stories and nutrition/calorie tools
+export const successStoriesKeywords = [
+  "calorie calculator",
+  "calorie calculator app",
+  "calorie app",
+  "calories burned calculator",
+  "calorie counting app",
+  "calorie tracker",
+  "calorie tracker app",
+  "calorie calculator for women",
+  "calorie requirements calculator",
+  "calorie needs calculator",
+  "kcal calculator",
+  "kilocalorie calculator",
+  "nutrition calculator",
+  "nutrition information calculator",
+  "nutrition facts calculator",
+  "nutrition app",
+  "personal nutrition",
+  "personal nutritionist",
+  "calories in calories out",
+  "weight loss success stories",
+  "transformation stories",
+  "fitness success",
+  "weight loss testimonials"
+] as const;

@@ -35,6 +35,8 @@ const SuccessStoryDetail = () => {
       '@type': 'Person',
       name: story.name,
     },
+    timeRequired: story.timeline,
+    about: 'Weight loss, fitness transformation, nutrition planning',
   };
 
   return (
@@ -209,48 +211,48 @@ const SuccessStoryDetail = () => {
                     Start Your Journey Today
                   </h3>
                   <p className="font-lato text-sm text-primary-foreground/90">
-                    Use our calorie calculator to begin your transformation
+                    Use our <strong>calorie calculator</strong> and <strong>nutrition planner</strong> to start your transformation.
                   </p>
                   <Link to="/calculator">
                     <Button className="w-full bg-background text-primary hover:bg-background/90">
-                      Calculate My Calories
+                      Start My Personalized Plan
                     </Button>
                   </Link>
                 </CardContent>
               </Card>
-            </div>
-          </div>
 
-          {/* More Stories */}
-          <div className="mt-12 sm:mt-16">
-            <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8 text-center">
-              More Success Stories
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {successStories
-                .filter((s) => s.id !== story.id)
-                .slice(0, 3)
-                .map((otherStory) => (
-                  <Link key={otherStory.id} to={`/success-stories/${otherStory.id}`}>
-                    <Card className="h-full border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
-                      <CardContent className="p-6 space-y-4">
-                        <div className="flex gap-1">
-                          {[...Array(otherStory.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
-                          ))}
-                        </div>
-                        <h3 className="font-poppins text-lg font-bold text-foreground">
-                          {otherStory.name}
-                        </h3>
-                        <div className="bg-primary-light rounded-lg p-3 text-center">
-                          <p className="font-poppins text-sm font-bold text-primary">
-                            {otherStory.result}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
+              {/* More Stories */}
+              <div className="mt-12 sm:mt-16">
+                <h2 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8 text-center">
+                  More Success Stories
+                </h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  {successStories
+                    .filter((s) => s.id !== story.id)
+                    .slice(0, 3)
+                    .map((otherStory) => (
+                      <Link key={otherStory.id} to={`/success-stories/${otherStory.id}`}>
+                        <Card className="h-full border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
+                          <CardContent className="p-6 space-y-4">
+                            <div className="flex gap-1">
+                              {[...Array(otherStory.rating)].map((_, i) => (
+                                <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
+                              ))}
+                            </div>
+                            <h3 className="font-poppins text-lg font-bold text-foreground">
+                              {otherStory.name}
+                            </h3>
+                            <div className="bg-primary-light rounded-lg p-3 text-center">
+                              <p className="font-poppins text-sm font-bold text-primary">
+                                {otherStory.result}
+                              </p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

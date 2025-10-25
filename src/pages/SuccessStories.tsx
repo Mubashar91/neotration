@@ -19,7 +19,7 @@ const SuccessStories = () => {
       <SEO
         title="Success Stories - FitJourney USA"
         description="Read inspiring transformation stories from real Americans who achieved their weight loss and fitness goals with FitJourney USA. Real people, real results."
-        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials"
+        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials, calorie calculator, nutrition planner, calorie tracker app, healthy eating success"
         canonicalUrl="/success-stories"
         structuredData={[successStoriesSchema]}
       />
@@ -53,7 +53,7 @@ const SuccessStories = () => {
 
                     {/* Quote */}
                     <p className="font-lato text-base text-muted-foreground italic line-clamp-3">
-                      "{story.quote}"
+                      "{story.quote}" Read how they tracked their progress using our <strong>calorie calculator</strong> and <strong>nutrition planner</strong>.
                     </p>
 
                     {/* Result Badge */}
@@ -91,7 +91,7 @@ const SuccessStories = () => {
                 Ready to Write Your Success Story?
               </h2>
               <p className="font-lato text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-                Start your transformation today with our free calorie calculator and personalized nutrition recommendations.
+                Start your health journey today with our free <strong>calorie calculator</strong>, <strong>nutrition planner</strong>, and <strong>calorie tracker app</strong> to achieve lasting results.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-4">
                 <a href="/calculator" className="w-full sm:w-auto">

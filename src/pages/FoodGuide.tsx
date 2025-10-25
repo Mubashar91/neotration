@@ -26,7 +26,7 @@ const FoodGuide = () => {
       <SEO
         title="Healthy Food Guide - FitJourney USA"
         description="Browse our comprehensive database of healthy foods with detailed nutritional information. Learn about calories, proteins, carbs, and fats for hundreds of foods."
-        keywords="healthy food guide, nutrition database, food calories, protein foods, healthy eating, nutritional information"
+        keywords="healthy food guide, nutrition database, nutrition app, calorie calculator, calorie counting app, nutrition tracker app, food calories, protein foods, healthy eating, nutritional information"
         canonicalUrl="/food"
         structuredData={[foodGuideSchema]}
       />
@@ -36,12 +36,10 @@ const FoodGuide = () => {
           <div className="text-center mb-8 sm:mb-12 space-y-3 sm:space-y-4 animate-fade-in">
             <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-foreground md:text-5xl">
               Food{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
-                Guide
-              </span>
+              <span className="bg-gradient-hero bg-clip-text text-transparent">Guide & Nutrition Tracker</span>
             </h1>
             <p className="font-lato text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Discover nutritious foods tailored to your fitness goals
+              Discover nutritious foods, track your calories, and optimize your diet with our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong>.
             </p>
           </div>
 
@@ -59,14 +57,14 @@ const FoodGuide = () => {
               variant={filter === "lose" ? "default" : "outline"}
               className={`text-sm sm:text-base ${filter === "lose" ? "bg-gradient-hero" : "border-2"}`}
             >
-              Lose Weight
+              Lose Weight (Use Calorie Calculator)
             </Button>
             <Button
               onClick={() => setFilter("maintain")}
               variant={filter === "maintain" ? "default" : "outline"}
               className={`text-sm sm:text-base ${filter === "maintain" ? "bg-gradient-hero" : "border-2"}`}
             >
-              Maintain Weight
+              Maintain Weight (Nutrition Tracker)
             </Button>
             <Button
               onClick={() => setFilter("gain")}
@@ -84,7 +82,7 @@ const FoodGuide = () => {
                 <div className="h-40 sm:h-48 overflow-hidden">
                   <img
                     src={food.image}
-                    alt={food.name}
+                    alt={`${food.name} - nutrition info, calories, protein, carbs, fat`}
                     className="w-full h-full object-cover transition-transform hover:scale-110"
                   />
                 </div>
@@ -94,7 +92,7 @@ const FoodGuide = () => {
                       {food.name}
                     </h3>
                     <p className="font-lato text-sm text-muted-foreground">
-                      {food.benefits}
+                      {food.benefits} Use our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to track daily intake and reach your fitness goals.
                     </p>
                   </div>
                   

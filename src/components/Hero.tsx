@@ -19,7 +19,10 @@ const Hero = () => {
               </span>
             </h1>
             <p className="font-lato text-base sm:text-lg text-muted-foreground md:text-xl max-w-xl">
-              Calculate daily calorie needs, get personalized meal plans, and track your weight loss journey with our free nutrition tools
+              Neotration is your all-in-one <strong>calorie calculator</strong> and <strong>nutrition app</strong>
+              designed to help you stay healthy. Calculate your daily calorie needs, track your meals
+              with our <strong>calorie counting app</strong>, and use our <strong>nutrition calculator</strong>
+              to get personalized insights for better health and fitness.
             </p>
             <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
               <Link to="/calculator" className="w-full sm:w-auto">

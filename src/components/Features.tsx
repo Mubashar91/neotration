@@ -11,7 +11,11 @@ const features = [
   {
     icon: Calculator,
     title: "Custom Nutrition Calculator",
-    description: "Receive tailored daily nutrition targets that align with your unique lifestyle, preferences, and wellness objectives.",
+    description: (
+      <>
+        Use our <strong>calorie calculator</strong> and <strong>nutrition calculator</strong> to get tailored daily nutrition targets that match your lifestyle and wellness goals.
+      </>
+    ),
     image: calculatorImg,
     link: "/calculator"
   },
@@ -43,7 +47,7 @@ const Features = () => {
             </span>
           </h2>
           <p className="font-lato text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Simple, effective tools to help you reach your health and fitness goals
+            Simple and effective tools including a <strong>calorie calculator</strong>, <strong>nutrition calculator</strong>, and <strong>calorie tracker app</strong> to help you reach your health and fitness goals.
           </p>
         </div>
 

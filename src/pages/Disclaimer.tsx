@@ -10,7 +10,7 @@ const Disclaimer = () => {
       <SEO
         title="Disclaimer - FitJourney USA"
         description="Important disclaimer about health and medical advice. FitJourney USA provides educational information only."
-        keywords="disclaimer, health disclaimer, medical advice"
+        keywords="disclaimer, health disclaimer, medical advice, nutrition disclaimer, calorie calculator disclaimer, fitness disclaimer, wellness advice"
         canonicalUrl="/disclaimer"
         noindex={true}
       />

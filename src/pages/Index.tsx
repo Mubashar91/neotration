@@ -11,7 +11,11 @@ import { Link } from "react-router-dom";
 const blogPosts = [
   {
     title: "Smart Grocery Shopping for Better Nutrition",
-    excerpt: "Master the art of selecting quality ingredients that support your wellness goals while staying within budget.",
+    excerpt: (
+      <>
+        Master the art of selecting quality ingredients while using our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to support your wellness goals within budget.
+      </>
+    ),
     category: "Shopping Guide",
     readTime: "6 min read"
   },
@@ -198,7 +202,7 @@ const Index = () => {
                     Monitor Your Progress
                   </h3>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                    Record your food choices and observe how they align with your wellness targets through our intuitive tracking system.
+                    Record your meals and track calories using our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to see how your choices align with your health goals.
                   </p>
                 </CardContent>
               </Card>
@@ -252,7 +256,7 @@ const Index = () => {
                     ))}
                   </div>
                   <p className="font-lato text-sm sm:text-base text-muted-foreground italic">
-                    "I never thought tracking my nutrition could be this straightforward. The daily meal guidance helped me build confidence in my food choices. My doctor is thrilled with my health improvements!"
+                    "I never thought using a <strong>nutrition tracker app</strong> and <strong>calorie counting app</strong> could make tracking my nutrition this straightforward..."
                   </p>
                   <div className="pt-4 border-t border-border">
                     <p className="font-poppins text-base font-bold text-foreground">Rachel H.</p>

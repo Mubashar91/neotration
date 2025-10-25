@@ -7,7 +7,7 @@ import { ArrowRight, Clock } from "lucide-react";
 const blogArticles = [
   {
     title: "How to Eat Healthy on a Budget in 2025",
-    excerpt: "Discover practical tips and strategies for maintaining a nutritious diet without breaking the bank. Learn about affordable superfoods and meal planning techniques.",
+    excerpt: "Discover practical tips and strategies for maintaining a nutritious diet using a <strong>calorie calculator</strong> or <strong>nutrition tracker app</strong> without breaking the bank.",
     category: "Nutrition Tips",
     readTime: "5 min read",
     date: "Jan 15, 2025"
@@ -60,9 +60,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Blog - FitJourney USA"
-        description="Read expert articles on nutrition, weight loss, meal planning, and healthy living. Get evidence-based tips and practical advice for your fitness journey."
-        keywords="nutrition blog, weight loss tips, healthy eating articles, meal planning guide, fitness blog"
+        title="Nutrition & Calorie Tracker Blog - FitJourney USA"
+        description="Explore expert articles on using a calorie calculator, nutrition tracker app, and nutrition calculator to support your healthy lifestyle, meal planning, and weight loss journey."
+        keywords="calorie calculator, nutrition app, nutrition calculator, calorie counting app, nutrition tracker app, healthy eating, meal planning, weight loss tips"
         canonicalUrl="/blog"
         structuredData={[blogSchema]}
       />
@@ -72,12 +72,10 @@ const Blog = () => {
           <div className="text-center mb-8 sm:mb-12 space-y-3 sm:space-y-4 animate-fade-in">
             <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-foreground md:text-5xl">
               Health &{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
-                Nutrition Blog
-              </span>
+              <span className="bg-gradient-hero bg-clip-text text-transparent">Nutrition Tracker Blog</span>
             </h1>
             <p className="font-lato text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Expert advice, nutrition tips, and the latest health trends to support your fitness journey
+              Expert advice and practical tips on using a <strong>calorie calculator</strong>, <strong>nutrition app</strong>, and <strong>nutrition calculator</strong> to track meals, improve your diet, and support your healthy lifestyle and weight loss journey.
             </p>
           </div>
 

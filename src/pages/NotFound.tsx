@@ -18,6 +18,7 @@ const NotFound = () => {
       <SEO
         title="Page Not Found - FitJourney USA"
         description="The page you're looking for could not be found. Return to FitJourney USA home page."
+        keywords="404, page not found, FitJourney USA, fitness website, missing page"
         noindex={true}
       />
       <Navbar />

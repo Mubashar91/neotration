@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
       <SEO
         title="Privacy Policy - FitJourney USA"
         description="Read FitJourney USA's privacy policy to understand how we collect, use, and protect your personal information."
-        keywords="privacy policy, data protection, user privacy"
+        keywords="privacy policy, data protection, user privacy, fitness data, health app privacy, personal information, GDPR, HIPAA"
         canonicalUrl="/privacy"
         noindex={true}
       />

@@ -607,7 +607,7 @@ const Calculator = () => {
       <SEO
         title="Free Calorie Calculator - FitJourney USA"
         description="Calculate your daily calorie needs based on your age, weight, height, activity level, and goals. Get personalized meal plans and track your nutrition."
-        keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner"
+        keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner, healthy eating, weight loss, weight gain, fitness tracker, macros calculator"
         canonicalUrl="/calculator"
         structuredData={[calculatorSchema]}
       />
