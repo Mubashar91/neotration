@@ -16,6 +16,44 @@ const FoodGuide = () => {
     description: 'Comprehensive guide to healthy foods with nutritional information',
     numberOfItems: foodData.length,
   };
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How do I choose foods for weight loss vs. gain?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use the filters. For weight loss, favor high-protein, lower-calorie foods. For gain, include energy-dense options with healthy fats and carbs.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where do the nutrition values come from?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Values are typical averages for common serving sizes; your brand/package may vary. Always check labels when available.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How can I track these foods?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use the FitJourney calorie calculator to set targets and log meals. Start with simple repeating meals for consistency.'
+        }
+      }
+    ]
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+      { '@type': 'ListItem', position: 2, name: 'Food', item: '/food' }
+    ]
+  };
 
   const filteredFoods = filter === "all" 
     ? foodData 
@@ -28,7 +66,7 @@ const FoodGuide = () => {
         description="Browse our comprehensive database of healthy foods with detailed nutritional information. Learn about calories, proteins, carbs, and fats for hundreds of foods."
         keywords="healthy food guide, nutrition database, nutrition app, calorie calculator, calorie counting app, nutrition tracker app, food calories, protein foods, healthy eating, nutritional information"
         canonicalUrl="/food"
-        structuredData={[foodGuideSchema]}
+        structuredData={[foodGuideSchema, faqSchema, breadcrumbSchema]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">

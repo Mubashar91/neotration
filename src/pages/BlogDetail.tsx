@@ -34,6 +34,15 @@ const BlogDetail = () => {
     image: article.image,
     author: { '@type': 'Organization', name: 'FitJourney USA' }
   };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: '/blog' },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `/blog/${article.slug}` }
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,7 +51,7 @@ const BlogDetail = () => {
         description={article.excerpt}
         keywords={article.keywords}
         canonicalUrl={`/blog/${article.slug}`}
-        structuredData={[articleSchema]}
+        structuredData={[articleSchema, breadcrumbSchema]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">

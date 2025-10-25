@@ -30,6 +30,36 @@ const Calculator = () => {
       priceCurrency: 'USD',
     },
   };
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How accurate is the calorie calculator?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'It uses the Mifflin-St Jeor equation with your activity level. It is an evidence-based estimate; adjust based on weekly trends.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Should I choose lose, maintain, or gain weight?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Pick the option matching your goal. The tool will set a safe daily calorie target for gradual progress.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How much protein should I eat?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A common target is 0.7–1.0 grams per pound of bodyweight per day, adjusted for your preferences and training.'
+        }
+      }
+    ]
+  };
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -609,7 +639,7 @@ const Calculator = () => {
         description="Calculate your daily calorie needs based on your age, weight, height, activity level, and goals. Get personalized meal plans and track your nutrition."
         keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner, healthy eating, weight loss, weight gain, fitness tracker, macros calculator"
         canonicalUrl="/calculator"
-        structuredData={[calculatorSchema]}
+        structuredData={[calculatorSchema, faqSchema]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">

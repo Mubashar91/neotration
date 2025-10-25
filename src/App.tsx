@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
 import BlogDetail from "./pages/BlogDetail";
+import GlobalSchema from "./components/GlobalSchema";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <GoogleAnalytics />
+          <GlobalSchema />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/calculator" element={<Calculator />} />

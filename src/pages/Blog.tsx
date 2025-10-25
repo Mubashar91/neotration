@@ -13,6 +13,24 @@ const Blog = () => {
     name: 'FitJourney USA Blog',
     description: 'Expert advice on nutrition, weight loss, and healthy living',
   };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: '/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: '/blog'
+      }
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -21,7 +39,7 @@ const Blog = () => {
         description="Explore expert articles on using a calorie calculator, nutrition tracker app, and nutrition calculator to support your healthy lifestyle, meal planning, and weight loss journey."
         keywords="calorie calculator, nutrition app, nutrition calculator, calorie counting app, nutrition tracker app, healthy eating, meal planning, weight loss tips"
         canonicalUrl="/blog"
-        structuredData={[blogSchema]}
+        structuredData={[blogSchema, breadcrumbSchema]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
