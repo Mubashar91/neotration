@@ -75,6 +75,8 @@ const Blog = () => {
                   className="h-full w-full object-cover"
                   loading="eager"
                   decoding="async"
+                  width={800}
+                  height={600}
                 />
               </Link>
               <CardContent className="p-6 sm:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
@@ -114,6 +116,8 @@ const Blog = () => {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
+                    width={600}
+                    height={400}
                   />
                 </Link>
                 <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">

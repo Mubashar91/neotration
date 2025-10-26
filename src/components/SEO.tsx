@@ -54,9 +54,12 @@ const SEO = ({
   };
 
   const allStructuredData = [organizationSchema, websiteSchema, ...structuredData];
+  const finalOgImage = ogImage ?? '/placeholder.svg';
 
   return (
     <Helmet>
+      {/* Feed discovery */}
+      <link rel="alternate" type="application/rss+xml" title="FitJourney USA Blog RSS" href={`${siteUrl}/feed.xml`} />
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
@@ -72,24 +75,24 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="FitJourney USA" />
-      {ogImage && (
+      {finalOgImage && (
         <meta
           property="og:image"
-          content={/^https?:\/\//.test(ogImage) ? ogImage : `${siteUrl}${ogImage}`}
+          content={/^https?:\/\//.test(finalOgImage) ? finalOgImage : `${siteUrl}${finalOgImage}`}
         />
       )}
-      {ogImage && <meta property="og:image:width" content="1200" />}
-      {ogImage && <meta property="og:image:height" content="630" />}
+      {finalOgImage && <meta property="og:image:width" content="1200" />}
+      {finalOgImage && <meta property="og:image:height" content="630" />}
       
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={fullCanonicalUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {ogImage && (
+      {finalOgImage && (
         <meta
           name="twitter:image"
-          content={/^https?:\/\//.test(ogImage) ? ogImage : `${siteUrl}${ogImage}`}
+          content={/^https?:\/\//.test(finalOgImage) ? finalOgImage : `${siteUrl}${finalOgImage}`}
         />
       )}
       

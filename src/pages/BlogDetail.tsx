@@ -69,8 +69,15 @@ const BlogDetail = () => {
 
           <Card className="overflow-hidden border-2 border-border shadow-card">
             <div className="h-56 sm:h-72 md:h-96 overflow-hidden">
-              <img src={article.image} alt={article.title} className="h-full w-full object-cover" />
+              <img
+                src={article.image}
+                alt={article.title}
+                className="h-full w-full object-cover"
+                width={1200}
+                height={630}
+              />
             </div>
+            
             <CardHeader>
               <div className="flex items-center justify-between">
                 <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">

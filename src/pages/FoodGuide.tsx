@@ -122,6 +122,8 @@ const FoodGuide = () => {
                     src={food.image}
                     alt={`${food.name} - nutrition info, calories, protein, carbs, fat`}
                     className="w-full h-full object-cover transition-transform hover:scale-110"
+                    width={600}
+                    height={400}
                   />
                 </div>
                 <CardContent className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>FitJourney USA Blog</title>
+    <link>https://neotration.vercel.app/blog</link>
+    <description>Expert advice on nutrition, weight loss, and healthy living</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Oct 2025 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>The Ultimate Guide to Starting Your Health Journey in 2025</title>
+      <link>https://neotration.vercel.app/blog/ultimate-health-journey-2025</link>
+      <guid>https://neotration.vercel.app/blog/ultimate-health-journey-2025</guid>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Everything you need to know about setting realistic health goals, creating sustainable habits, and staying motivated throughout your fitness transformation.</description>
+    </item>
+
+    <item>
+      <title>How to Eat Healthy on a Budget in 2025</title>
+      <link>https://neotration.vercel.app/blog/eat-healthy-on-a-budget-2025</link>
+      <guid>https://neotration.vercel.app/blog/eat-healthy-on-a-budget-2025</guid>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Discover practical tips and strategies for maintaining a nutritious diet using a calorie calculator or nutrition tracker app without breaking the bank.</description>
+    </item>
+
+    <item>
+      <title>Top 10 U.S. Superfoods You Should Be Eating</title>
+      <link>https://neotration.vercel.app/blog/top-us-superfoods</link>
+      <guid>https://neotration.vercel.app/blog/top-us-superfoods</guid>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Learn about nutrient-dense foods that are easily available across America and how to incorporate them into your daily meals for maximum health benefits.</description>
+    </item>
+
+    <item>
+      <title>How to Lose Weight Safely and Sustainably</title>
+      <link>https://neotration.vercel.app/blog/lose-weight-safely-sustainably</link>
+      <guid>https://neotration.vercel.app/blog/lose-weight-safely-sustainably</guid>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Evidence-based strategies for healthy, long-term weight management that actually work. Avoid fad diets and learn the science of sustainable weight loss.</description>
+    </item>
+
+    <item>
+      <title>The Complete Guide to Meal Prepping for Beginners</title>
+      <link>https://neotration.vercel.app/blog/meal-prep-for-beginners</link>
+      <guid>https://neotration.vercel.app/blog/meal-prep-for-beginners</guid>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Master the art of meal preparation with our step-by-step guide. Save time, money, and stay on track with your nutrition goals effortlessly.</description>
+    </item>
+
+    <item>
+      <title>Understanding Macros: Protein, Carbs, and Fats Explained</title>
+      <link>https://neotration.vercel.app/blog/macros-explained</link>
+      <guid>https://neotration.vercel.app/blog/macros-explained</guid>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Demystify macronutrients and learn how to balance your diet for optimal health and performance.</description>
+    </item>
+
+    <item>
+      <title>Best Pre and Post-Workout Nutrition Strategies</title>
+      <link>https://neotration.vercel.app/blog/pre-post-workout-nutrition</link>
+      <guid>https://neotration.vercel.app/blog/pre-post-workout-nutrition</guid>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Maximize your workout results with proper nutrition timing. Learn what to eat before and after exercise for better performance and recovery.</description>
+    </item>
+
+    <item>
+      <title>Hydration Myths Debunked: How Much Water Do You Really Need?</title>
+      <link>https://neotration.vercel.app/blog/hydration-myths-debunked</link>
+      <guid>https://neotration.vercel.app/blog/hydration-myths-debunked</guid>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Forget the one-size-fits-all 8 cups rule. Learn how to personalize hydration based on body size, climate, and training.</description>
+    </item>
+
+    <item>
+      <title>Beginner Strength Training: A Simple 4‑Week Plan</title>
+      <link>https://neotration.vercel.app/blog/beginner-strength-training-4-weeks</link>
+      <guid>https://neotration.vercel.app/blog/beginner-strength-training-4-weeks</guid>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Build confidence and momentum with three full-body sessions per week, progressive overload, and solid recovery.</description>
+    </item>
+  </channel>
+</rss>
