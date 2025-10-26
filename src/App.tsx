@@ -7,6 +7,9 @@ import { HelmetProvider } from "react-helmet-async";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import Index from "./pages/Index";
 import Calculator from "./pages/Calculator";
+import WeightLossCalculator from "./pages/WeightLossCalculator";
+import MaintenanceCalculator from "./pages/MaintenanceCalculator";
+import DailyCalorieCalculator from "./pages/DailyCalorieCalculator";
 import FoodGuide from "./pages/FoodGuide";
 import Blog from "./pages/Blog";
 import SuccessStories from "./pages/SuccessStories";
@@ -34,6 +37,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/calculator" element={<Calculator />} />
+            <Route path="/weight-loss-calorie-calculator" element={<WeightLossCalculator />} />
+            <Route path="/maintenance-calorie-calculator" element={<MaintenanceCalculator />} />
+            <Route path="/daily-calorie-calculator" element={<DailyCalorieCalculator />} />
             <Route path="/food" element={<FoodGuide />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
