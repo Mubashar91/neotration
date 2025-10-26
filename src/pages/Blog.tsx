@@ -1,12 +1,29 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import CategoryFilter from "@/components/CategoryFilter";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { blogArticles } from "@/data/blogArticles";
+import { blogArticles, blogCategories } from "@/data/blogArticles";
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+  
+  // Filter articles by category
+  const filteredArticles = activeCategory === 'all' 
+    ? blogArticles 
+    : blogArticles.filter(article => article.categorySlug === activeCategory);
+  
+  // Get active category info for SEO
+  const activeCategoryInfo = blogCategories.find(cat => cat.slug === activeCategory);
+  const categoryTitle = activeCategoryInfo && activeCategory !== 'all' 
+    ? `${activeCategoryInfo.name} - ` 
+    : '';
+  const categoryDescription = activeCategoryInfo && activeCategory !== 'all'
+    ? activeCategoryInfo.description
+    : 'Expert advice on nutrition, weight loss, muscle gain, and healthy living';
   const siteUrl = "https://neotration.vercel.app";
   const blogSchema = {
     '@context': 'https://schema.org',
@@ -46,9 +63,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Nutrition & Calorie Tracker Blog - FitJourney USA"
-        description="Explore expert articles on using a calorie calculator, nutrition tracker app, and nutrition calculator to support your healthy lifestyle, meal planning, and weight loss journey."
-        keywords="calorie calculator, nutrition app, nutrition calculator, calorie counting app, nutrition tracker app, healthy eating, meal planning, weight loss tips"
+        title={`${categoryTitle}Nutrition & Calorie Tracker Blog - FitJourney USA`}
+        description={`${categoryDescription}. Expert articles on using a calorie calculator, nutrition tracker app, and nutrition calculator to support your healthy lifestyle.`}
+        keywords="calorie calculator, nutrition app, nutrition calculator, calorie counting app, nutrition tracker app, healthy eating, meal planning, weight loss tips, muscle gain, exercise"
         canonicalUrl="/blog"
         structuredData={[blogSchema, breadcrumbSchema, itemListSchema]}
       />
@@ -64,6 +81,19 @@ const Blog = () => {
               Expert advice and practical tips on using a <strong>calorie calculator</strong>, <strong>nutrition app</strong>, and <strong>nutrition calculator</strong> to track meals, improve your diet, and support your healthy lifestyle and weight loss journey.
             </p>
           </div>
+
+          {/* Category Filter */}
+          <CategoryFilter 
+            categories={blogCategories}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+          />
+
+          {/* Results Count */}
+          <p className="text-center text-sm text-muted-foreground mb-6">
+            Showing {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
+            {activeCategory !== 'all' && ` in ${activeCategoryInfo?.name}`}
+          </p>
 
           {/* Featured Post */}
           <Card className="mb-8 sm:mb-12 overflow-hidden border-2 border-primary shadow-hover animate-scale-in">
@@ -107,7 +137,7 @@ const Blog = () => {
 
           {/* Blog Grid */}
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogArticles.slice(1).map((article, index) => (
+            {filteredArticles.slice(1).map((article, index) => (
               <Card key={index} className="group overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
                 <Link to={`/blog/${article.slug}`} className="h-40 sm:h-48 overflow-hidden block">
                   <img

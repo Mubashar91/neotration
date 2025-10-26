@@ -1,12 +1,29 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import CategoryFilter from "@/components/CategoryFilter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, ArrowRight } from "lucide-react";
-import { successStories } from "@/data/successStories";
+import { successStories, storyCategories } from "@/data/successStories";
 
 const SuccessStories = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+  
+  // Filter stories by category
+  const filteredStories = activeCategory === 'all' 
+    ? successStories 
+    : successStories.filter(story => story.categorySlug === activeCategory);
+  
+  // Get active category info for SEO
+  const activeCategoryInfo = storyCategories.find(cat => cat.slug === activeCategory);
+  const categoryTitle = activeCategoryInfo && activeCategory !== 'all' 
+    ? `${activeCategoryInfo.name} - ` 
+    : '';
+  const categoryDescription = activeCategoryInfo && activeCategory !== 'all'
+    ? activeCategoryInfo.description
+    : 'Real transformation stories from real people who achieved their fitness goals';
   const successStoriesSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -17,9 +34,9 @@ const SuccessStories = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Success Stories - FitJourney USA"
-        description="Read inspiring transformation stories from real Americans who achieved their weight loss and fitness goals with FitJourney USA. Real people, real results."
-        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials, calorie calculator, nutrition planner, calorie tracker app, healthy eating success"
+        title={`${categoryTitle}Success Stories - FitJourney USA`}
+        description={`${categoryDescription}. Read inspiring transformation stories from real Americans who achieved their fitness goals with FitJourney USA.`}
+        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials, muscle gain stories, calorie calculator, nutrition planner, calorie tracker app"
         canonicalUrl="/success-stories"
         structuredData={[successStoriesSchema]}
       />
@@ -38,9 +55,22 @@ const SuccessStories = () => {
             </p>
           </div>
 
+          {/* Category Filter */}
+          <CategoryFilter 
+            categories={storyCategories}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+          />
+
+          {/* Results Count */}
+          <p className="text-center text-sm text-muted-foreground mb-6">
+            Showing {filteredStories.length} {filteredStories.length === 1 ? 'story' : 'stories'}
+            {activeCategory !== 'all' && ` in ${activeCategoryInfo?.name}`}
+          </p>
+
           {/* Success Stories Grid */}
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-10 sm:mb-12 md:mb-16">
-            {successStories.map((story, index) => (
+            {filteredStories.map((story, index) => (
               <Link key={index} to={`/success-stories/${story.id}`} className="group">
                 <Card className="h-full border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary animate-scale-in">
                   <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
@@ -55,6 +85,13 @@ const SuccessStories = () => {
                     <p className="font-lato text-base text-muted-foreground italic line-clamp-3">
                       "{story.quote}" Read how they tracked their progress using our <strong>calorie calculator</strong> and <strong>nutrition planner</strong>.
                     </p>
+
+                    {/* Category Badge */}
+                    <div className="mb-2">
+                      <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
+                        {story.category}
+                      </span>
+                    </div>
 
                     {/* Result Badge */}
                     <div className="bg-primary-light rounded-lg p-3 text-center">

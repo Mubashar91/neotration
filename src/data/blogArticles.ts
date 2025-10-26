@@ -12,6 +12,7 @@ export interface BlogArticle {
   title: string;
   excerpt: string;
   category: string;
+  categorySlug: string; // URL-friendly category for routing
   readTime: string;
   date: string;
   image: string;
@@ -19,13 +20,24 @@ export interface BlogArticle {
   keywords: string;
 }
 
+// Blog categories for filtering and SEO
+export const blogCategories = [
+  { name: 'All', slug: 'all', description: 'All blog articles' },
+  { name: 'Weight Loss', slug: 'weight-loss', description: 'Tips and guides for safe, sustainable weight loss' },
+  { name: 'Weight Gain', slug: 'weight-gain', description: 'Muscle building and healthy weight gain strategies' },
+  { name: 'Healthy Lifestyle', slug: 'healthy-lifestyle', description: 'General health and wellness tips' },
+  { name: 'Exercise', slug: 'exercise', description: 'Workout guides and fitness tips' },
+  { name: 'Nutrition', slug: 'nutrition', description: 'Nutrition science and meal planning' }
+] as const;
+
 export const blogArticles: BlogArticle[] = [
   {
     slug: "ultimate-health-journey-2025",
     title: "The Ultimate Guide to Starting Your Health Journey in 2025",
     excerpt:
       "Everything you need to know about setting realistic health goals, creating sustainable habits, and staying motivated throughout your fitness transformation.",
-    category: "Featured",
+    category: "Healthy Lifestyle",
+    categorySlug: "healthy-lifestyle",
     readTime: "8 min read",
     date: "Jan 18, 2025",
     image:
@@ -38,7 +50,8 @@ export const blogArticles: BlogArticle[] = [
     title: "How to Eat Healthy on a Budget in 2025",
     excerpt:
       "Discover practical tips and strategies for maintaining a nutritious diet using a calorie calculator or nutrition tracker app without breaking the bank.",
-    category: "Nutrition Tips",
+    category: "Nutrition",
+    categorySlug: "nutrition",
     readTime: "5 min read",
     date: "Jan 15, 2025",
     image:
@@ -51,7 +64,8 @@ export const blogArticles: BlogArticle[] = [
     title: "Top 10 U.S. Superfoods You Should Be Eating",
     excerpt:
       "Learn about nutrient-dense foods that are easily available across America and how to incorporate them into your daily meals for maximum health benefits.",
-    category: "Food Guide",
+    category: "Nutrition",
+    categorySlug: "nutrition",
     readTime: "7 min read",
     date: "Jan 12, 2025",
     image:
@@ -65,6 +79,7 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       "Evidence-based strategies for healthy, long-term weight management that actually work. Avoid fad diets and learn the science of sustainable weight loss.",
     category: "Weight Loss",
+    categorySlug: "weight-loss",
     readTime: "8 min read",
     date: "Jan 10, 2025",
     image:
@@ -77,7 +92,8 @@ export const blogArticles: BlogArticle[] = [
     title: "The Complete Guide to Meal Prepping for Beginners",
     excerpt:
       "Master the art of meal preparation with our step-by-step guide. Save time, money, and stay on track with your nutrition goals effortlessly.",
-    category: "Meal Planning",
+    category: "Nutrition",
+    categorySlug: "nutrition",
     readTime: "10 min read",
     date: "Jan 8, 2025",
     image:
@@ -90,7 +106,8 @@ export const blogArticles: BlogArticle[] = [
     title: "Understanding Macros: Protein, Carbs, and Fats Explained",
     excerpt:
       "Demystify macronutrients and learn how to balance your diet for optimal health and performance.",
-    category: "Nutrition Science",
+    category: "Nutrition",
+    categorySlug: "nutrition",
     readTime: "6 min read",
     date: "Jan 5, 2025",
     image:
@@ -103,7 +120,8 @@ export const blogArticles: BlogArticle[] = [
     title: "Best Pre and Post-Workout Nutrition Strategies",
     excerpt:
       "Maximize your workout results with proper nutrition timing. Learn what to eat before and after exercise for better performance and recovery.",
-    category: "Fitness Nutrition",
+    category: "Exercise",
+    categorySlug: "exercise",
     readTime: "7 min read",
     date: "Jan 3, 2025",
     image:
@@ -117,7 +135,8 @@ export const blogArticles: BlogArticle[] = [
     title: "Hydration Myths Debunked: How Much Water Do You Really Need?",
     excerpt:
       "Forget the one-size-fits-all 8 cups rule. Learn how to personalize hydration based on body size, climate, and training.",
-    category: "Wellness",
+    category: "Healthy Lifestyle",
+    categorySlug: "healthy-lifestyle",
     readTime: "6 min read",
     date: "Jan 20, 2025",
     image:
@@ -130,7 +149,8 @@ export const blogArticles: BlogArticle[] = [
     title: "Beginner Strength Training: A Simple 4‑Week Plan",
     excerpt:
       "Build confidence and momentum with three full-body sessions per week, progressive overload, and solid recovery.",
-    category: "Training",
+    category: "Exercise",
+    categorySlug: "exercise",
     readTime: "9 min read",
     date: "Jan 22, 2025",
     image:

@@ -9,12 +9,23 @@ export interface SuccessStory {
   startWeight: number;
   currentWeight: number;
   timeline: string;
+  category: string; // Display name
+  categorySlug: string; // URL-friendly category for routing
   fullStory: string;
   challenges: string[];
   tips: string[];
   favoriteFoods: string[];
   exerciseRoutine: string;
 }
+
+// Success story categories for filtering and SEO
+export const storyCategories = [
+  { name: 'All Stories', slug: 'all', description: 'All transformation stories' },
+  { name: 'Weight Loss', slug: 'weight-loss', description: 'Inspiring weight loss transformations' },
+  { name: 'Weight Gain', slug: 'weight-gain', description: 'Muscle building success stories' },
+  { name: 'Healthy Lifestyle', slug: 'healthy-lifestyle', description: 'Overall health improvements' },
+  { name: 'Fitness Journey', slug: 'fitness-journey', description: 'Complete fitness transformations' }
+] as const;
 
 export const successStories: SuccessStory[] = [
   {
@@ -28,6 +39,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 185,
     currentWeight: 150,
     timeline: "4 months",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
     fullStory: "I started my journey in January 2024 weighing 185 lbs. As a busy marketing manager, I always made excuses about not having time to eat healthy. FitJourney's calorie calculator showed me I was eating way more than I needed. The food guide helped me discover delicious, healthy alternatives to my usual fast food choices. The first month was challenging, but seeing the numbers drop kept me motivated. By month two, healthy eating became a habit. Now, four months later, I'm 35 lbs lighter and feel amazing!",
     challenges: [
       "Breaking fast food addiction",
@@ -61,6 +74,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 145,
     currentWeight: 165,
     timeline: "6 months",
+    category: "Weight Gain",
+    categorySlug: "weight-gain",
     fullStory: "I've always been the 'skinny guy' who couldn't gain weight no matter what I ate. FitJourney's calculator revealed I wasn't eating nearly enough calories. The platform taught me about calorie surplus and proper macros. I learned to focus on nutrient-dense, calorie-rich foods like nuts, avocados, and lean proteins. Combined with a structured weight training program, I finally started seeing gains. Six months later, I've put on 20 lbs of lean muscle and I'm stronger than ever.",
     challenges: [
       "Eating enough calories consistently",
@@ -94,6 +109,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 175,
     currentWeight: 145,
     timeline: "Ongoing - 1+ year",
+    category: "Healthy Lifestyle",
+    categorySlug: "healthy-lifestyle",
     fullStory: "I've tried every diet you can imagine - keto, paleo, juice cleanses, you name it. I'd lose weight quickly then gain it all back plus more. FitJourney taught me that sustainable weight loss isn't about restriction, it's about education and balance. I learned to calculate my maintenance calories and build a diet around foods I actually enjoy. The best part? I've maintained my 30 lb weight loss for over a year now without feeling deprived.",
     challenges: [
       "Breaking the diet mentality",
@@ -127,6 +144,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 240,
     currentWeight: 190,
     timeline: "8 months",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
     fullStory: "At 45, I was pre-diabetic, exhausted all the time, and my doctor warned me about serious health risks. That was my wake-up call. FitJourney made the process simple - I started by just tracking my calories and was shocked to see I was eating 3000+ calories daily. I cut back to my recommended 2000 calories and started walking. The weight came off steadily. Eight months later, I'm 50 lbs lighter, my blood sugar is normal, and I have energy to play with my kids. Best decision of my life.",
     challenges: [
       "Changing 20+ years of unhealthy habits",
@@ -160,6 +179,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 168,
     currentWeight: 140,
     timeline: "3 months",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
     fullStory: "After having my first baby, I struggled to lose the pregnancy weight. I was overwhelmed with complicated diet plans and conflicting advice online. FitJourney cut through the noise with simple, science-based guidance. I learned about portion control, made healthier swaps for my favorite foods, and stayed consistent. Three months later, I'm back to my pre-pregnancy weight and feeling confident again. The best part is I did it while breastfeeding and caring for a newborn!",
     challenges: [
       "Finding time with a newborn",
@@ -193,6 +214,8 @@ export const successStories: SuccessStory[] = [
     startWeight: 210,
     currentWeight: 175,
     timeline: "5 months",
+    category: "Fitness Journey",
+    categorySlug: "fitness-journey",
     fullStory: "I'm a software engineer who spent 10+ hours a day sitting at a desk, living on pizza and energy drinks. I hit 210 lbs and realized I needed to change. FitJourney's educational approach really resonated with my analytical mind. I dove deep into understanding macros, micronutrients, and how food affects energy and focus. I restructured my entire diet and lifestyle. Five months later, I'm 35 lbs lighter, sleeping better, and my productivity at work has actually increased. Understanding the 'why' behind nutrition made all the difference.",
     challenges: [
       "Breaking caffeine and junk food dependency",
