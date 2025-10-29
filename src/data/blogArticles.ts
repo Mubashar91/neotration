@@ -7,6 +7,8 @@ import macrosExplained from "@/content/blog/macros-explained.txt?raw";
 import prePostWorkout from "@/content/blog/pre-post-workout-nutrition.txt?raw";
 import hydrationMyths from "@/content/blog/hydration-myths-debunked.txt?raw";
 import beginnerStrength4Weeks from "@/content/blog/beginner-strength-training-4-weeks.txt?raw";
+import smartSnacking from "@/content/blog/smart-snacking-weight-loss.txt?raw";
+import homeWorkouts20Min from "@/content/blog/20-minute-home-workouts-beginners.txt?raw";
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -157,5 +159,33 @@ export const blogArticles: BlogArticle[] = [
       "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&h=400&q=80",
     content: `${beginnerStrength4Weeks}\n\nSafety first: master technique, control tempo, and progress gradually for sustainable strength.`,
     keywords: "beginner strength training, full body workout, progressive overload, gym routine, muscle, recovery"
+  },
+  {
+    slug: "smart-snacking-weight-loss",
+    title: "Smart Snacking for Weight Loss: Stay Full Between Meals",
+    excerpt:
+      "Build snacks around protein and fiber to curb cravings, control calories, and keep energy steady — no willpower contest required.",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
+    readTime: "6 min read",
+    date: "Jan 24, 2025",
+    image:
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&h=400&q=80",
+    content: `${smartSnacking}\n\nCoach tip: Pair a protein (yogurt, turkey, whey) with a fiber source (fruit, veg, whole grains) for lasting fullness.`,
+    keywords: "weight loss snacks, high protein snacks, fiber snacks, hunger management, calorie deficit tips"
+  },
+  {
+    slug: "20-minute-home-workouts-beginners",
+    title: "20‑Minute Home Workouts for Busy Beginners",
+    excerpt:
+      "No gym needed. Short, structured sessions you can repeat to build strength, cardio, and momentum at home.",
+    category: "Exercise",
+    categorySlug: "exercise",
+    readTime: "7 min read",
+    date: "Jan 27, 2025",
+    image:
+      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=600&h=400&q=80",
+    content: `${homeWorkouts20Min}\n\nProgress idea: add 2–3 reps per set each week or reduce rest by 5 seconds to keep improving.`,
+    keywords: "home workout, beginner workout, 20 minute workout, EMOM, no equipment training, bodyweight"
   }
 ];
