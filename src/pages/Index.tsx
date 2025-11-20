@@ -7,31 +7,8 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { blogArticles } from "@/data/blogArticles";
 
-const blogPosts = [
-  {
-    title: "Smart Grocery Shopping for Better Nutrition",
-    excerpt: (
-      <>
-        Master the art of selecting quality ingredients while using our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to support your wellness goals within budget.
-      </>
-    ),
-    category: "Shopping Guide",
-    readTime: "6 min read"
-  },
-  {
-    title: "Building Sustainable Eating Habits That Last",
-    excerpt: "Transform your relationship with food through simple, science-backed approaches that fit your lifestyle.",
-    category: "Lifestyle",
-    readTime: "8 min read"
-  },
-  {
-    title: "Understanding Your Body's Nutritional Needs",
-    excerpt: "Decode the signals your body sends and learn how to respond with the right nutritional choices.",
-    category: "Health Science",
-    readTime: "7 min read"
-  }
-];
 
 const Index = () => {
   const homePageSchema = {
@@ -86,28 +63,89 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
-              {blogPosts.map((post, index) => (
-                <Card key={index} className="group overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
-                  <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
+            {/* Featured Post */}
+            {blogArticles.length > 0 && (
+              <Card className="mb-8 sm:mb-12 overflow-hidden border-2 border-primary shadow-hover">
+                <div className="grid md:grid-cols-2 gap-0 md:gap-6">
+                  <Link to={`/blog/${blogArticles[0].slug}`} className="h-48 sm:h-64 md:h-auto overflow-hidden block">
+                    <img
+                      src={blogArticles[0].image}
+                      alt={blogArticles[0].title}
+                      className="h-full w-full object-cover"
+                      loading="eager"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                    />
+                  </Link>
+                  <CardContent className="p-6 sm:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
                     <div className="flex items-center gap-2">
                       <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
-                        {post.category}
+                        Featured
                       </span>
-                      <span className="font-lato text-xs text-muted-foreground">
-                        {post.readTime}
+                      <span className="font-lato text-sm text-muted-foreground flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        {blogArticles[0].readTime}
                       </span>
                     </div>
-                    <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="font-lato text-sm sm:text-base text-muted-foreground">
-                      {post.excerpt}
-                    </p>
-                    <Link to="/blog" className="inline-flex items-center gap-2 font-lato text-sm font-semibold text-primary group-hover:gap-3 transition-all">
-                      Read More
-                      <ArrowRight className="h-4 w-4" />
+                    <Link to={`/blog/${blogArticles[0].slug}`} className="group inline-block">
+                      <h3 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {blogArticles[0].title}
+                      </h3>
                     </Link>
+                    <p className="font-lato text-sm sm:text-base text-muted-foreground">
+                      {blogArticles[0].excerpt}
+                    </p>
+                    <Link to={`/blog/${blogArticles[0].slug}`} className="inline-flex items-center gap-2 font-lato text-sm sm:text-base font-semibold text-primary hover:gap-3 transition-all">
+                      Read Full Article
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </CardContent>
+                </div>
+              </Card>
+            )}
+
+            {/* Latest Posts */}
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
+              {blogArticles.slice(1, 7).map((article, index) => (
+                <Card key={article.slug} className="group overflow-hidden border-2 border-border bg-card shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
+                  <Link to={`/blog/${article.slug}`} className="h-40 sm:h-48 overflow-hidden block">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      width={600}
+                      height={400}
+                    />
+                  </Link>
+                  <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
+                        {article.category}
+                      </span>
+                      <span className="font-lato text-xs text-muted-foreground">
+                        {article.date}
+                      </span>
+                    </div>
+                    <Link to={`/blog/${article.slug}`} className="group inline-block">
+                      <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                    </Link>
+                    <p className="font-lato text-sm text-muted-foreground">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="font-lato text-xs text-muted-foreground">
+                        {article.readTime}
+                      </span>
+                      <Link to={`/blog/${article.slug}`} className="inline-flex items-center gap-2 font-lato text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                        Read More
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
               ))}

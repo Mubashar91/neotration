@@ -5,16 +5,22 @@ import SEO from "@/components/SEO";
 import CategoryFilter from "@/components/CategoryFilter";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { blogArticles, blogCategories } from "@/data/blogArticles";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchParams] = useSearchParams();
+  const activeTag = (searchParams.get('tag') || '').toLowerCase();
   
   // Filter articles by category
-  const filteredArticles = activeCategory === 'all' 
+  let filteredArticles = activeCategory === 'all' 
     ? blogArticles 
     : blogArticles.filter(article => article.categorySlug === activeCategory);
+  // Optional tag filter
+  if (activeTag) {
+    filteredArticles = filteredArticles.filter(a => a.tags && a.tags.some(t => t.toLowerCase() === activeTag));
+  }
   
   // Get active category info for SEO
   const activeCategoryInfo = blogCategories.find(cat => cat.slug === activeCategory);
@@ -89,10 +95,20 @@ const Blog = () => {
             onCategoryChange={setActiveCategory}
           />
 
+          {/* Active tag notice */}
+          {activeTag && (
+            <div className="text-center mb-4">
+              <span className="text-sm">Filtering by tag <span className="font-semibold text-primary">#{activeTag}</span></span>
+              <span className="mx-2">·</span>
+              <Link to="/blog" className="text-sm text-primary hover:underline">Clear</Link>
+            </div>
+          )}
+
           {/* Results Count */}
           <p className="text-center text-sm text-muted-foreground mb-6">
             Showing {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
             {activeCategory !== 'all' && ` in ${activeCategoryInfo?.name}`}
+            {activeTag && ` with tag #${activeTag}`}
           </p>
 
           {/* Featured Post */}
