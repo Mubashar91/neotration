@@ -50,6 +50,81 @@ const BlogDetail = () => {
     ]
   };
 
+  // Basic markdown-ish renderer for headings and lists
+  const renderContent = (content: string) => {
+    const lines = content.split(/\r?\n/);
+    const elements: JSX.Element[] = [];
+    let listBuffer: string[] = [];
+    let isOrdered = false;
+
+    const flushList = () => {
+      if (listBuffer.length === 0) return;
+      const items = listBuffer.map((item, idx) => (
+        <li key={`li-${elements.length}-${idx}`} className="ml-6 list-disc marker:text-primary">
+          {item}
+        </li>
+      ));
+      elements.push(
+        <ul key={`ul-${elements.length}`} className="space-y-1 my-2">
+          {items}
+        </ul>
+      );
+      listBuffer = [];
+      isOrdered = false;
+    };
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed === "") {
+        flushList();
+        elements.push(<div key={`sp-${elements.length}`} className="h-2" />);
+        continue;
+      }
+
+      if (trimmed.startsWith("## ")) {
+        flushList();
+        elements.push(
+          <h2 key={`h2-${elements.length}`} className="font-poppins text-xl sm:text-2xl font-bold text-foreground mt-6 mb-3">
+            {trimmed.replace(/^##\s+/, "")}
+          </h2>
+        );
+        continue;
+      }
+
+      if (trimmed.startsWith("### ")) {
+        flushList();
+        elements.push(
+          <h3 key={`h3-${elements.length}`} className="font-poppins text-lg sm:text-xl font-semibold text-foreground mt-4 mb-2">
+            {trimmed.replace(/^###\s+/, "")}
+          </h3>
+        );
+        continue;
+      }
+
+      if (/^\d+\./.test(trimmed)) {
+        // ordered list -> treat as bullets for simplicity
+        listBuffer.push(trimmed.replace(/^\d+\.\s*/, ""));
+        isOrdered = true;
+        continue;
+      }
+
+      if (trimmed.startsWith("- ")) {
+        listBuffer.push(trimmed.slice(2));
+        continue;
+      }
+
+      // paragraph
+      flushList();
+      elements.push(
+        <p key={`p-${elements.length}`} className="font-lato text-base text-muted-foreground leading-relaxed">
+          {trimmed}
+        </p>
+      );
+    }
+    flushList();
+    return elements;
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -92,10 +167,8 @@ const BlogDetail = () => {
                 <Clock className="h-4 w-4" /> {article.readTime}
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="font-lato text-base text-muted-foreground leading-relaxed whitespace-pre-wrap">
-                {article.content}
-              </p>
+            <CardContent className="space-y-3">
+              {renderContent(article.content)}
             </CardContent>
           </Card>
         </div>
