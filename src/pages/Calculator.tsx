@@ -681,15 +681,10 @@ const Calculator = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="gender" className="font-lato font-semibold">Gender</Label>
-                    <Select value={formData.gender} onValueChange={(value) => setFormData({ ...formData, gender: value })}>
-                      <SelectTrigger className="border-2">
-                        <SelectValue placeholder="Select gender" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="male">Male</SelectItem>
-                        <SelectItem value="female">Female</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div className="flex gap-2">
+                      <Button type="button" variant={formData.gender === 'male' ? 'default' : 'outline'} className="flex-1" onClick={() => setFormData({ ...formData, gender: 'male' })}>Male</Button>
+                      <Button type="button" variant={formData.gender === 'female' ? 'default' : 'outline'} className="flex-1" onClick={() => setFormData({ ...formData, gender: 'female' })}>Female</Button>
+                    </div>
                   </div>
 
                   <div className="space-y-2">
@@ -718,32 +713,24 @@ const Calculator = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="activity" className="font-lato font-semibold">Activity Level</Label>
-                    <Select value={formData.activity} onValueChange={(value) => setFormData({ ...formData, activity: value })}>
-                      <SelectTrigger className="border-2">
-                        <SelectValue placeholder="Select activity level" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="sedentary">Sedentary (little or no exercise)</SelectItem>
-                        <SelectItem value="light">Light (exercise 1-3 days/week)</SelectItem>
-                        <SelectItem value="moderate">Moderate (exercise 3-5 days/week)</SelectItem>
-                        <SelectItem value="active">Active (exercise 6-7 days/week)</SelectItem>
-                        <SelectItem value="veryActive">Very Active (intense exercise daily)</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button type="button" variant={formData.activity === 'sedentary' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, activity: 'sedentary' })}>Sedentary</Button>
+                      <Button type="button" variant={formData.activity === 'light' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, activity: 'light' })}>Light</Button>
+                      <Button type="button" variant={formData.activity === 'moderate' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, activity: 'moderate' })}>Moderate</Button>
+                      <Button type="button" variant={formData.activity === 'active' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, activity: 'active' })}>Active</Button>
+                      <Button type="button" variant={formData.activity === 'veryActive' ? 'default' : 'outline'} className="col-span-2" onClick={() => setFormData({ ...formData, activity: 'veryActive' })}>Very Active</Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Tip: Pick the option that matches your average week.</p>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="goal" className="font-lato font-semibold">Fitness Goal</Label>
-                    <Select value={formData.goal} onValueChange={(value) => setFormData({ ...formData, goal: value })}>
-                      <SelectTrigger className="border-2">
-                        <SelectValue placeholder="Select your goal" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="lose">Lose Weight 🔥</SelectItem>
-                        <SelectItem value="maintain">Maintain Weight ⚖️</SelectItem>
-                        <SelectItem value="gain">Gain Weight 💪</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div className="grid grid-cols-3 gap-2">
+                      <Button type="button" variant={formData.goal === 'lose' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, goal: 'lose' })}>Lose 🔥</Button>
+                      <Button type="button" variant={formData.goal === 'maintain' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, goal: 'maintain' })}>Maintain ⚖️</Button>
+                      <Button type="button" variant={formData.goal === 'gain' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, goal: 'gain' })}>Gain 💪</Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground">We’ll tailor calories and a timeline for safe progress.</p>
                   </div>
 
                   {(formData.goal === "lose" || formData.goal === "gain") && (
@@ -781,7 +768,7 @@ const Calculator = () => {
               </Card>
 
               {/* Results */}
-              <div className="space-y-6">
+              <div className="space-y-6 lg:sticky lg:top-24 self-start">
                 {result !== null && (
                   <Card className="border-2 border-primary shadow-hover animate-scale-in bg-primary-light">
                     <CardHeader>
