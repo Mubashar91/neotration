@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -17,6 +17,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 
 const Calculator = () => {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+  const resultsRef = useRef<HTMLDivElement | null>(null);
   
   const calculatorSchema = {
     '@context': 'https://schema.org',
@@ -70,6 +72,9 @@ const Calculator = () => {
     targetWeight: ""
   });
   const [result, setResult] = useState<number | null>(null);
+  const [lastBmr, setLastBmr] = useState<number | null>(null);
+  const [lastTdee, setLastTdee] = useState<number | null>(null);
+  const [submitted, setSubmitted] = useState(false);
   const [timeline, setTimeline] = useState<{ weeks: number; months: number; targetCalories: number } | null>(null);
   const [meals, setMeals] = useState<Array<{ name: string; calories: number }>>([]);
   const [currentMeal, setCurrentMeal] = useState({ name: "", calories: "" });
@@ -78,6 +83,23 @@ const Calculator = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [suggestedMealsAdded, setSuggestedMealsAdded] = useState(false);
+
+  // Prefill from URL params (gender, age, goal)
+  useEffect(() => {
+    const gender = searchParams.get('gender') || '';
+    const age = searchParams.get('age') || '';
+    const goal = searchParams.get('goal') || '';
+    if (gender || age || goal) {
+      setFormData(prev => ({ ...prev, gender, age, goal }));
+    }
+  }, [searchParams]);
+
+  // Completion meter for required fields
+  const completedCount = useMemo(() => {
+    const req = ['age','gender','weight','height','activity','goal'] as const;
+    return req.reduce((acc, key) => acc + (formData[key] ? 1 : 0), 0);
+  }, [formData]);
+  const completionPct = Math.round((completedCount / 6) * 100);
 
   // Common foods database with calorie information
   const commonFoods = [
@@ -106,6 +128,7 @@ const Calculator = () => {
   ];
 
   const calculateCalories = () => {
+    setSubmitted(true);
     const { age, gender, weight, height, activity, goal, targetWeight } = formData;
     
     if (!age || !gender || !weight || !height || !activity || !goal) {
@@ -134,6 +157,8 @@ const Calculator = () => {
     };
 
     const tdee = bmr * activityMultipliers[activity];
+    setLastBmr(Math.round(bmr));
+    setLastTdee(Math.round(tdee));
     let adjustedCalories = tdee;
 
     // Calculate timeline if target weight is provided
@@ -183,6 +208,37 @@ const Calculator = () => {
       setResult(Math.round(adjustedCalories));
       setTimeline(null);
     }
+  };
+
+  // Auto-scroll to results when available
+  useEffect(() => {
+    if (result !== null && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [result]);
+
+  // Example profile and reset actions
+  const useExampleProfile = () => {
+    setFormData({
+      age: '28',
+      gender: 'male',
+      weight: '75',
+      height: '178',
+      activity: 'moderate',
+      goal: 'lose',
+      targetWeight: '5'
+    });
+  };
+  const resetAll = () => {
+    setFormData({ age: '', gender: '', weight: '', height: '', activity: '', goal: '', targetWeight: '' });
+    setResult(null);
+    setTimeline(null);
+    setMeals([]);
+    setCurrentMeal({ name: '', calories: '' });
+    setEditingMealIndex(null);
+    setEditMealData({ name: '', calories: '' });
+    setSearchTerm('');
+    setSuggestedMealsAdded(false);
   };
 
   // Get recommended foods based on goal
@@ -667,6 +723,16 @@ const Calculator = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  {/* Completion meter */}
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs text-muted-foreground">Form completion</span>
+                      <span className="text-xs font-medium">{completionPct}%</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded">
+                      <div className="h-2 bg-primary rounded" style={{ width: `${completionPct}%` }} />
+                    </div>
+                  </div>
                   <div className="space-y-2">
                     <Label htmlFor="age" className="font-lato font-semibold">Age</Label>
                     <Input
@@ -677,6 +743,9 @@ const Calculator = () => {
                       onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                       className="border-2"
                     />
+                    {submitted && !formData.age && (
+                      <p className="text-xs text-red-500">Age is required.</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -685,6 +754,9 @@ const Calculator = () => {
                       <Button type="button" variant={formData.gender === 'male' ? 'default' : 'outline'} className="flex-1" onClick={() => setFormData({ ...formData, gender: 'male' })}>Male</Button>
                       <Button type="button" variant={formData.gender === 'female' ? 'default' : 'outline'} className="flex-1" onClick={() => setFormData({ ...formData, gender: 'female' })}>Female</Button>
                     </div>
+                    {submitted && !formData.gender && (
+                      <p className="text-xs text-red-500">Please select a gender.</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -697,6 +769,9 @@ const Calculator = () => {
                       onChange={(e) => setFormData({ ...formData, weight: e.target.value })}
                       className="border-2"
                     />
+                    {submitted && !formData.weight && (
+                      <p className="text-xs text-red-500">Weight is required.</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -709,6 +784,9 @@ const Calculator = () => {
                       onChange={(e) => setFormData({ ...formData, height: e.target.value })}
                       className="border-2"
                     />
+                    {submitted && !formData.height && (
+                      <p className="text-xs text-red-500">Height is required.</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -721,6 +799,9 @@ const Calculator = () => {
                       <Button type="button" variant={formData.activity === 'veryActive' ? 'default' : 'outline'} className="col-span-2" onClick={() => setFormData({ ...formData, activity: 'veryActive' })}>Very Active</Button>
                     </div>
                     <p className="text-xs text-muted-foreground">Tip: Pick the option that matches your average week.</p>
+                    {submitted && !formData.activity && (
+                      <p className="text-xs text-red-500">Please select an activity level.</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -731,6 +812,9 @@ const Calculator = () => {
                       <Button type="button" variant={formData.goal === 'gain' ? 'default' : 'outline'} onClick={() => setFormData({ ...formData, goal: 'gain' })}>Gain 💪</Button>
                     </div>
                     <p className="text-xs text-muted-foreground">We’ll tailor calories and a timeline for safe progress.</p>
+                    {submitted && !formData.goal && (
+                      <p className="text-xs text-red-500">Please select a goal.</p>
+                    )}
                   </div>
 
                   {(formData.goal === "lose" || formData.goal === "gain") && (
@@ -741,6 +825,24 @@ const Calculator = () => {
                           How Much Do You Want to {formData.goal === "lose" ? "Lose" : "Gain"}?
                         </Label>
                       </div>
+                      {/* Copy to clipboard */}
+                      <div className="flex justify-center">
+                        <Button size="sm" variant="outline" onClick={() => navigator.clipboard.writeText(String(result))}>Copy calories</Button>
+                      </div>
+
+                      {/* BMR & TDEE */}
+                      {(lastBmr !== null && lastTdee !== null) && (
+                        <div className="grid sm:grid-cols-2 gap-3">
+                          <div className="p-3 rounded border bg-background/80">
+                            <div className="text-xs text-muted-foreground">Your BMR</div>
+                            <div className="text-lg font-semibold">{lastBmr} cal/day</div>
+                          </div>
+                          <div className="p-3 rounded border bg-background/80">
+                            <div className="text-xs text-muted-foreground">Maintenance (TDEE)</div>
+                            <div className="text-lg font-semibold">{lastTdee} cal/day</div>
+                          </div>
+                        </div>
+                      )}
                       <Input
                         id="targetWeight"
                         type="number"
@@ -760,15 +862,20 @@ const Calculator = () => {
 
                   <Button
                     onClick={calculateCalories}
-                    className="w-full bg-gradient-hero font-lato text-lg font-semibold shadow-card transition-all hover:shadow-hover"
+                    disabled={completionPct < 50}
+                    className="w-full bg-gradient-hero font-lato text-lg font-semibold shadow-card transition-all hover:shadow-hover disabled:opacity-60"
                   >
                     Calculate My Calories
                   </Button>
+                  <div className="flex gap-2">
+                    <Button type="button" variant="outline" className="flex-1" onClick={useExampleProfile}>Use Example Profile</Button>
+                    <Button type="button" variant="ghost" className="flex-1" onClick={resetAll}>Reset</Button>
+                  </div>
                 </CardContent>
               </Card>
 
               {/* Results */}
-              <div className="space-y-6 lg:sticky lg:top-24 self-start">
+              <div ref={resultsRef} className="space-y-6 lg:sticky lg:top-24 self-start">
                 {result !== null && (
                   <Card className="border-2 border-primary shadow-hover animate-scale-in bg-primary-light">
                     <CardHeader>
@@ -783,6 +890,28 @@ const Calculator = () => {
                           calories per day
                         </p>
                       </div>
+
+                      {/* Macros bar visualization */}
+                      {(() => {
+                        const protein = Math.round((result * 0.3) / 4);
+                        const carbs = Math.round((result * 0.4) / 4);
+                        const fats = Math.round((result * 0.3) / 9);
+                        return (
+                          <div>
+                            <div className="text-sm font-medium mb-2">Suggested Daily Macros</div>
+                            <div className="h-3 w-full rounded overflow-hidden flex">
+                              <div className="bg-primary" style={{ width: '30%' }} title={`Protein ~30% (${protein}g)`} />
+                              <div className="bg-secondary" style={{ width: '40%' }} title={`Carbs ~40% (${carbs}g)`} />
+                              <div className="bg-amber-500" style={{ width: '30%' }} title={`Fats ~30% (${fats}g)`} />
+                            </div>
+                            <div className="mt-2 text-xs text-muted-foreground flex gap-4">
+                              <span>Protein: {protein}g</span>
+                              <span>Carbs: {carbs}g</span>
+                              <span>Fats: {fats}g</span>
+                            </div>
+                          </div>
+                        );
+                      })()}
 
                       {/* Timeline Display */}
                       {timeline && (
