@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -117,23 +118,46 @@ const FoodGuide = () => {
           <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredFoods.map((food, index) => (
               <Card key={index} className="overflow-hidden border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary animate-scale-in">
-                <div className="h-40 sm:h-48 overflow-hidden">
-                  <img
-                    src={food.image}
-                    alt={`${food.name} - nutrition info, calories, protein, carbs, fat`}
-                    className="w-full h-full object-cover transition-transform hover:scale-110"
-                    width={600}
-                    height={400}
-                  />
-                </div>
+                <Link to={`/food/${food.slug || food.name.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-")}`} aria-label={`${food.name} nutrition details`}>
+                  <div className="h-40 sm:h-48 overflow-hidden">
+                    <img
+                      src={food.image}
+                      alt={`${food.name} - nutrition info, calories, protein, carbs, fat`}
+                      className="w-full h-full object-cover transition-transform hover:scale-110"
+                      width={600}
+                      height={400}
+                    />
+                  </div>
+                </Link>
                 <CardContent className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
                   <div>
-                    <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground mb-2">
-                      {food.name}
-                    </h3>
-                    <p className="font-lato text-sm text-muted-foreground">
-                      {food.benefits} Use our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to track daily intake and reach your fitness goals.
-                    </p>
+                    <Link to={`/food/${food.slug || food.name.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-")}`} className="hover:underline">
+                      <h3 className="font-poppins text-lg sm:text-xl font-bold text-foreground mb-2">
+                        {food.name}
+                      </h3>
+                    </Link>
+                    {food.servingSize && (
+                      <p className="font-lato text-xs text-muted-foreground mb-1">Serving: {food.servingSize}</p>
+                    )}
+                    {food.description ? (
+                      <p className="font-lato text-sm text-muted-foreground">
+                        {food.description}
+                      </p>
+                    ) : (
+                      <p className="font-lato text-sm text-muted-foreground">
+                        {food.benefits} Use our <strong>calorie calculator</strong> and <strong>nutrition tracker app</strong> to track daily intake and reach your fitness goals.
+                      </p>
+                    )}
+                    {(food.bestFor || (food.dietTags && food.dietTags.length > 0)) && (
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {food.bestFor && (
+                          <span className="inline-block text-[10px] px-2 py-1 rounded-full bg-secondary/10 border border-secondary text-secondary">Best for: {food.bestFor}</span>
+                        )}
+                        {(food.dietTags || []).map((tag) => (
+                          <span key={tag} className="inline-block text-[10px] px-2 py-1 rounded-full bg-background border border-border text-muted-foreground">{tag}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   
                   <div className="space-y-2 pt-2 border-t border-border">
@@ -153,6 +177,28 @@ const FoodGuide = () => {
                       <span className="font-lato text-sm text-muted-foreground">Fat:</span>
                       <span className="font-lato font-semibold">{food.fat}g</span>
                     </div>
+                    {(food.fiber !== undefined || food.sugar !== undefined || food.sodium !== undefined) && (
+                      <div className="pt-2 mt-1 border-t border-border space-y-2">
+                        {food.fiber !== undefined && (
+                          <div className="flex justify-between">
+                            <span className="font-lato text-sm text-muted-foreground">Fiber:</span>
+                            <span className="font-lato font-semibold">{food.fiber}g</span>
+                          </div>
+                        )}
+                        {food.sugar !== undefined && (
+                          <div className="flex justify-between">
+                            <span className="font-lato text-sm text-muted-foreground">Sugar:</span>
+                            <span className="font-lato font-semibold">{food.sugar}g</span>
+                          </div>
+                        )}
+                        {food.sodium !== undefined && (
+                          <div className="flex justify-between">
+                            <span className="font-lato text-sm text-muted-foreground">Sodium:</span>
+                            <span className="font-lato font-semibold">{food.sodium}mg</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>

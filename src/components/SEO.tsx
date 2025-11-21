@@ -36,7 +36,9 @@ const SEO = ({
     logo: `${siteUrl}/placeholder.svg`,
     description: 'Your trusted partner for personalized nutrition and calorie tracking',
     sameAs: [
-      // Add your social media URLs when available
+      'https://www.facebook.com/fitjourneyusa',
+      'https://www.instagram.com/fitjourneyusa',
+      'https://twitter.com/fitjourneyusa'
     ],
   };
 

@@ -22,6 +22,7 @@ import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import GlobalSchema from "./components/GlobalSchema";
+import FoodDetail from "./pages/FoodDetail";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/maintenance-calorie-calculator" element={<MaintenanceCalculator />} />
             <Route path="/daily-calorie-calculator" element={<DailyCalorieCalculator />} />
             <Route path="/food" element={<FoodGuide />} />
+            <Route path="/food/:slug" element={<FoodDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/success-stories" element={<SuccessStories />} />

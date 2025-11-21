@@ -22,7 +22,7 @@ const SuccessStories = () => {
     ? `${activeCategoryInfo.name} - ` 
     : '';
   const categoryDescription = activeCategoryInfo && activeCategory !== 'all'
-    ? activeCategoryInfo.description
+    ? (('metaDescription' in activeCategoryInfo && (activeCategoryInfo as { metaDescription?: string }).metaDescription) || activeCategoryInfo.description)
     : 'Real transformation stories from real people who achieved their fitness goals';
   const successStoriesSchema = {
     '@context': 'https://schema.org',
@@ -71,7 +71,7 @@ const SuccessStories = () => {
           {/* Success Stories Grid */}
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-10 sm:mb-12 md:mb-16">
             {filteredStories.map((story, index) => (
-              <Link key={index} to={`/success-stories/${story.id}`} className="group">
+              <Link key={index} to={`/success-stories/${story.slug || story.id}`} className="group">
                 <Card className="h-full border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary animate-scale-in">
                   <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
                     {/* Rating Stars */}

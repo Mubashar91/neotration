@@ -9,7 +9,7 @@ import { successStories } from "@/data/successStories";
 
 const SuccessStoryDetail = () => {
   const { id } = useParams();
-  const story = successStories.find((s) => s.id === id);
+  const story = successStories.find((s) => s.id === id || s.slug === id);
 
   if (!story) {
     return (
@@ -42,11 +42,11 @@ const SuccessStoryDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${story.name}'s Success Story - FitJourney USA`}
-        description={story.quote}
-        keywords={`${story.name} weight loss, transformation story, ${story.location}, fitness success`}
-        canonicalUrl={`/success-stories/${story.id}`}
-        structuredData={[storySchema]}
+        title={story.metaTitle || `${story.name}'s Success Story - FitJourney USA`}
+        description={story.metaDescription || story.quote}
+        keywords={(story.keywords && story.keywords.join(', ')) || `${story.name} weight loss, transformation story, ${story.location}, fitness success`}
+        canonicalUrl={`/success-stories/${story.slug || story.id}`}
+        structuredData={[storySchema, ...(story.schema ? [story.schema] : [])]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">
@@ -73,11 +73,19 @@ const SuccessStoryDetail = () => {
                     </h1>
                     <p className="font-lato text-base sm:text-lg md:text-xl text-muted-foreground">
                       {story.location} • Age {story.age}
+                      {story.occupation ? ` • ${story.occupation}` : ''}
                     </p>
                     <div className="bg-background/80 rounded-2xl p-4 sm:p-6">
                       <p className="font-poppins text-2xl sm:text-3xl font-bold text-primary">
                         {story.result}
                       </p>
+                      {(story.startDate || story.dietApproach) && (
+                        <p className="mt-2 font-lato text-sm text-muted-foreground">
+                          {story.startDate ? `Started: ${story.startDate}` : ''}
+                          {story.startDate && story.dietApproach ? ' • ' : ''}
+                          {story.dietApproach ? `Approach: ${story.dietApproach}` : ''}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -90,6 +98,22 @@ const SuccessStoryDetail = () => {
                         <p className="font-poppins text-xl sm:text-2xl font-bold text-foreground">{story.startWeight} lbs</p>
                       </CardContent>
                     </Card>
+
+              {/* Milestones */}
+              {story.milestones && story.milestones.length > 0 && (
+                <Card className="border-2 border-border shadow-card">
+                  <CardHeader>
+                    <CardTitle className="font-poppins text-xl sm:text-2xl">Milestones</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {story.milestones.map((m, i) => (
+                        <li key={i} className="font-lato text-sm text-muted-foreground">Month {m.month}: {m.weight} lbs — {m.achievement}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
                     <Card className="border-2 border-border bg-background">
                       <CardContent className="p-4 sm:p-6 text-center">
                         <Target className="h-6 w-6 sm:h-8 sm:w-8 text-secondary mx-auto mb-2" />
@@ -113,6 +137,21 @@ const SuccessStoryDetail = () => {
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+              {/* Before/After Images */}
+              {story.beforeAfterImages && (
+                <Card className="border-2 border-border shadow-card">
+                  <CardHeader>
+                    <CardTitle className="font-poppins text-xl sm:text-2xl">Before & After</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <img src={story.beforeAfterImages.before} alt={story.beforeAfterImages.alt || `${story.name} before`} className="w-full rounded-md border" />
+                      <img src={story.beforeAfterImages.after} alt={story.beforeAfterImages.alt || `${story.name} after`} className="w-full rounded-md border" />
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
               {/* Full Story */}
               <Card className="border-2 border-border shadow-card">
                 <CardHeader>
@@ -169,6 +208,18 @@ const SuccessStoryDetail = () => {
 
             {/* Sidebar */}
             <div className="space-y-6">
+              {/* Weekly Meal Plan */}
+              {story.weeklyMealPlan && (
+                <Card className="border-2 border-border shadow-card">
+                  <CardHeader>
+                    <CardTitle className="font-poppins text-xl">Weekly Meal Plan</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-lato text-sm text-muted-foreground whitespace-pre-line">{story.weeklyMealPlan}</p>
+                  </CardContent>
+                </Card>
+              )}
+
               {/* Exercise Routine */}
               <Card className="border-2 border-border shadow-card">
                 <CardHeader>
@@ -231,7 +282,7 @@ const SuccessStoryDetail = () => {
                     .filter((s) => s.id !== story.id)
                     .slice(0, 3)
                     .map((otherStory) => (
-                      <Link key={otherStory.id} to={`/success-stories/${otherStory.id}`}>
+                      <Link key={otherStory.id} to={`/success-stories/${otherStory.slug || otherStory.id}`}>
                         <Card className="h-full border-2 border-border shadow-card transition-all hover:shadow-hover hover:-translate-y-2 hover:border-primary">
                           <CardContent className="p-6 space-y-4">
                             <div className="flex gap-1">

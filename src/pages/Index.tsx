@@ -24,6 +24,16 @@ const Index = () => {
       priceCurrency: 'USD',
     },
   };
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: blogArticles.slice(0, 7).map((a, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      url: `/blog/${a.slug}`,
+      name: a.title,
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-background font-lato">
@@ -32,7 +42,7 @@ const Index = () => {
         description="Free calorie calculator with personalized meal plans for Americans. Get custom nutrition recommendations, track daily calories, and achieve your weight loss goals in 2025."
         keywords="free calorie calculator, nutrition planner, meal plan generator, weight loss calculator, daily calorie needs, healthy eating plan, fitness tracker USA, diet calculator 2025"
         canonicalUrl="/"
-        structuredData={[homePageSchema]}
+        structuredData={[homePageSchema, itemListSchema]}
       />
       <Navbar />
       <main>
@@ -76,6 +86,7 @@ const Index = () => {
                       decoding="async"
                       width={800}
                       height={600}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
                     />
                   </Link>
                   <CardContent className="p-6 sm:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
@@ -118,6 +129,7 @@ const Index = () => {
                       decoding="async"
                       width={600}
                       height={400}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
                     />
                   </Link>
                   <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">

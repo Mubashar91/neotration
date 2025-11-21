@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +16,10 @@ const BlogDetail = () => {
 
   const siteUrl = "https://neotration.vercel.app";
   const fullUrl = `${siteUrl}/blog/${article.slug}`;
+  const wordCount = article.content.split(/\s+/).filter(Boolean).length;
+  const idx = blogArticles.findIndex((a) => a.slug === article.slug);
+  const prev = idx > 0 ? blogArticles[idx - 1] : undefined;
+  const next = idx < blogArticles.length - 1 ? blogArticles[idx + 1] : undefined;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -22,11 +27,32 @@ const BlogDetail = () => {
     headline: article.title,
     description: article.excerpt,
     datePublished: new Date(article.date).toISOString(),
-    dateModified: new Date(article.date).toISOString(),
+    dateModified: new Date(article.updatedAt || article.date).toISOString(),
     url: fullUrl,
     mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
-    image: article.image,
-    author: { '@type': 'Organization', name: 'FitJourney USA' }
+    image: [article.image],
+    keywords: article.keywords,
+    articleSection: article.category,
+    inLanguage: 'en-US',
+    wordCount,
+    author: article.author && article.author !== 'FitJourney Team'
+      ? { '@type': 'Person', name: article.author }
+      : { '@type': 'Organization', name: 'FitJourney USA' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FitJourney USA',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/placeholder.svg`
+      }
+    }
+  };
+  const imageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    url: article.image,
+    width: 1200,
+    height: 630,
   };
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -84,8 +110,11 @@ const BlogDetail = () => {
         const id = slugify(text);
         headings.push({ id, text, level: 2 });
         elements.push(
-          <h2 id={id} key={`h2-${elements.length}`} className="font-poppins text-xl sm:text-2xl font-bold text-foreground mt-6 mb-3 scroll-mt-24">
-            {text}
+          <h2 id={id} key={`h2-${elements.length}`} className="group font-poppins text-xl sm:text-2xl font-bold text-foreground mt-6 mb-3 scroll-mt-24">
+            <a href={`#${id}`} className="no-underline hover:underline">{text}</a>
+            <a href={`#${id}`} aria-label="Copy link to section" className="opacity-0 group-hover:opacity-100 inline-flex items-center ml-2 text-muted-foreground hover:text-primary transition-opacity">
+              <LinkIcon className="h-4 w-4" />
+            </a>
           </h2>
         );
         continue;
@@ -97,8 +126,11 @@ const BlogDetail = () => {
         const id = slugify(text);
         headings.push({ id, text, level: 3 });
         elements.push(
-          <h3 id={id} key={`h3-${elements.length}`} className="font-poppins text-lg sm:text-xl font-semibold text-foreground mt-4 mb-2 scroll-mt-24">
-            {text}
+          <h3 id={id} key={`h3-${elements.length}`} className="group font-poppins text-lg sm:text-xl font-semibold text-foreground mt-4 mb-2 scroll-mt-24">
+            <a href={`#${id}`} className="no-underline hover:underline">{text}</a>
+            <a href={`#${id}`} aria-label="Copy link to subsection" className="opacity-0 group-hover:opacity-100 inline-flex items-center ml-2 text-muted-foreground hover:text-primary transition-opacity">
+              <LinkIcon className="h-4 w-4" />
+            </a>
           </h3>
         );
         continue;
@@ -151,13 +183,14 @@ const BlogDetail = () => {
         }
       }
     }
-    if (faqs.length === 0) return null;
+    const merged = [...faqs, ...((article?.faqs ?? []))];
+    if (merged.length === 0) return null;
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } }))
+      mainEntity: merged.map((f: { question: string; answer: string }) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } }))
     } as const;
-  }, [article?.content]);
+  }, [article?.content, article?.faqs]);
 
   // Reading progress bar
   const [progress, setProgress] = useState(0);
@@ -175,6 +208,13 @@ const BlogDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        {prev && (<link rel="prev" href={`/blog/${prev.slug}`} />)}
+        {next && (<link rel="next" href={`/blog/${next.slug}`} />)}
+        <meta name="author" content={article.author || 'FitJourney USA'} />
+        <meta property="article:published_time" content={new Date(article.date).toISOString()} />
+        <meta property="article:modified_time" content={new Date(article.updatedAt || article.date).toISOString()} />
+      </Helmet>
       <SEO
         title={`${article.title} | ${article.category} Tips`}
         description={article.seoDescription ?? article.excerpt}
@@ -182,7 +222,7 @@ const BlogDetail = () => {
         canonicalUrl={`/blog/${article.slug}`}
         ogType="article"
         ogImage={article.image}
-        structuredData={[articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
+        structuredData={[articleSchema, breadcrumbSchema, imageSchema, ...(faqSchema ? [faqSchema] : [])]}
       />
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-40 bg-transparent">
@@ -211,6 +251,7 @@ const BlogDetail = () => {
                 className="h-full w-full object-cover"
                 width={1200}
                 height={630}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
               />
             </div>
             
@@ -320,18 +361,22 @@ const BlogDetail = () => {
               {/* Related Articles */}
               <div className="mt-8 pt-6 border-t">
                 <h2 className="font-poppins text-xl font-semibold mb-3">Related Articles</h2>
-                <ul className="list-disc ml-6 space-y-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {blogArticles
                     .filter((a) => a.slug !== article.slug && a.categorySlug === article.categorySlug)
-                    .slice(0, 3)
+                    .slice(0, 2)
                     .map((a) => (
-                      <li key={a.slug}>
-                        <Link to={`/blog/${a.slug}`} className="text-primary hover:underline">
-                          {a.title}
-                        </Link>
-                      </li>
+                      <Link key={a.slug} to={`/blog/${a.slug}`} className="group border rounded-md overflow-hidden hover:border-primary transition">
+                        <div className="h-28 overflow-hidden">
+                          <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                        </div>
+                        <div className="p-3">
+                          <div className="font-poppins font-semibold text-foreground group-hover:text-primary line-clamp-2">{a.title}</div>
+                          <div className="text-xs text-muted-foreground mt-1">{a.readTime}</div>
+                        </div>
+                      </Link>
                     ))}
-                </ul>
+                </div>
               </div>
 
               {/* External Helpful Resources */}

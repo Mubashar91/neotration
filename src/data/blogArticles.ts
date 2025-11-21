@@ -9,6 +9,12 @@ import hydrationMyths from "@/content/blog/hydration-myths-debunked.txt?raw";
 import beginnerStrength4Weeks from "@/content/blog/beginner-strength-training-4-weeks.txt?raw";
 import smartSnacking from "@/content/blog/smart-snacking-weight-loss.txt?raw";
 import homeWorkouts20Min from "@/content/blog/20-minute-home-workouts-beginners.txt?raw";
+import properNutrition from "@/content/blog/proper-nutrition-solves-weight-loss.txt?raw";
+import kickstart5Ways from "@/content/blog/weight-loss-kickstart-5-ways.txt?raw";
+import weightGainGuide from "@/content/blog/healthy-weight-gain-guide-thin-people.txt?raw";
+import truthFadDiets from "@/content/blog/truth-about-fad-diets.txt?raw";
+import superfoods10 from "@/content/blog/superfoods-10-to-add-today.txt?raw";
+import mealPrepEasy from "@/content/blog/meal-prep-made-easy.txt?raw";
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -27,6 +33,7 @@ export interface BlogArticle {
   tags?: string[];
   difficulty?: "beginner" | "intermediate" | "advanced";
   seoDescription?: string;
+  faqs?: Array<{ question: string; answer: string }>; // Optional FAQ for rich results
 }
 
 // Blog categories for filtering and SEO
@@ -45,6 +52,86 @@ export const blogCategories = [
 ] as const;
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "weight-loss-kickstart-5-ways",
+    title: "5 Simple Ways to Kickstart Your Weight Loss Journey",
+    excerpt: "Five practical steps to start losing weight without extreme diets or complex routines.",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
+    readTime: "5 min read",
+    date: "Feb 13, 2025",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: kickstart5Ways,
+    keywords: "weight loss tips, start losing weight, simple habits, protein breakfast, mindful eating",
+    author: "FitJourney Team",
+    tags: ["weight loss", "habits", "beginners"],
+    difficulty: "beginner",
+    seoDescription: "Start your weight loss journey with 5 simple, sustainable steps: protein breakfasts, hydration, mindful eating, daily movement, and better sleep."
+  },
+  {
+    slug: "healthy-weight-gain-guide-thin-people",
+    title: "Healthy Weight Gain: A Complete Guide for Naturally Thin People",
+    excerpt: "Struggling to gain weight? Learn calorie-dense foods, strength training, and a practical plan to build muscle.",
+    category: "Weight Gain",
+    categorySlug: "weight-gain",
+    readTime: "7 min read",
+    date: "Feb 14, 2025",
+    image: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=800&h=600&q=80",
+    content: weightGainGuide,
+    keywords: "healthy weight gain, calorie surplus, build muscle, strength training, mass gainer",
+    author: "Coach Alex",
+    tags: ["weight gain", "muscle", "nutrition"],
+    difficulty: "beginner",
+    seoDescription: "A healthy weight gain guide for naturally thin people: calorie surplus, protein, strength training, and sample split."
+  },
+  {
+    slug: "truth-about-fad-diets",
+    title: "The Truth About Fad Diets: Why They Fail and What Works Instead",
+    excerpt: "Why extreme diets backfire and the balanced habits that actually keep the weight off.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "6 min read",
+    date: "Feb 15, 2025",
+    image: "https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=800&h=600&q=80",
+    content: truthFadDiets,
+    keywords: "fad diets, yo-yo dieting, sustainable weight loss, balanced nutrition",
+    author: "FitJourney Team",
+    tags: ["nutrition", "habits", "diet"],
+    difficulty: "beginner",
+    seoDescription: "Understand why fad diets fail and how balanced, sustainable habits keep weight off for good."
+  },
+  {
+    slug: "superfoods-10-to-add-today",
+    title: "10 Superfoods to Add to Your Diet Today",
+    excerpt: "Ten nutrient-dense foods with simple ways to use each one in your weekly meals.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "6 min read",
+    date: "Feb 16, 2025",
+    image: "https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format&fit=crop&w=800&h=600&q=80",
+    content: superfoods10,
+    keywords: "superfoods, antioxidants, healthy foods, omega-3, fiber",
+    author: "Chef Leo",
+    tags: ["superfoods", "recipes", "nutrition"],
+    difficulty: "beginner",
+    seoDescription: "Add these 10 superfoods to boost nutrition: blueberries, salmon, spinach, chia, and more with easy uses."
+  },
+  {
+    slug: "meal-prep-made-easy",
+    title: "Meal Prep Made Easy: Save Time and Eat Healthier",
+    excerpt: "A simple, step-by-step approach to meal prep so you can stay consistent all week.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "5 min read",
+    date: "Feb 17, 2025",
+    image: "https://images.unsplash.com/photo-1512058564366-c9e6d5a5bbf8?auto=format&fit=crop&w=800&h=600&q=80",
+    content: mealPrepEasy,
+    keywords: "meal prep, batch cooking, weekly meal plan, containers",
+    author: "FitJourney Team",
+    tags: ["meal prep", "planning", "nutrition"],
+    difficulty: "beginner",
+    seoDescription: "Beginner-friendly meal prep: simple recipes, container tips, staged prep, and a sample weekly plan."
+  },
   {
     slug: "ultimate-health-journey-2025",
     title: "The Ultimate Guide to Starting Your Health Journey in 2025",
@@ -221,8 +308,48 @@ export const blogArticles: BlogArticle[] = [
     categorySlug: "recipes",
     readTime: "7 min read",
     date: "Feb 1, 2025",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061",
-    content: `\n## Why Protein in the Morning Matters\nEating protein early reduces cravings, stabilizes energy, and improves muscle retention — especially when you're in a calorie deficit. Aim for 25–40 g protein at breakfast.\n\n## Macro Targets (Quick Guide)\n- Protein: 25–40 g  \n- Carbs: 20–50 g (activity-dependent)  \n- Fats: 5–15 g  \n\n## Top 10 High-Protein Breakfasts\n1. Greek yogurt bowl (yogurt + whey + berries + granola)  \n2. Protein oats (oats + whey + chia + cinnamon)  \n3. Veggie omelet (3 eggs/egg whites + spinach + feta)  \n4. Cottage cheese fruit plate (cottage cheese + pineapple + almonds)  \n5. Protein smoothie (whey + banana + peanut butter + milk)  \n6. Turkey & egg wrap (tortilla + eggs + turkey + salsa)  \n7. Tofu scramble (tofu + turmeric + peppers + nutritional yeast)  \n8. Chia pudding + whey (chia + milk + whey + strawberries)  \n9. Overnight oats (oats + Greek yogurt + whey + blueberries)  \n10. High-protein pancakes (whey + oats + egg whites)  \n\n## Make-Ahead Breakfast Box (5 Minutes)\nPrepare a 3-day base: 6 boiled eggs, 3 yogurt cups, sliced fruit, measured whey. Mix-and-match each morning.\n\n## Grocery List (Budget-Friendly)\n- Eggs or egg whites  \n- Greek yogurt + whey  \n- Oats, chia seeds  \n- Frozen berries, bananas  \n- Whole-wheat tortillas  \n\n## Common Mistakes to Avoid\n- Skipping protein and overeating later  \n- Drinking only coffee (blood sugar crash)  \n- Ultra-low calories that backfire midday\n\n## FAQs\n- How much protein? 25–40 g works for most adults.  \n- Can I do dairy-free? Use soy yogurt or tofu scramble + plant protein.  \n- Weight loss tip? Keep breakfasts consistent on weekdays.\n`,
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `
+## Why Protein in the Morning Matters
+Eating protein early reduces cravings, stabilizes energy, and improves muscle retention — especially when you're in a calorie deficit. Aim for 25–40 g protein at breakfast.
+
+## Macro Targets (Quick Guide)
+- Protein: 25–40 g  
+- Carbs: 20–50 g (activity-dependent)  
+- Fats: 5–15 g  
+
+## Top 10 High-Protein Breakfasts
+1. Greek yogurt bowl (yogurt + whey + berries + granola)  
+2. Protein oats (oats + whey + chia + cinnamon)  
+3. Veggie omelet (3 eggs/egg whites + spinach + feta)  
+4. Cottage cheese fruit plate (cottage cheese + pineapple + almonds)  
+5. Protein smoothie (whey + banana + peanut butter + milk)  
+6. Turkey & egg wrap (tortilla + eggs + turkey + salsa)  
+7. Tofu scramble (tofu + turmeric + peppers + nutritional yeast)  
+8. Chia pudding + whey (chia + milk + whey + strawberries)  
+9. Overnight oats (oats + Greek yogurt + whey + blueberries)  
+10. High-protein pancakes (whey + oats + egg whites)  
+
+## Make-Ahead Breakfast Box (5 Minutes)
+Prepare a 3-day base: 6 boiled eggs, 3 yogurt cups, sliced fruit, measured whey. Mix-and-match each morning.
+
+## Grocery List (Budget-Friendly)
+- Eggs or egg whites  
+- Greek yogurt + whey  
+- Oats, chia seeds  
+- Frozen berries, bananas  
+- Whole-wheat tortillas  
+
+## Common Mistakes to Avoid
+- Skipping protein and overeating later  
+- Drinking only coffee (blood sugar crash)  
+- Ultra-low calories that backfire midday
+
+## FAQs
+- How much protein? 25–40 g works for most adults.  
+- Can I do dairy-free? Use soy yogurt or tofu scramble + plant protein.  
+- Weight loss tip? Keep breakfasts consistent on weekdays.
+`,
     author: "Coach Alex",
     keywords: "high protein breakfast, meal prep, morning meals",
     tags: ["protein", "breakfast", "recipes"],
@@ -237,13 +364,44 @@ export const blogArticles: BlogArticle[] = [
     categorySlug: "supplements",
     readTime: "9 min read",
     date: "Jan 30, 2025",
-    image: "https://images.unsplash.com/photo-1609890440613-52d0a14d8ad5",
-    content: `\n## TL;DR — What Works\nThe short list: whey protein (convenience), creatine monohydrate (strength), vitamin D (deficiency common), omega‑3 (heart/brain), magnesium (sleep).\n\n## Evidence-Based Picks + Doses\n- Whey protein: Helps hit daily protein; 20–40 g post‑workout or as needed.  \n- Creatine monohydrate: 3–5 g daily; improves strength and power. No cycling required.  \n- Vitamin D3: 1000–2000 IU daily (test levels if possible).  \n- Omega‑3: ~1–2 g combined EPA/DHA per day (check label).  \n- Magnesium (glycinate/citrate): 200–400 mg at night.\n\n## What to Skip\nDetox teas, fat burners, and BCAAs (if you already hit protein) — limited to no benefit.\n\n## Goal-Based Sample Stacks\n- Strength: Creatine + whey.  \n- Fat loss: Whey (satiety) + omega‑3.  \n- General health: Vitamin D + omega‑3 + magnesium.\n\n## Safety Notes\nCheck medications with your doctor; avoid mega-doses. Creatine is well‑studied and safe for healthy adults.\n\n## FAQs\n- Do I need a loading phase for creatine? No, daily 3–5 g saturates in ~3–4 weeks.  \n- Best time for whey? Whenever it helps you hit daily protein.  \n- Are multivitamins necessary? Not for most balanced diets.\n`,
+    image: "https://images.unsplash.com/photo-1609890440613-52d0a14d8ad5?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `
+## TL;DR — What Works
+The short list: whey protein (convenience), creatine monohydrate (strength), vitamin D (deficiency common), omega‑3 (heart/brain), magnesium (sleep).
+
+## Evidence-Based Picks + Doses
+- Whey protein: Helps hit daily protein; 20–40 g post‑workout or as needed.  
+- Creatine monohydrate: 3–5 g daily; improves strength and power. No cycling required.  
+- Vitamin D3: 1000–2000 IU daily (test levels if possible).  
+- Omega‑3: ~1–2 g combined EPA/DHA per day (check label).  
+- Magnesium (glycinate/citrate): 200–400 mg at night.
+
+## What to Skip
+Detox teas, fat burners, and BCAAs (if you already hit protein) — limited to no benefit.
+
+## Goal-Based Sample Stacks
+- Strength: Creatine + whey.  
+- Fat loss: Whey (satiety) + omega‑3.  
+- General health: Vitamin D + omega‑3 + magnesium.
+
+## Safety Notes
+Check medications with your doctor; avoid mega-doses. Creatine is well‑studied and safe for healthy adults.
+
+## FAQs
+- Do I need a loading phase for creatine? No, daily 3–5 g saturates in ~3–4 weeks.  
+- Best time for whey? Whenever it helps you hit daily protein.  
+- Are multivitamins necessary? Not for most balanced diets.
+`,
     author: "Coach Alex",
     keywords: "creatine, whey protein, supplement stack",
     tags: ["creatine", "vitamins", "protein"],
     difficulty: "beginner",
-    seoDescription: "Learn which supplements are science-backed and which to avoid."
+    seoDescription: "Learn which supplements are science-backed and which to avoid.",
+    faqs: [
+      { question: "Do I need to load creatine?", answer: "No. A daily 3–5 g dose saturates muscles in ~3–4 weeks without a loading phase." },
+      { question: "What supplements are worth it for beginners?", answer: "Whey for convenience, creatine monohydrate for strength, vitamin D if deficient, omega‑3 for heart/brain, magnesium for sleep." },
+      { question: "Are fat burners effective?", answer: "Evidence is weak. Focus on calorie balance, protein, and training for sustainable fat loss." }
+    ]
   },
   {
     slug: "fitness-mindset-2025",
@@ -253,8 +411,45 @@ export const blogArticles: BlogArticle[] = [
     categorySlug: "mindset",
     readTime: "10 min read",
     date: "Feb 2, 2025",
-    image: "https://images.unsplash.com/photo-1518611012118-f0c5d2f2d1da",
-    content: `\n## Identity > Motivation\n“You become the type of person who…” — identity drives action when motivation fades.\nExamples:\n- Tracks steps  \n- Lifts 3 days/week  \n- Cooks at home  \n- Drinks water  \n- Avoids all‑or‑nothing thinking\n\n## Systems That Guarantee Momentum\n- Weekly meal routine (repeat 3–5 core meals)  \n- Fixed training days (Mon/Wed/Fri)  \n- 24‑hour reset rule after a slip  \n- Sunday planning ritual (groceries + workouts)\n\n## Mindset Tools\n- 80% rule (good enough beats perfect)  \n- Habit stacking (add 1 new habit to an existing one)  \n- Environment design (visible water bottle, prepped gym bag)  \n- 2‑minute rule (start tiny; remove friction)\n\n## 30‑Day Consistency Challenge\n- 8k steps/day  \n- 1 high‑protein meal/day  \n- 3 workouts/week  \n- Track 1 metric (not 10)\n\n## Common Traps\n- Waiting for motivation  \n- Changing plans weekly  \n- Tracking too many variables\n\n## FAQs\n- How do I restart after a break? Use the 2‑minute rule + 1 easy workout.  \n- How many habits at once? 1–2 until automatic.  \n- How to stay motivated? Measure small wins weekly.\n`,
+    image: "https://images.unsplash.com/photo-1518611012118-f0c5d2f2d1da?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `
+## Identity > Motivation
+“You become the type of person who…” — identity drives action when motivation fades.
+Examples:
+- Tracks steps  
+- Lifts 3 days/week  
+- Cooks at home  
+- Drinks water  
+- Avoids all‑or‑nothing thinking
+
+## Systems That Guarantee Momentum
+- Weekly meal routine (repeat 3–5 core meals)  
+- Fixed training days (Mon/Wed/Fri)  
+- 24‑hour reset rule after a slip  
+- Sunday planning ritual (groceries + workouts)
+
+## Mindset Tools
+- 80% rule (good enough beats perfect)  
+- Habit stacking (add 1 new habit to an existing one)  
+- Environment design (visible water bottle, prepped gym bag)  
+- 2‑minute rule (start tiny; remove friction)
+
+## 30‑Day Consistency Challenge
+- 8k steps/day  
+- 1 high‑protein meal/day  
+- 3 workouts/week  
+- Track 1 metric (not 10)
+
+## Common Traps
+- Waiting for motivation  
+- Changing plans weekly  
+- Tracking too many variables
+
+## FAQs
+- How do I restart after a break? Use the 2‑minute rule + 1 easy workout.  
+- How many habits at once? 1–2 until automatic.  
+- How to stay motivated? Measure small wins weekly.
+`,
     author: "Coach Mia",
     keywords: "fitness mindset, consistency, motivation",
     tags: ["mindset", "habits", "motivation"],
@@ -269,8 +464,38 @@ export const blogArticles: BlogArticle[] = [
     categorySlug: "recipes",
     readTime: "6 min read",
     date: "Feb 3, 2025",
-    image: "https://images.unsplash.com/photo-1512058564366-c9e6d5a5bbf8",
-    content: `\n## The 15-Minute Meal Framework\nChoose: 1 protein + 1 carb + 1 veggie. Cook everything in one pan or microwave + pan combo.\n\n## 15-Minute Meal Ideas\n1. Chicken stir fry (frozen veg + soy sauce + garlic)  \n2. Tuna rice bowl (microwave rice + tuna + mayo + cucumber)  \n3. Shrimp tacos (frozen shrimp + taco seasoning + coleslaw mix)  \n4. Egg fried rice (leftover rice + eggs + peas + scallions)  \n5. Turkey chili cup (canned beans + tomato + ground turkey)  \n6. Veggie omelet (eggs + spinach + mushrooms + cheese)  \n7. Tofu rice noodles (tofu + rice noodles + chili oil + bok choy)  \n8. Salmon wrap (canned salmon + yogurt sauce + lettuce)\n\n## Pantry & Freezer Staples\n- Frozen veggies, mixed greens  \n- Eggs or tofu  \n- Rice, tortillas, rice noodles  \n- Canned tuna/salmon/beans  \n- Rotisserie chicken\n\n## Portion & Macro Tips\n- Protein first (25–35 g)  \n- Fill plate with veggies  \n- Add fats last (olive oil, cheese)\n\n## FAQs\n- Can I make these high‑protein? Add Greek yogurt, whey, or extra lean meat.  \n- Meal prep option? Batch cook protein + rice for 3 days.  \n- Gluten‑free swaps? Use corn tortillas and rice noodles.\n`,
+    image: "https://images.unsplash.com/photo-1512058564366-c9e6d5a5bbf8?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `
+## The 15-Minute Meal Framework
+Choose: 1 protein + 1 carb + 1 veggie. Cook everything in one pan or microwave + pan combo.
+
+## 15-Minute Meal Ideas
+1. Chicken stir fry (frozen veg + soy sauce + garlic)  
+2. Tuna rice bowl (microwave rice + tuna + mayo + cucumber)  
+3. Shrimp tacos (frozen shrimp + taco seasoning + coleslaw mix)  
+4. Egg fried rice (leftover rice + eggs + peas + scallions)  
+5. Turkey chili cup (canned beans + tomato + ground turkey)  
+6. Veggie omelet (eggs + spinach + mushrooms + cheese)  
+7. Tofu rice noodles (tofu + rice noodles + chili oil + bok choy)  
+8. Salmon wrap (canned salmon + yogurt sauce + lettuce)
+
+## Pantry & Freezer Staples
+- Frozen veggies, mixed greens  
+- Eggs or tofu  
+- Rice, tortillas, rice noodles  
+- Canned tuna/salmon/beans  
+- Rotisserie chicken
+
+## Portion & Macro Tips
+- Protein first (25–35 g)  
+- Fill plate with veggies  
+- Add fats last (olive oil, cheese)
+
+## FAQs
+- Can I make these high‑protein? Add Greek yogurt, whey, or extra lean meat.  
+- Meal prep option? Batch cook protein + rice for 3 days.  
+- Gluten‑free swaps? Use corn tortillas and rice noodles.
+`,
     author: "Chef Leo",
     keywords: "healthy fast meals, 15 minute recipes",
     tags: ["recipes", "quick meals"],
@@ -285,12 +510,154 @@ export const blogArticles: BlogArticle[] = [
     categorySlug: "exercise",
     readTime: "8 min read",
     date: "Feb 5, 2025",
-    image: "https://images.unsplash.com/photo-1558610284-f00d6b850d35",
-    content: `\n## Cardio Types (Know the Difference)\n- LISS: Low intensity steady state (walking, easy cycling)  \n- MISS: Moderate intensity steady state (comfortable jog)  \n- HIIT: High‑intensity intervals (short bursts)  \n- Zone 2: Conversational pace that builds aerobic base\n\n## How Much Cardio Do You Need?\n- General health: 150 min/week moderate or 75 min vigorous  \n- Fat loss: Use cardio to increase expenditure; nutrition still leads\n\n## Weekly Templates\n- Beginner: 3 × 20‑minute walks  \n- Intermediate: 2 × Zone 2 + 1 × HIIT  \n- Advanced: 4 × sessions (mix Zone 2 + intervals)\n\n## Fat Loss Tips\n- Prioritize steps + strength training  \n- Keep HIIT short (quality > quantity)  \n- Avoid “earning food” mentality\n\n## Heart Health Markers\n- Resting HR < 75  \n- 7k–10k steps/day  \n- Consistent Zone 2 work\n\n## Mistakes to Avoid\n- Doing only HIIT  \n- Skipping strength training  \n- Inconsistent routine\n\n## FAQs\n- Best time for cardio? Whenever you’ll be consistent.  \n- Can I do cardio and weights together? Yes; separate by a few hours if possible.  \n- Is fasted cardio better? No meaningful difference for fat loss.\n`,
+    image: "https://images.unsplash.com/photo-1558610284-f00d6b850d35?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `
+## Cardio Types (Know the Difference)
+- LISS: Low intensity steady state (walking, easy cycling)  
+- MISS: Moderate intensity steady state (comfortable jog)  
+- HIIT: High‑intensity intervals (short bursts)  
+- Zone 2: Conversational pace that builds aerobic base
+
+## How Much Cardio Do You Need?
+- General health: 150 min/week moderate or 75 min vigorous  
+- Fat loss: Use cardio to increase expenditure; nutrition still leads
+
+## Weekly Templates
+- Beginner: 3 × 20‑minute walks  
+- Intermediate: 2 × Zone 2 + 1 × HIIT  
+- Advanced: 4 × sessions (mix Zone 2 + intervals)
+
+## Fat Loss Tips
+- Prioritize steps + strength training  
+- Keep HIIT short (quality > quantity)  
+- Avoid “earning food” mentality
+
+## Heart Health Markers
+- Resting HR < 75  
+- 7k–10k steps/day  
+- Consistent Zone 2 work
+
+## Mistakes to Avoid
+- Doing only HIIT  
+- Skipping strength training  
+- Inconsistent routine
+
+## FAQs
+- Best time for cardio? Whenever you’ll be consistent.  
+- Can I do cardio and weights together? Yes; separate by a few hours if possible.  
+- Is fasted cardio better? No meaningful difference for fat loss.
+`,
     author: "Coach Alex",
     keywords: "cardio workout, HIIT, Zone 2, fat loss cardio",
     tags: ["cardio", "fat loss", "heart health"],
     difficulty: "beginner",
-    seoDescription: "Learn the best cardio strategies for fat loss and heart health."
+    seoDescription: "Learn the best cardio strategies for fat loss and heart health.",
+    faqs: [
+      { question: "How much cardio do I need for fat loss?", answer: "Use cardio to increase calorie expenditure while maintaining a diet-induced deficit. Aim for 150 min/week moderate or 75 min vigorous as a baseline." },
+      { question: "Is fasted cardio better for fat loss?", answer: "No significant difference versus fed cardio when calories and protein are matched." },
+      { question: "Can I combine cardio and strength on the same day?", answer: "Yes. Separate sessions by a few hours or perform cardio after lifting to minimize interference." }
+    ]
+  },
+  {
+    slug: "healthy-grocery-list-2025",
+    title: "The Ultimate Healthy Grocery List (2025 Edition)",
+    excerpt: "Budget-friendly, high-protein, high-fiber items for fast weekly shopping.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "6 min read",
+    date: "Feb 7, 2025",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `\n## Core Protein Picks\n- Chicken thighs, eggs, Greek yogurt, cottage cheese, canned tuna\n\n## Smart Carbs\n- Oats, rice, potatoes, whole-wheat bread, tortillas\n\n## Fiber & Veg\n- Frozen mixed veggies, spinach, broccoli, carrots, apples, bananas\n\n## Fats & Flavor\n- Olive oil, avocado, nuts, salsa, spices\n\n## Pro Tips\n- Shop perimeter first  \n- Buy frozen for cheaper produce  \n- Plan 3 repeat meals for simplicity`,
+    keywords: "healthy grocery list, budget groceries, high protein shopping",
+    author: "FitJourney Team",
+    tags: ["groceries", "meal prep", "budget"],
+    difficulty: "beginner",
+    seoDescription: "Use this 2025 healthy grocery list to simplify shopping and hit your macros."
+  },
+  {
+    slug: "beginner-gym-mistakes",
+    title: "10 Beginner Gym Mistakes (and Easy Fixes)",
+    excerpt: "Avoid these common pitfalls to build strength and confidence faster.",
+    category: "Exercise",
+    categorySlug: "exercise",
+    readTime: "7 min read",
+    date: "Feb 8, 2025",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `\n## Top Mistakes\n1. Program hopping  \n2. Lifting too heavy too soon  \n3. Skipping warm‑ups  \n4. Poor sleep and protein\n\n## Fixes\n- Follow 1 plan for 8–12 weeks  \n- Track weights and aim for small weekly PRs  \n- Learn 5 basics: squat, hinge, push, pull, carry`,
+    keywords: "beginner gym mistakes, workout tips, strength training",
+    author: "Coach Mia",
+    tags: ["gym", "beginner", "strength"],
+    difficulty: "beginner",
+    seoDescription: "Learn common beginner gym mistakes and how to fix them fast."
+  },
+  {
+    slug: "1500-calorie-meal-plan",
+    title: "Simple 1500‑Calorie Meal Plan (High‑Protein)",
+    excerpt: "A practical, repeatable day of eating to support fat loss.",
+    category: "Weight Loss",
+    categorySlug: "weight-loss",
+    readTime: "6 min read",
+    date: "Feb 9, 2025",
+    image: "https://images.unsplash.com/photo-1512058564366-c9e6d5a5bbf8?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `\n## Daily Template (~1500 kcal)\n- Breakfast: Greek yogurt bowl (~350)  \n- Lunch: Chicken rice bowl (~500)  \n- Snack: Apple + almonds (~250)  \n- Dinner: Turkey chili (~400)\n\n## Tips\n- Protein target: 100–120 g  \n- Steps: 7–10k/day  \n- Track 1–2 metrics only`,
+    keywords: "1500 calorie meal plan, high protein diet, weight loss meals",
+    author: "Coach Alex",
+    tags: ["meal plan", "weight loss", "protein"],
+    difficulty: "beginner",
+    seoDescription: "Follow this simple 1500‑calorie, high‑protein day of eating for fat loss.",
+    faqs: [
+      { question: "Is 1500 calories enough for weight loss?", answer: "It depends on your size and activity. Use our calculator to confirm a safe deficit; adjust by 100–200 calories based on weekly progress." },
+      { question: "How much protein should I eat on 1500 calories?", answer: "Most adults do well with 100–120 g/day; aim for 0.7–1.0 g per lb of goal bodyweight if feasible." },
+      { question: "Can I customize this plan for vegetarian or gluten‑free?", answer: "Yes—swap chicken/turkey for tofu, tempeh, or legumes; use gluten‑free grains like rice and quinoa." }
+    ]
+  },
+  {
+    slug: "vegan-high-protein-meals",
+    title: "Vegan High‑Protein Meals That Actually Taste Great",
+    excerpt: "Plant‑based recipes with 25–40 g protein using simple ingredients.",
+    category: "Recipes",
+    categorySlug: "recipes",
+    readTime: "8 min read",
+    date: "Feb 10, 2025",
+    image: "https://images.unsplash.com/photo-1526312426976-593c2e615b89?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `\n## Meal Ideas (25–40 g protein)\n- Tofu stir fry + rice  \n- Lentil bolognese + pasta  \n- Soy yogurt bowl + plant protein  \n- Tempeh tacos + black beans\n\n## Protein Staples\nTofu, tempeh, seitan, soy yogurt, lentils, beans, edamame`,
+    keywords: "vegan high protein meals, plant based protein",
+    author: "Chef Leo",
+    tags: ["vegan", "protein", "recipes"],
+    difficulty: "beginner",
+    seoDescription: "Easy vegan high‑protein meal ideas that are affordable and tasty."
+  },
+  {
+    slug: "sleep-and-weight-loss",
+    title: "Sleep and Weight Loss: The Missing Link",
+    excerpt: "Better sleep improves hunger control, recovery, and calorie adherence.",
+    category: "Healthy Lifestyle",
+    categorySlug: "healthy-lifestyle",
+    readTime: "5 min read",
+    date: "Feb 11, 2025",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&h=600&q=80",
+    content: `\n## Why Sleep Matters\n- Appetite hormones (ghrelin/leptin)  \n- Recovery and decision making\n\n## Quick Wins\n- Fixed bedtime, dark cool room  \n- Limit screens 60 minutes before bed  \n- Magnesium, chamomile as needed`,
+    keywords: "sleep and weight loss, appetite, recovery",
+    author: "FitJourney Team",
+    tags: ["sleep", "weight loss", "recovery"],
+    difficulty: "beginner",
+    seoDescription: "Improve weight loss results by fixing sleep with simple routines."
+  }
+  ,
+  {
+    slug: "proper-nutrition-solves-weight-loss",
+    title: "How Proper Nutrition Solves Most Weight-Loss Problems",
+    excerpt: "Proper nutrition is the foundation of sustainable weight loss — controlling hunger, hormones, and metabolism without extreme diets.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "10 min read",
+    date: "Feb 12, 2025",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: properNutrition,
+    keywords: "proper nutrition weight loss, clean eating, metabolism, hormones, cravings, digestion, sustainable weight loss",
+    author: "FitJourney Team",
+    tags: ["nutrition", "weight loss", "clean eating"],
+    difficulty: "beginner",
+    seoDescription: "Learn why proper nutrition is the most powerful lever for sustainable weight loss and how to start today."
   }
 ];

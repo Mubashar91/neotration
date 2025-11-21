@@ -70,29 +70,33 @@ const Contact = () => {
                 <CardContent className="p-6 sm:p-8">
                   <h2 className="font-poppins text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        required
-                        className="mt-2"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        required
-                        className="mt-2"
-                      />
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <Label htmlFor="name">Full Name</Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          required
+                          autoComplete="name"
+                          className="mt-2"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your.email@example.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          required
+                          autoComplete="email"
+                          className="mt-2"
+                        />
+                      </div>
                     </div>
                     <div>
                       <Label htmlFor="subject">Subject</Label>
@@ -103,6 +107,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={(e) => setFormData({...formData, subject: e.target.value})}
                         required
+                        autoComplete="off"
                         className="mt-2"
                       />
                     </div>
@@ -129,7 +134,7 @@ const Contact = () => {
               <div className="space-y-6">
                 <Card className="border-2 border-border shadow-card">
                   <CardContent className="p-6 sm:p-8">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                       <div className="p-3 bg-primary-light rounded-lg">
                         <Mail className="h-6 w-6 text-primary" />
                       </div>
@@ -146,7 +151,7 @@ const Contact = () => {
 
                 <Card className="border-2 border-border shadow-card">
                   <CardContent className="p-6 sm:p-8">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                       <div className="p-3 bg-secondary-light rounded-lg">
                         <Phone className="h-6 w-6 text-secondary" />
                       </div>
@@ -163,7 +168,7 @@ const Contact = () => {
 
                 <Card className="border-2 border-border shadow-card">
                   <CardContent className="p-6 sm:p-8">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                       <div className="p-3 bg-primary-light rounded-lg">
                         <MapPin className="h-6 w-6 text-primary" />
                       </div>

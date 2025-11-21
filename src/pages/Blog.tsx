@@ -123,6 +123,7 @@ const Blog = () => {
                   decoding="async"
                   width={800}
                   height={600}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
                 />
               </Link>
               <CardContent className="p-6 sm:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
@@ -164,6 +165,7 @@ const Blog = () => {
                     decoding="async"
                     width={600}
                     height={400}
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
                   />
                 </Link>
                 <CardContent className="p-5 sm:p-6 space-y-3 sm:space-y-4">
