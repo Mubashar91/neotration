@@ -3,6 +3,12 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite",
+  "functions": {
+    "middleware.ts": {
+      "memory": 128,
+      "maxDuration": 5
+    }
+  },
   "redirects": [
     {
       "source": "/(.*)",

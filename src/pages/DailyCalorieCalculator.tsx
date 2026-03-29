@@ -201,9 +201,9 @@ const DailyCalorieCalculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Daily Calorie Calculator - How Many Calories Do You Need? | FitJourney USA"
-        description="Find out how many calories you need per day based on your age, gender, weight, height, and activity level. Free and accurate daily calorie calculator."
-        keywords="daily calorie calculator, how many calories per day, daily calorie needs, calories per day calculator, daily caloric intake, how many calories should i eat"
+        title="Daily Calorie Calculator USA - How Many Calories Do I Need Per Day? | FitJourney USA"
+        description="How many calories should you eat per day? Our free daily calorie calculator gives Americans a personalized answer based on age, weight, height, activity level and fitness goal."
+        keywords="daily calorie calculator USA, how many calories per day, how many calories should I eat, daily calorie needs, calories per day calculator, daily caloric intake, calorie needs by age, calorie needs for women, calorie needs for men, daily calorie intake calculator"
         canonicalUrl="/daily-calorie-calculator"
         structuredData={[calculatorSchema, faqSchema]}
       />

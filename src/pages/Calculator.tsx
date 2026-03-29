@@ -691,9 +691,9 @@ const Calculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Free Calorie Calculator - FitJourney USA"
-        description="Calculate your daily calorie needs based on your age, weight, height, activity level, and goals. Get personalized meal plans and track your nutrition."
-        keywords="calorie calculator, daily calorie needs, BMR calculator, TDEE calculator, nutrition calculator, meal planner, healthy eating, weight loss, weight gain, fitness tracker, macros calculator"
+        title="Free Calorie Calculator USA - Get Your Daily Calorie Target | FitJourney USA"
+        description="Use America's most accurate free calorie calculator. Enter your age, weight, height and activity level to get your personalized daily calorie target for weight loss, maintenance, or muscle gain."
+        keywords="calorie calculator USA, free calorie calculator, daily calorie calculator, TDEE calculator USA, BMR calculator, how many calories to lose weight, calorie counter, weight loss calorie calculator, calorie intake calculator, nutrition calculator USA"
         canonicalUrl="/calculator"
         structuredData={[calculatorSchema, faqSchema]}
       />

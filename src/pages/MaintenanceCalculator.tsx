@@ -141,9 +141,9 @@ const MaintenanceCalculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Maintenance Calorie Calculator - Find Your TDEE | FitJourney USA"
-        description="Calculate your maintenance calories (TDEE) to maintain your current weight. Get accurate results based on your activity level and body composition."
-        keywords="maintenance calorie calculator, TDEE calculator, maintenance calories, total daily energy expenditure, how many calories to maintain weight, calorie maintenance"
+        title="Maintenance Calorie Calculator USA - Find Your TDEE | FitJourney USA"
+        description="Calculate your maintenance calories (TDEE) to stay at your current weight. Free, accurate TDEE calculator for Americans based on your age, weight, height and activity level."
+        keywords="maintenance calorie calculator USA, TDEE calculator, total daily energy expenditure, how many calories to maintain weight, maintenance calories, BMR vs TDEE, calorie maintenance calculator, TDEE calculator for women, TDEE calculator for men"
         canonicalUrl="/maintenance-calorie-calculator"
         structuredData={[calculatorSchema, faqSchema]}
       />

@@ -148,9 +148,9 @@ const WeightLossCalculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Weight Loss Calorie Calculator - Lose Weight Safely | FitJourney USA"
-        description="Calculate exactly how many calories you need to lose weight safely. Get a personalized weight loss plan with timeline and daily calorie targets."
-        keywords="weight loss calorie calculator, calorie calculator for weight loss, weight loss calculator, how many calories to lose weight, weight loss diet plan, calorie deficit calculator"
+        title="Weight Loss Calorie Calculator USA - How Many Calories to Lose Weight? | FitJourney USA"
+        description="Find out exactly how many calories you need to lose weight safely. Our free weight loss calorie calculator gives you a personalized daily target and timeline — built for Americans."
+        keywords="weight loss calorie calculator USA, how many calories to lose weight, calorie deficit for weight loss, weight loss calculator, calories to lose a pound, safe weight loss calories, weight loss diet plan USA, calorie calculator for weight loss women, calorie calculator for weight loss men"
         canonicalUrl="/weight-loss-calorie-calculator"
         structuredData={[calculatorSchema, faqSchema]}
       />

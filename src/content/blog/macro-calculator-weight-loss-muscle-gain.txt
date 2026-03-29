@@ -1,0 +1,74 @@
+## What Are Macros?
+
+Macronutrients — or "macros" — are the three main nutrients that make up all the food you eat:
+
+Protein (4 calories per gram): Builds and repairs muscle, keeps you full, and boosts your metabolism. Found in meat, fish, eggs, dairy, and legumes.
+
+Carbohydrates (4 calories per gram): Your body's primary energy source. Found in grains, fruits, vegetables, and beans.
+
+Fat (9 calories per gram): Supports hormones, brain function, and vitamin absorption. Found in oils, nuts, avocado, and fatty fish.
+
+Every food you eat is made up of some combination of these three macronutrients. When you count macros, you're tracking how many grams of each you eat per day.
+
+## How to Calculate Your Macros
+
+The right macro split depends on your personal goal. Here's how to set yours:
+
+### Step 1: Find Your Daily Calorie Goal
+
+Use our free calorie calculator at FitJourney USA to calculate your TDEE and set a calorie target based on your goal (deficit for fat loss, surplus for muscle gain).
+
+### Step 2: Choose Your Macro Split
+
+These are the most common splits used by US nutritionists and fitness coaches:
+
+- Weight loss: Protein 35% / Carbs 35% / Fat 30%
+- Muscle gain: Protein 30% / Carbs 45% / Fat 25%
+- Maintenance: Protein 25% / Carbs 45% / Fat 30%
+- Keto: Protein 25% / Carbs 5% / Fat 70%
+
+### Step 3: Convert Percentages to Grams
+
+Multiply your daily calorie goal by each percentage, then divide by the calories per gram:
+
+- Protein: (Calories × 0.35) ÷ 4
+- Carbs: (Calories × 0.35) ÷ 4
+- Fat: (Calories × 0.30) ÷ 9
+
+Example for a 1,800-calorie weight loss goal:
+
+- Protein: (1,800 × 0.35) ÷ 4 = 158g
+- Carbs: (1,800 × 0.35) ÷ 4 = 158g
+- Fat: (1,800 × 0.30) ÷ 9 = 60g
+
+## Why Protein Is the Most Important Macro
+
+No matter your goal, protein is the macro you should prioritize above all others. Here's why:
+
+It keeps you full longer than carbs or fat, making it easier to stay in a calorie deficit. It preserves muscle mass when you're losing weight, so you lose fat — not muscle. It has the highest thermic effect, meaning your body burns more calories just by digesting it.
+
+Most fitness experts recommend 0.7–1 gram of protein per pound of body weight for active Americans. If you weigh 160 lbs, aim for 112–160g of protein per day.
+
+## Best Foods for Each Macro
+
+High-protein foods: Chicken breast, turkey, tuna, salmon, Greek yogurt, eggs, cottage cheese, tofu, lentils
+
+Healthy carbs: Oats, brown rice, sweet potato, quinoa, whole wheat bread, fruits, vegetables
+
+Healthy fats: Avocado, olive oil, almonds, walnuts, chia seeds, salmon, peanut butter
+
+## How to Track Your Macros
+
+The easiest way to track macros is with a food tracking app. Popular options in the US include MyFitnessPal, Cronometer, and Lose It. Simply log everything you eat and the app will show you your daily macro totals.
+
+Tips for accurate tracking: weigh your food with a kitchen scale, log meals before eating, and plan your meals the night before.
+
+## Is Counting Macros Right for You?
+
+Counting macros works best for people who want precise control over their results. It's ideal for gym-goers, athletes, and anyone who has hit a plateau with simple calorie counting. It does require more effort than just counting calories, but many people find it more satisfying because they can eat a wide variety of foods as long as they hit their numbers.
+
+## Final Thoughts
+
+Macro tracking is one of the most powerful tools in nutrition. Once you know your numbers, you stop guessing and start getting real results.
+
+Find your personal macro targets instantly with the FitJourney USA free calculator. Enter your details and get your custom protein, carb, and fat goals in seconds.
