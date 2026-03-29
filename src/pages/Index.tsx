@@ -38,9 +38,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-lato">
       <SEO
-        title="Free Calorie Calculator & Nutrition Planner | FitJourney USA 2025"
-        description="Free calorie calculator with personalized meal plans for Americans. Get custom nutrition recommendations, track daily calories, and achieve your weight loss goals in 2025."
-        keywords="free calorie calculator, nutrition planner, meal plan generator, weight loss calculator, daily calorie needs, healthy eating plan, fitness tracker USA, diet calculator 2025"
+        title="Free Calorie Calculator USA – Lose Weight & Track Nutrition | FitJourney USA 2025"
+        description="America's free calorie calculator. Get your personalized daily calorie target, macro breakdown, and weight loss plan in 60 seconds. Trusted by 50,000+ Americans."
+        keywords="free calorie calculator USA, calorie calculator, weight loss calculator USA, daily calorie needs, TDEE calculator, nutrition calculator, calorie deficit, macro calculator, meal plan USA, how many calories to lose weight, calorie counter app USA"
         canonicalUrl="/"
         structuredData={[homePageSchema, itemListSchema]}
       />

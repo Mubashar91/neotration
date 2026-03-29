@@ -26,6 +26,7 @@ const SEO = ({
   const siteUrl = 'https://neotration.vercel.app';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const fullTitle = title.includes('FitJourney USA') ? title : `${title} | FitJourney USA`;
+  const resolvedOgImage = /^https?:\/\//.test(ogImage ?? "") ? ogImage! : `${siteUrl}${ogImage ?? '/placeholder.svg'}`;
 
   // Default Organization Structured Data
   const organizationSchema = {
@@ -56,7 +57,6 @@ const SEO = ({
   };
 
   const allStructuredData = [organizationSchema, websiteSchema, ...structuredData];
-  const finalOgImage = ogImage ?? '/placeholder.svg';
 
   return (
     <Helmet>
@@ -67,9 +67,10 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={fullCanonicalUrl} />
-      
-      {/* Robots */}
-      {noindex && <meta name="robots" content="noindex,nofollow" />}
+      <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
+      <meta name="googlebot" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
+      <link rel="alternate" hrefLang="en-US" href={fullCanonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={fullCanonicalUrl} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
@@ -77,26 +78,20 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="FitJourney USA" />
-      {finalOgImage && (
-        <meta
-          property="og:image"
-          content={/^https?:\/\//.test(finalOgImage) ? finalOgImage : `${siteUrl}${finalOgImage}`}
-        />
-      )}
-      {finalOgImage && <meta property="og:image:width" content="1200" />}
-      {finalOgImage && <meta property="og:image:height" content="630" />}
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:image" content={resolvedOgImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={fullTitle} />
       
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
+      <meta name="twitter:site" content="@fitjourneyusa" />
       <meta name="twitter:url" content={fullCanonicalUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {finalOgImage && (
-        <meta
-          name="twitter:image"
-          content={/^https?:\/\//.test(finalOgImage) ? finalOgImage : `${siteUrl}${finalOgImage}`}
-        />
-      )}
+      <meta name="twitter:image" content={resolvedOgImage} />
+      <meta name="twitter:image:alt" content={fullTitle} />
       
       {/* Additional Meta */}
       <meta name="author" content="FitJourney USA" />

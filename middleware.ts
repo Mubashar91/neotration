@@ -7,44 +7,44 @@ const DEFAULT_IMAGE = `${SITE_URL}/placeholder.svg`;
 
 const STATIC_ROUTES: Record<string, { title: string; description: string; image?: string }> = {
   '/': {
-    title: 'Free Calorie Calculator & Nutrition Planner | FitJourney USA 2025',
-    description: 'Free calorie calculator with personalized meal plans for Americans. Get custom nutrition recommendations, track daily calories, and achieve your weight loss goals in 2025.',
+    title: 'Free Calorie Calculator USA – Lose Weight & Track Nutrition | FitJourney USA 2025',
+    description: "America's free calorie calculator. Get your personalized daily calorie target, macro breakdown, and weight loss plan in 60 seconds. Trusted by 50,000+ Americans.",
   },
   '/calculator': {
-    title: 'Calorie Calculator | FitJourney USA',
-    description: 'Calculate your daily calorie needs with our free, accurate calorie calculator. Get personalized nutrition targets for weight loss, maintenance, or muscle gain.',
+    title: 'Free Calorie Calculator USA - Get Your Daily Calorie Target | FitJourney USA',
+    description: "Use America's most accurate free calorie calculator. Enter your age, weight, height and activity level to get your personalized daily calorie target for weight loss, maintenance, or muscle gain.",
   },
   '/weight-loss-calorie-calculator': {
-    title: 'Weight Loss Calorie Calculator | FitJourney USA',
-    description: 'Find your exact calorie deficit for safe, sustainable weight loss. Free weight loss calculator tailored for Americans.',
+    title: 'Weight Loss Calorie Calculator USA - How Many Calories to Lose Weight? | FitJourney USA',
+    description: 'Find out exactly how many calories you need to lose weight safely. Our free weight loss calorie calculator gives you a personalized daily target and timeline — built for Americans.',
   },
   '/maintenance-calorie-calculator': {
-    title: 'Maintenance Calorie Calculator | FitJourney USA',
-    description: 'Calculate your maintenance calories to stay at your current weight. Free TDEE calculator.',
+    title: 'Maintenance Calorie Calculator USA - Find Your TDEE | FitJourney USA',
+    description: 'Calculate your maintenance calories (TDEE) to stay at your current weight. Free, accurate TDEE calculator for Americans based on your age, weight, height and activity level.',
   },
   '/daily-calorie-calculator': {
-    title: 'Daily Calorie Calculator | FitJourney USA',
-    description: 'Find out exactly how many calories you need per day based on your age, weight, height, and activity level.',
+    title: 'Daily Calorie Calculator USA - How Many Calories Do I Need Per Day? | FitJourney USA',
+    description: 'How many calories should you eat per day? Our free daily calorie calculator gives Americans a personalized answer based on age, weight, height, activity level and fitness goal.',
   },
   '/food': {
-    title: 'Healthy Food Guide & Nutrition Facts | FitJourney USA',
-    description: 'Explore nutrition facts, calories, and health benefits for hundreds of foods. Find the best foods for your diet goals.',
+    title: 'Healthy Food Guide & Nutrition Facts for Americans | FitJourney USA',
+    description: 'Browse nutrition facts, calories, protein, carbs and fat for hundreds of foods. Find the best foods for weight loss, muscle gain, or a balanced American diet.',
   },
   '/blog': {
-    title: 'Health & Nutrition Blog | FitJourney USA',
-    description: 'Expert nutrition tips, workout guides, and healthy recipes from the FitJourney USA team.',
+    title: 'Nutrition & Weight Loss Blog for Americans | FitJourney USA',
+    description: 'Science-backed nutrition tips, calorie guides, and weight loss strategies written for everyday Americans. Updated regularly by the FitJourney USA team.',
   },
   '/success-stories': {
-    title: 'Weight Loss Success Stories | FitJourney USA',
-    description: 'Real success stories from everyday Americans who transformed their health with FitJourney USA.',
+    title: 'Real Weight Loss Success Stories from Americans | FitJourney USA',
+    description: 'Read real weight loss success stories from everyday Americans who used FitJourney USA to transform their health and hit their calorie goals.',
   },
   '/about': {
-    title: 'About FitJourney USA | Our Mission',
-    description: 'Learn about FitJourney USA and our mission to help Americans achieve their health and nutrition goals.',
+    title: 'About FitJourney USA - Free Nutrition & Calorie Tools for Americans',
+    description: 'FitJourney USA helps 50,000+ Americans calculate daily calories, track macros, and reach their weight loss goals with free, science-backed nutrition tools.',
   },
   '/contact': {
-    title: 'Contact FitJourney USA',
-    description: 'Get in touch with the FitJourney USA team for support, feedback, or partnership inquiries.',
+    title: 'Contact FitJourney USA - Get Help With Your Nutrition & Calorie Goals',
+    description: 'Contact the FitJourney USA team for support, questions, or feedback. We help Americans with calorie tracking, weight loss plans, and nutrition guidance.',
   },
 };
 

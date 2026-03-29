@@ -7,3 +7,5 @@ Allow: /*.js$
 
 # Sitemap location
 Sitemap: https://neotration.vercel.app/sitemap.xml
+Sitemap: https://neotration.vercel.app/feed.xml
+Host: https://neotration.vercel.app

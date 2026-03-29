@@ -18,27 +18,46 @@ const SuccessStories = () => {
   
   // Get active category info for SEO
   const activeCategoryInfo = storyCategories.find(cat => cat.slug === activeCategory);
-  const categoryTitle = activeCategoryInfo && activeCategory !== 'all' 
-    ? `${activeCategoryInfo.name} - ` 
+  const categoryTitle = activeCategoryInfo && activeCategory !== 'all'
+    ? `${activeCategoryInfo.name} - `
     : '';
   const categoryDescription = activeCategoryInfo && activeCategory !== 'all'
     ? (('metaDescription' in activeCategoryInfo && (activeCategoryInfo as { metaDescription?: string }).metaDescription) || activeCategoryInfo.description)
-    : 'Real transformation stories from real people who achieved their fitness goals';
+    : 'Real transformation stories from everyday Americans who achieved weight loss, muscle gain, and healthier lifestyles.';
+  const categoryMetaTitle = (activeCategoryInfo && 'metaTitle' in activeCategoryInfo && (activeCategoryInfo as { metaTitle?: string }).metaTitle)
+    || 'US Success Stories - FitJourney USA';
+  const pageKeywords = activeCategory !== 'all'
+    ? `us ${activeCategoryInfo?.name?.toLowerCase()} success stories, real transformation testimonials usa, fitjourney usa results, calorie calculator success stories`
+    : 'us success stories, weight loss success stories usa, muscle gain transformation usa, healthy lifestyle testimonials, calorie calculator results, nutrition planner success';
+  const siteUrl = "https://neotration.vercel.app";
   const successStoriesSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Success Stories - FitJourney USA',
-    description: 'Real transformation stories from real people who achieved their fitness goals',
+    name: 'US Success Stories - FitJourney USA',
+    description: 'Real transformation stories from Americans who achieved their fitness and nutrition goals.',
+    url: `${siteUrl}/success-stories`,
+    inLanguage: 'en-US',
+    audience: { '@type': 'Audience', geographicArea: { '@type': 'Country', name: 'United States' } },
+  };
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: filteredStories.map((story, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `${siteUrl}/success-stories/${story.slug || story.id}`,
+      name: `${story.name} - ${story.result}`,
+    })),
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${categoryTitle}Success Stories - FitJourney USA`}
-        description={`${categoryDescription}. Read inspiring transformation stories from real Americans who achieved their fitness goals with FitJourney USA.`}
-        keywords="weight loss success stories, transformation stories, fitness success, weight loss testimonials, muscle gain stories, calorie calculator, nutrition planner, calorie tracker app"
+        title={activeCategory !== 'all' ? `${categoryTitle}Success Stories USA - FitJourney USA` : categoryMetaTitle}
+        description={categoryDescription}
+        keywords={pageKeywords}
         canonicalUrl="/success-stories"
-        structuredData={[successStoriesSchema]}
+        structuredData={[successStoriesSchema, itemListSchema]}
       />
       <Navbar />
       <main className="py-12 sm:py-16 md:py-20">

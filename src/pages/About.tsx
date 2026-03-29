@@ -15,9 +15,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="About Us - FitJourney USA"
-        description="Learn about FitJourney USA's mission to empower Americans with personalized nutrition guidance and support for achieving their health and fitness goals."
-        keywords="about fitjourney, nutrition guidance, health goals, fitness mission, calorie calculator, calorie calorie calculator, calorie count, calorie calculator app, calorie app, calories application, calories burned calculator, calorie to calorie, calorie counting app, calorie tracker, nutrition calculator, nutrition information calculator, nutritional info calculator, calorie tracker app, calorie calculator for women, calorie requirements calculator, nutrition fact calculator, nutrition app, personal nutrition, personal nutritionist, calorie need calculator, calorie in and calorie out, kcal calculator, kilocalorie calculator"
+        title="About FitJourney USA - Free Nutrition & Calorie Tools for Americans"
+        description="FitJourney USA helps 50,000+ Americans calculate daily calories, track macros, and reach their weight loss goals with free, science-backed nutrition tools."
+        keywords="about FitJourney USA, free calorie calculator USA, nutrition tools for Americans, weight loss help USA, healthy eating America, calorie tracker USA, free diet tools USA"
         canonicalUrl="/about"
         structuredData={[aboutSchema]}
       />

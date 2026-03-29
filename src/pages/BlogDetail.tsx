@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowLeft, Clock, Share2, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
 
@@ -229,54 +229,56 @@ const BlogDetail = () => {
         <div className="h-full bg-primary transition-[width] duration-150" style={{ width: `${progress}%` }} />
       </div>
       <Navbar />
-      <main className="py-12 sm:py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <main className="py-10 sm:py-14 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           {/* Visual breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-muted-foreground">
-            <Link to="/" className="hover:underline">Home</Link>
-            <span className="mx-2">/</span>
-            <Link to="/blog" className="hover:underline">Blog</Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{article.title}</span>
+          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-muted-foreground flex flex-wrap items-center gap-2">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-foreground line-clamp-1">{article.title}</span>
           </nav>
-          <Link to="/blog" className="inline-flex items-center gap-2 font-lato text-base font-medium text-primary hover:text-primary/80 transition-colors mb-6">
+          <Link to="/blog" className="inline-flex items-center gap-2 font-lato text-sm sm:text-base font-medium text-primary hover:text-primary/80 transition-colors mb-6">
             <ArrowLeft className="h-4 w-4" /> Back to Blog
           </Link>
 
-          <Card className="overflow-hidden border-2 border-border shadow-card">
-            <div className="h-56 sm:h-72 md:h-96 overflow-hidden">
+          <Card className="overflow-hidden border border-border/70 shadow-card rounded-2xl">
+            <div className="relative h-56 sm:h-72 md:h-[26rem] overflow-hidden">
               <img
                 src={article.image}
                 alt={article.title}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover scale-[1.01]"
                 width={1200}
                 height={630}
                 onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
               />
-            </div>
-            
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <span className="font-poppins text-xs font-semibold text-primary bg-primary-light px-3 py-1 rounded-full">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                <span className="inline-flex font-poppins text-xs font-semibold text-white bg-white/15 backdrop-blur px-3 py-1 rounded-full border border-white/30">
                   {article.category}
                 </span>
-                <span className="font-lato text-xs text-muted-foreground">{article.date}</span>
               </div>
-              <h1 className="font-poppins text-2xl sm:text-3xl font-bold text-foreground mt-4">
+            </div>
+            
+            <CardHeader className="pb-3">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span>{article.date}</span>
+                <span>•</span>
+                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {article.readTime}</span>
+              </div>
+              <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mt-2 leading-tight">
                 {article.title}
               </h1>
-              <div className="font-lato text-xs sm:text-sm text-muted-foreground mt-1">
+              <div className="font-lato text-xs sm:text-sm text-muted-foreground mt-2">
                 <span>By {article.author ?? 'FitJourney USA'}</span>
                 {article.updatedAt && <span> • Updated {article.updatedAt}</span>}
               </div>
-              <div className="font-lato text-sm text-muted-foreground flex items-center gap-2 mt-2">
-                <Clock className="h-4 w-4" /> {article.readTime}
-              </div>
               {/* Tag chips */}
               {article.tags && article.tags.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {article.tags.map((t) => (
-                    <Link key={t} to={`/blog?tag=${encodeURIComponent(t)}`} className="text-xs px-2 py-1 border rounded-full hover:border-primary hover:text-primary">
+                    <Link key={t} to={`/blog?tag=${encodeURIComponent(t)}`} className="text-xs px-2.5 py-1 border border-border/70 bg-muted/30 rounded-full hover:border-primary hover:text-primary transition-colors">
                       #{t}
                     </Link>
                   ))}
@@ -284,24 +286,24 @@ const BlogDetail = () => {
               )}
 
               {/* Share buttons */}
-              <div className="mt-3 flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 text-sm text-muted-foreground"><Share2 className="h-4 w-4" /> Share:</span>
-                <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1"><Twitter className="h-4 w-4" /> X</a>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1"><Facebook className="h-4 w-4" /> Facebook</a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1"><Linkedin className="h-4 w-4" /> LinkedIn</a>
-                <button type="button" onClick={() => navigator.clipboard.writeText(`https://neotration.vercel.app/blog/${article.slug}`)} className="text-primary hover:underline inline-flex items-center gap-1"><LinkIcon className="h-4 w-4" /> Copy link</button>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground mr-1"><Share2 className="h-3.5 w-3.5" /> Share</span>
+                <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Twitter className="h-3.5 w-3.5" /> X</a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Facebook className="h-3.5 w-3.5" /> Facebook</a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Linkedin className="h-3.5 w-3.5" /> LinkedIn</a>
+                <button type="button" onClick={() => navigator.clipboard.writeText(`https://neotration.vercel.app/blog/${article.slug}`)} className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><LinkIcon className="h-3.5 w-3.5" /> Copy link</button>
               </div>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-7 pt-1">
               {/* Summary box */}
-              <div className="rounded-md border bg-muted/30 p-4">
-                <h2 className="font-poppins text-base sm:text-lg font-semibold mb-2">Summary</h2>
-                <p className="font-lato text-sm text-muted-foreground">{article.seoDescription ?? article.excerpt}</p>
+              <div className="rounded-xl border bg-gradient-to-br from-muted/45 to-background p-4 sm:p-5">
+                <h2 className="font-poppins text-base sm:text-lg font-semibold mb-2">Quick Summary</h2>
+                <p className="font-lato text-sm sm:text-base text-muted-foreground leading-relaxed">{article.seoDescription ?? article.excerpt}</p>
               </div>
 
               {/* Author bio */}
-              <div className="flex items-start gap-3 p-4 border rounded-md">
-                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center font-poppins text-sm font-bold text-primary">
+              <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 border rounded-xl bg-card/50">
+                <div className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-primary/10 flex items-center justify-center font-poppins text-sm font-bold text-primary">
                   {article.author?.split(' ').map(w => w[0]).join('').slice(0,2)}
                 </div>
                 <div>
@@ -322,38 +324,46 @@ const BlogDetail = () => {
                   </p>
                 </div>
               </div>
-              {/* Table of contents */}
+              {/* Table of contents + content layout */}
               {(() => {
                 const { elements, headings } = renderContent(article.content);
                 return (
-                  <>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
                     {headings.length > 0 && (
-                      <div className="rounded-md border p-4 bg-muted/30">
-                        <h2 className="font-poppins text-base sm:text-lg font-semibold mb-2">Table of contents</h2>
-                        <ul className="space-y-1">
-                          {headings.map((h, idx) => (
-                            <li key={`toc-${idx}`} className={h.level === 3 ? 'ml-4' : ''}>
-                              <a href={`#${h.id}`} className="text-primary hover:underline">
-                                {h.text}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <aside className="lg:col-span-4 lg:sticky lg:top-24">
+                        <div className="rounded-xl border bg-muted/20 p-4 shadow-sm">
+                          <h2 className="font-poppins text-sm font-semibold uppercase tracking-wide text-foreground/80 mb-3">
+                            Table of contents
+                          </h2>
+                          <ul className="space-y-1.5 max-h-[50vh] overflow-auto pr-1">
+                            {headings.map((h, idx) => (
+                              <li key={`toc-${idx}`} className={h.level === 3 ? "ml-3" : ""}>
+                                <a
+                                  href={`#${h.id}`}
+                                  className="block text-sm text-primary/90 hover:text-primary hover:underline leading-snug"
+                                >
+                                  {h.text}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </aside>
                     )}
-                    {/* Content */}
-                    <div className="space-y-3">{elements}</div>
-                  </>
+                    <div className={headings.length > 0 ? "lg:col-span-8 space-y-4" : "lg:col-span-12 space-y-4"}>
+                      {elements}
+                    </div>
+                  </div>
                 );
               })()}
 
               {/* Inline tool CTAs */}
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <Link to="/calculator" className="block group border rounded-md p-4 hover:border-primary transition">
+                <Link to="/calculator" className="block group border rounded-xl p-4 hover:border-primary hover:shadow-sm transition">
                   <div className="font-poppins font-semibold text-foreground group-hover:text-primary">Calculate Your Daily Calories</div>
                   <p className="text-sm text-muted-foreground">Use our free calorie calculator to set your target in minutes.</p>
                 </Link>
-                <Link to="/food" className="block group border rounded-md p-4 hover:border-primary transition">
+                <Link to="/food" className="block group border rounded-xl p-4 hover:border-primary hover:shadow-sm transition">
                   <div className="font-poppins font-semibold text-foreground group-hover:text-primary">Explore the Food Guide</div>
                   <p className="text-sm text-muted-foreground">Find protein-rich foods and meal ideas to hit your goals.</p>
                 </Link>
@@ -366,7 +376,7 @@ const BlogDetail = () => {
                     .filter((a) => a.slug !== article.slug && a.categorySlug === article.categorySlug)
                     .slice(0, 2)
                     .map((a) => (
-                      <Link key={a.slug} to={`/blog/${a.slug}`} className="group border rounded-md overflow-hidden hover:border-primary transition">
+                      <Link key={a.slug} to={`/blog/${a.slug}`} className="group border rounded-xl overflow-hidden hover:border-primary hover:shadow-sm transition">
                         <div className="h-28 overflow-hidden">
                           <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                         </div>
@@ -431,12 +441,12 @@ const BlogDetail = () => {
               </div>
 
               {/* Newsletter CTA */}
-              <div className="mt-8 border rounded-lg p-5 bg-primary/5">
+              <div className="mt-8 border rounded-xl p-5 bg-primary/5">
                 <h2 className="font-poppins text-xl font-semibold mb-2">Get weekly nutrition & workout tips</h2>
                 <p className="font-lato text-sm text-muted-foreground mb-3">No spam. One practical email to keep you consistent.</p>
                 <form action="https://formspree.io/f/xbldqrkg" method="POST" className="flex flex-col sm:flex-row gap-2">
-                  <input type="email" name="email" required placeholder="Your email" className="flex-1 border rounded-md px-3 py-2" />
-                  <button type="submit" className="px-4 py-2 rounded-md bg-primary text-white font-semibold">Subscribe</button>
+                  <input type="email" name="email" required placeholder="Your email" className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/30" />
+                  <button type="submit" className="px-4 py-2 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">Subscribe</button>
                 </form>
               </div>
             </CardContent>

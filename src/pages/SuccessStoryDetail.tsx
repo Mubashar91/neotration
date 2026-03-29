@@ -29,12 +29,23 @@ const SuccessStoryDetail = () => {
   const storySchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `${story.name}'s Weight Loss Success Story`,
-    description: story.quote,
+    headline: `${story.name}'s ${story.category} Success Story (${story.location})`,
+    description: story.metaDescription || story.quote,
     author: {
       '@type': 'Person',
       name: story.name,
     },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://neotration.vercel.app/success-stories/${story.slug || story.id}`,
+    },
+    articleSection: story.category,
+    inLanguage: 'en-US',
+    audience: {
+      '@type': 'Audience',
+      geographicArea: { '@type': 'Country', name: 'United States' }
+    },
+    keywords: (story.keywords && story.keywords.join(', ')) || `${story.category} success story USA`,
     timeRequired: story.timeline,
     about: 'Weight loss, fitness transformation, nutrition planning',
   };

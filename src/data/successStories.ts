@@ -59,36 +59,36 @@ export const storyCategories = [
     name: 'All Stories', 
     slug: 'all', 
     description: 'All transformation stories and weight loss success testimonials',
-    metaTitle: 'Success Stories | Real Weight Loss & Fitness Transformations',
-    metaDescription: 'Read inspiring weight loss success stories and fitness transformations. Real people, real results with our calorie calculator and nutrition guidance.'
+    metaTitle: 'US Success Stories | Real Weight Loss & Fitness Transformations',
+    metaDescription: 'Read inspiring US weight loss and fitness transformation stories from real people. See practical calorie and nutrition strategies that work for busy American lifestyles.'
   },
   { 
     name: 'Weight Loss', 
     slug: 'weight-loss', 
     description: 'Inspiring weight loss transformations and success stories',
-    metaTitle: 'Weight Loss Success Stories | Real Transformation Testimonials',
-    metaDescription: 'Discover amazing weight loss success stories from real people who transformed their lives. Get inspired by their journey and tips for losing weight.'
+    metaTitle: 'Weight Loss Success Stories USA | Real Transformation Testimonials',
+    metaDescription: 'Discover real USA weight loss success stories with practical tips on calorie deficits, meal planning, and consistency. Learn what worked for everyday Americans.'
   },
   { 
     name: 'Weight Gain', 
     slug: 'weight-gain', 
     description: 'Muscle building and healthy weight gain success stories',
-    metaTitle: 'Weight Gain Success Stories | Muscle Building Transformations',
-    metaDescription: 'Real weight gain success stories from people who built muscle and gained healthy weight. Learn their nutrition strategies and workout routines.'
+    metaTitle: 'Weight Gain Success Stories USA | Muscle Building Transformations',
+    metaDescription: 'Real US weight gain and muscle-building stories from hardgainers. Learn calorie surplus strategies, protein targets, and gym routines that delivered results.'
   },
   { 
     name: 'Healthy Lifestyle', 
     slug: 'healthy-lifestyle', 
     description: 'Overall health improvement and lifestyle transformation stories',
-    metaTitle: 'Healthy Lifestyle Success Stories | Complete Health Transformations',
-    metaDescription: 'Inspiring stories of complete lifestyle transformations. Learn how real people improved their health, energy, and quality of life.'
+    metaTitle: 'Healthy Lifestyle Success Stories USA | Lasting Health Transformations',
+    metaDescription: 'Inspiring US lifestyle transformation stories focused on sustainable habits, better energy, and long-term health improvements for real life.'
   },
   { 
     name: 'Fitness Journey', 
     slug: 'fitness-journey', 
     description: 'Complete fitness transformation success stories',
-    metaTitle: 'Fitness Journey Success Stories | Complete Body Transformations',
-    metaDescription: 'Amazing fitness transformation stories from beginners to athletes. Real journeys, struggles, and triumphs with exercise and nutrition.'
+    metaTitle: 'Fitness Journey Success Stories USA | Complete Body Transformations',
+    metaDescription: 'Read US fitness journey stories from beginners to advanced trainees. Real struggles, wins, and practical nutrition and training lessons.'
   }
 ] as const;
 
@@ -111,14 +111,16 @@ export const successStories: SuccessStory[] = [
     categorySlug: "weight-loss",
     dietApproach: "Calorie deficit with balanced macros and meal prep",
     
-    metaTitle: "Sarah Lost 35 Pounds in 4 Months | Weight Loss Success Story",
-    metaDescription: "Read how Sarah Thompson lost 35 lbs in 4 months using our calorie calculator and meal planning. A busy marketing manager's inspiring weight loss journey.",
+    metaTitle: "How Sarah in Austin Lost 35 Pounds in 4 Months | USA Weight Loss Story",
+    metaDescription: "Read how Sarah Thompson from Austin, TX lost 35 lbs in 4 months using calorie targets, meal prep, and consistent habits. A realistic USA weight loss success story.",
     keywords: [
       "weight loss success story",
       "lost 35 pounds",
       "calorie calculator results",
       "4 month transformation",
       "working professional weight loss",
+      "usa weight loss story",
+      "austin texas weight loss success",
       "meal prep weight loss",
       "fast food to healthy eating",
       "sustainable weight loss"
@@ -227,14 +229,16 @@ export const successStories: SuccessStory[] = [
     categorySlug: "weight-gain",
     dietApproach: "Calorie surplus with high protein and frequent meals",
     
-    metaTitle: "Michael Gained 20 Pounds of Muscle in 6 Months | Weight Gain Success",
-    metaDescription: "Discover how Michael Chen gained 20 lbs of lean muscle in 6 months using calorie surplus strategies and weight training. Perfect for skinny guys who want to bulk up.",
+    metaTitle: "How Michael in San Francisco Gained 20 Pounds of Muscle | USA Success Story",
+    metaDescription: "See how Michael Chen in San Francisco, CA gained 20 lbs of lean muscle in 6 months with a calorie surplus, high-protein meals, and progressive strength training.",
     keywords: [
       "weight gain success story",
       "muscle building transformation",
       "gained 20 pounds muscle",
       "skinny to muscular",
       "hardgainer success",
+      "usa muscle gain story",
+      "san francisco muscle transformation",
       "calorie surplus results",
       "lean muscle gain",
       "ectomorph transformation"
@@ -353,14 +357,16 @@ export const successStories: SuccessStory[] = [
     categorySlug: "healthy-lifestyle",
     dietApproach: "Sustainable lifestyle changes with flexible eating and intuitive nutrition",
     
-    metaTitle: "Jessica Lost 30 Pounds & Kept It Off 1+ Year | Maintenance Success",
-    metaDescription: "Learn how Jessica Martinez lost 30 lbs and maintained her weight loss for over a year. No more yo-yo dieting - discover sustainable healthy habits that last.",
+    metaTitle: "Jessica in Miami Lost 30 Pounds and Kept It Off 1+ Year | USA Story",
+    metaDescription: "Learn how Jessica Martinez in Miami, FL lost 30 lbs and maintained for over a year using flexible eating and sustainable routines. A practical US maintenance success story.",
     keywords: [
       "weight loss maintenance",
       "kept weight off",
       "sustainable weight loss",
       "no yo-yo dieting",
       "lifestyle change success",
+      "usa weight loss maintenance story",
+      "miami healthy lifestyle transformation",
       "maintained weight loss 1 year",
       "flexible dieting",
       "intuitive eating success"
@@ -475,8 +481,8 @@ export const successStories: SuccessStory[] = [
     categorySlug: "weight-loss",
     dietApproach: "Calorie deficit with focus on whole foods and reduced processed foods",
     
-    metaTitle: "David Lost 50 Pounds & Reversed Pre-Diabetes | Health Transformation",
-    metaDescription: "At 45, David Johnson lost 50 lbs in 8 months and reversed pre-diabetes. Inspiring weight loss journey with practical tips for men over 40.",
+    metaTitle: "David in Seattle Lost 50 Pounds and Reversed Pre-Diabetes | USA Story",
+    metaDescription: "At age 45, David Johnson in Seattle, WA lost 50 lbs in 8 months and reversed pre-diabetes with calorie tracking and whole-food habits. Inspiring US transformation for men over 40.",
     keywords: [
       "weight loss over 40",
       "lost 50 pounds",
@@ -484,6 +490,8 @@ export const successStories: SuccessStory[] = [
       "men weight loss success",
       "health transformation",
       "midlife weight loss",
+      "usa men over 40 weight loss story",
+      "seattle health transformation",
       "diabetes prevention",
       "weight loss at 45"
     ],

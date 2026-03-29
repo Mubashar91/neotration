@@ -3,233 +3,223 @@
   <!-- Main Pages -->
   <url>
     <loc>https://neotration.vercel.app/</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/calculator</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/weight-loss-calorie-calculator</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/maintenance-calorie-calculator</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/daily-calorie-calculator</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/food</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/blog</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/success-stories</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/about</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/contact</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/privacy</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/terms</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
   <url>
     <loc>https://neotration.vercel.app/disclaimer</loc>
-    <lastmod>2025-11-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
+
   <!-- Success Stories Detail Pages -->
   <url>
-    <loc>https://neotration.vercel.app/success-stories/sarah-thompson</loc>
-    <lastmod>2025-10-23</lastmod>
+    <loc>https://neotration.vercel.app/success-stories/sarah-thompson-weight-loss-35-pounds</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
-    <loc>https://neotration.vercel.app/success-stories/michael-chen</loc>
-    <lastmod>2025-10-23</lastmod>
+    <loc>https://neotration.vercel.app/success-stories/michael-chen-muscle-gain-20-pounds</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
-    <loc>https://neotration.vercel.app/success-stories/jessica-martinez</loc>
-    <lastmod>2025-10-23</lastmod>
+    <loc>https://neotration.vercel.app/success-stories/jessica-martinez-maintained-weight-loss-1-year</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
-    <loc>https://neotration.vercel.app/success-stories/david-johnson</loc>
-    <lastmod>2025-10-23</lastmod>
+    <loc>https://neotration.vercel.app/success-stories/david-johnson-lost-50-pounds-reversed-prediabetes</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <url>
-    <loc>https://neotration.vercel.app/success-stories/emily-rodriguez</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://neotration.vercel.app/success-stories/james-wilson</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
+
   <!-- Blog Detail Pages -->
   <url>
     <loc>https://neotration.vercel.app/blog/calorie-deficit-weight-loss</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neotration.vercel.app/blog/macro-calculator-weight-loss-muscle-gain</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neotration.vercel.app/blog/1200-1500-calorie-meal-plan-weight-loss</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neotration.vercel.app/blog/keto-vs-low-calorie-diet</loc>
-    <lastmod>2025-01-25</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/weight-loss-tips-2025</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/how-many-calories-should-i-eat</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/high-protein-foods-list</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/meal-prep-beginners-guide</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/how-to-start-running-weight-loss</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/best-exercises-weight-loss-home</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/how-to-build-muscle-beginners</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/how-to-stay-motivated-weight-loss</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/why-am-i-not-losing-weight</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/weight-loss-mindset-psychology</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Food Detail Pages -->
   <url>
-    <loc>https://neotration.vercel.app/food/chicken-breast</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://neotration.vercel.app/food/chicken-breast-nutrition</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neotration.vercel.app/food/salmon</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://neotration.vercel.app/food/salmon-nutrition-omega3</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neotration.vercel.app/food/brown-rice</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://neotration.vercel.app/food/brown-rice-nutrition</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neotration.vercel.app/food/avocado</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://neotration.vercel.app/food/avocado-nutrition-healthy-fats</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neotration.vercel.app/food/greek-yogurt</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/sweet-potato</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/eggs</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/spinach</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/almonds</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/quinoa</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/broccoli</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neotration.vercel.app/food/lean-beef</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://neotration.vercel.app/food/greek-yogurt-nutrition</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

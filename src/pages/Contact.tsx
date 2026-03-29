@@ -39,9 +39,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact Us - FitJourney USA"
-        description="Get in touch with FitJourney USA for support, questions, or feedback. We're here to help you on your fitness journey."
-        keywords="contact fitjourney, support, customer service, help, calorie calculator, calorie calorie calculator, calorie count, calorie calculator app, calorie app, calories application, calories burned calculator, calorie to calorie, calorie counting app, calorie tracker, nutrition calculator, nutrition information calculator, nutritional info calculator, calorie tracker app, calorie calculator for women, calorie requirements calculator, nutrition fact calculator, nutrition app, personal nutrition, personal nutritionist, calorie need calculator, calorie in and calorie out, kcal calculator, kilocalorie calculator"
+        title="Contact FitJourney USA - Get Help With Your Nutrition & Calorie Goals"
+        description="Contact the FitJourney USA team for support, questions, or feedback. We help Americans with calorie tracking, weight loss plans, and nutrition guidance."
+        keywords="contact FitJourney USA, nutrition support USA, calorie calculator help, weight loss support, healthy eating help USA, diet plan support"
         canonicalUrl="/contact"
         structuredData={[contactSchema]}
       />
