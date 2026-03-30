@@ -90,7 +90,7 @@ export const storyCategories = [
     metaTitle: 'Fitness Journey Success Stories USA | Complete Body Transformations',
     metaDescription: 'Read US fitness journey stories from beginners to advanced trainees. Real struggles, wins, and practical nutrition and training lessons.'
   }
-] as const;
+] as const;     
 
 export const successStories: SuccessStory[] = [
   {
