@@ -10,7 +10,7 @@ const About = () => {
     '@type': 'AboutPage',
     name: 'About FitJourney USA',
     description: 'Learn about our mission to empower Americans to achieve their health and fitness goals',
-  };
+  };     
 
   return (
     <div className="min-h-screen bg-background">
