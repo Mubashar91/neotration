@@ -26,7 +26,7 @@ const SEO = ({
   const siteUrl = 'https://neotration.vercel.app';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const fullTitle = title.includes('FitJourney USA') ? title : `${title} | FitJourney USA`;
-  const resolvedOgImage = /^https?:\/\//.test(ogImage ?? "") ? ogImage! : `${siteUrl}${ogImage ?? '/placeholder.svg'}`;
+  const resolvedOgImage = /^https?:\/\//.test(ogImage ?? "") ? ogImage! : `${siteUrl}${ogImage ?? '/og-image.svg'}`;
 
   // Default Organization Structured Data
   const organizationSchema = {
@@ -34,7 +34,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'FitJourney USA',
     url: siteUrl,
-    logo: `${siteUrl}/placeholder.svg`,
+    logo: `${siteUrl}/favicon.svg`,
     description: 'Your trusted partner for personalized nutrition and calorie tracking',
     sameAs: [
       'https://www.facebook.com/fitjourneyusa',
@@ -92,11 +92,19 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={resolvedOgImage} />
       <meta name="twitter:image:alt" content={fullTitle} />
+      <meta name="twitter:image:width" content="1200" />
+      <meta name="twitter:image:height" content="630" />
       
       {/* Additional Meta */}
       <meta name="author" content="FitJourney USA" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
+      <meta name="distribution" content="global" />
+      <meta name="rating" content="general" />
+      <meta name="referrer" content="origin-when-cross-origin" />
+      <meta name="theme-color" content="#10b981" />
+      <meta name="msapplication-TileColor" content="#10b981" />
+      <meta name="google-adsense-account" content="ca-pub-8497285724891966" />
       
       {/* Structured Data */}
       {allStructuredData.map((schema, index) => (
