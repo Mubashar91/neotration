@@ -192,6 +192,68 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- NEW BLOG POSTS (High SEO/CPC Value) -->
+  <url>
+    <loc>https://neotration.vercel.app/blog/intermittent-fasting-guide-16-8-method</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/best-weight-loss-supplements-evidence-based</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/healthy-snacks-weight-loss-low-calorie</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/portion-control-guide-weight-loss</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/walking-for-weight-loss-beginner-plan</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/sleep-weight-loss-hormones-recovery</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/protein-powder-guide-beginners</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/emotional-eating-stress-weight-gain</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/low-calorie-restaurant-meals-guide</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neotration.vercel.app/blog/metabolism-myths-weight-loss-facts</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Food Detail Pages -->
   <url>
     <loc>https://neotration.vercel.app/food/chicken-breast-nutrition</loc>
