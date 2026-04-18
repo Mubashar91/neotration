@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { blogArticles, blogCategories } from "@/data/blogArticles";
-
+   
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchParams] = useSearchParams();
