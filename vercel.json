@@ -13,7 +13,7 @@
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.neotration.vercel.app" }],
-      "destination": "https://neotration.vercel.app/:splat",
+      "destination": "https://neotration.vercel.app/$1",
       "permanent": true
     }
   ],
