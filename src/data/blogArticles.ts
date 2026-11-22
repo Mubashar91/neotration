@@ -35,6 +35,13 @@ import lowCalorieSoups from "@/content/blog/low-calorie-soup-recipes.txt?raw";
 import volumeEating from "@/content/blog/volume-eating-meals-guide.txt?raw";
 import highProteinBreakfastPrep from "@/content/blog/high-protein-breakfast-meal-prep.txt?raw";
 
+// TASK 2 — Winter / trend articles
+import smallProteinMeals from "@/content/blog/small-high-protein-meals-low-appetite.txt?raw";
+import mediterraneanBeginners from "@/content/blog/mediterranean-diet-beginners-7-day-plan.txt?raw";
+import antiInflammatorySheetPan from "@/content/blog/anti-inflammatory-sheet-pan-dinners.txt?raw";
+import slowCookerDumpDinners from "@/content/blog/high-protein-slow-cooker-dump-dinners.txt?raw";
+import proteinFiberDinners from "@/content/blog/protein-fiber-dinners-fibermaxxing.txt?raw";
+
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -705,6 +712,116 @@ export const blogArticles: BlogArticle[] = [
       { question: "Can I make overnight oats without protein powder?", answer: "Yes. Replace protein powder with an extra ½ cup Greek yogurt (+9g protein) or 2 tbsp hemp seeds (+10g protein). You'll still get a nutritious, filling breakfast." },
       { question: "How do I hit 30g protein at breakfast without eggs?", answer: "Greek yogurt (17g/cup) + protein powder (25g/scoop) in overnight oats easily hits 30g+. Cottage cheese (28g/cup) with hemp seeds is another egg-free option." },
       { question: "Is high-protein breakfast important for weight loss?", answer: "Research supports it. A high-protein breakfast reduces ghrelin (hunger hormone) levels more effectively than high-carb breakfasts, leading to lower calorie intake throughout the day." }
+    ]
+  },
+  {
+    slug: "small-high-protein-meals-low-appetite",
+    title: "Small High-Protein Meals for Low-Appetite Days: 12 Plates (GLP-1-Friendly)",
+    excerpt: "Twelve small, protein-first plates of 200–400 calories each for days when appetite is low, plus a sample day that reaches 120g protein in five small meals.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "7 min read",
+    date: "Nov 22, 2026",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&h=600&q=80",
+    content: smallProteinMeals,
+    keywords: "glp-1 friendly meals, small high protein meals, low appetite meals, protein first meals, high protein small portions, glp-1 meal ideas",
+    author: "FitJourney Team",
+    tags: ["high protein", "small meals", "low appetite", "meal ideas"],
+    difficulty: "beginner",
+    seoDescription: "12 small high-protein meals (200–400 cal, 17–28g protein) for low-appetite days, including GLP-1-friendly ideas and a sample 120g-protein day.",
+    faqs: [
+      { question: "What should I eat when I have no appetite?", answer: "Choose small, protein-first foods that are easy to eat — Greek yogurt, cottage cheese, eggs, soups with chicken, or a half-size protein smoothie — and eat on a schedule every 2.5–3 hours." },
+      { question: "How much protein do I need when eating less?", answer: "Many active adults aim for 1.2–1.6g protein per kg of body weight. When total food intake is low, prioritizing protein at every meal helps protect muscle. Ask your clinician for a personal target." },
+      { question: "Are these meals suitable on GLP-1 medication?", answer: "They follow the protein-first, small-portion approach commonly suggested for reduced appetite, but this is general information. Always follow the eating guidance from your prescribing doctor or dietitian." },
+      { question: "Is a protein shake a good meal replacement on low-appetite days?", answer: "A half-size protein smoothie can be a practical option because liquids are often easier to get down. Pair it with solid meals when you can for fiber and other nutrients." }
+    ]
+  },
+  {
+    slug: "mediterranean-diet-beginners-7-day-plan",
+    title: "Mediterranean Diet for Beginners: A Simple 7-Day Starter Plan",
+    excerpt: "A plain-English intro to the Mediterranean diet with a pantry list and a 7-day starter meal plan at about 1,600–1,800 calories and 85–100g protein a day.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "Nov 22, 2026",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: mediterraneanBeginners,
+    keywords: "mediterranean diet for beginners, mediterranean diet meal plan, 7 day mediterranean diet plan, mediterranean diet food list, easy mediterranean meals",
+    author: "FitJourney Team",
+    tags: ["mediterranean diet", "meal plan", "beginners", "heart health"],
+    difficulty: "beginner",
+    seoDescription: "Mediterranean diet for beginners: what to eat, a pantry starter list, and a simple 7-day meal plan with calories and protein for each day.",
+    faqs: [
+      { question: "What do you eat on the Mediterranean diet?", answer: "Mostly vegetables, fruit, whole grains, beans, nuts, and olive oil, with fish twice a week, moderate poultry, eggs, yogurt and cheese, and red meat and sweets only occasionally." },
+      { question: "Can you lose weight on the Mediterranean diet?", answer: "It can support a calorie deficit because its meals are high in fiber and filling, but olive oil and nuts are calorie-dense. Portions still matter — measure oil at first." },
+      { question: "Is the Mediterranean diet expensive?", answer: "Not necessarily. Beans, lentils, oats, frozen vegetables, and canned tuna or sardines are among the most affordable whole foods available." },
+      { question: "How do I start the Mediterranean diet?", answer: "Change one meal at a time: switch to olive oil, add a fish night, and make beans or lentils a regular lunch. The 7-day plan in this guide is a ready-made template." }
+    ]
+  },
+  {
+    slug: "anti-inflammatory-sheet-pan-dinners",
+    title: "15 Anti-Inflammatory Sheet Pan Dinners (One Pan, 30 Minutes)",
+    excerpt: "Fifteen one-pan anti-inflammatory dinners built on vegetables, fatty fish, beans, olive oil and spices — each with calories and protein per serving.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "Nov 22, 2026",
+    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&h=600&q=80",
+    content: antiInflammatorySheetPan,
+    keywords: "anti inflammatory sheet pan dinners, anti inflammatory dinner recipes, sheet pan dinners healthy, anti inflammatory meals, one pan healthy dinners",
+    author: "FitJourney Team",
+    tags: ["anti-inflammatory", "sheet pan", "dinner", "30 minutes"],
+    difficulty: "beginner",
+    seoDescription: "15 anti-inflammatory sheet pan dinners ready in 30 minutes — salmon, turmeric chicken, shrimp, tofu and more, with calories and protein per serving.",
+    faqs: [
+      { question: "What foods are considered anti-inflammatory?", answer: "Eating patterns rich in vegetables, fruit, fatty fish, olive oil, beans, nuts, whole grains, herbs and spices — and low in ultra-processed foods and added sugar — are generally described as anti-inflammatory." },
+      { question: "What temperature do you cook sheet pan dinners at?", answer: "425°F (220°C) works for most sheet pan dinners. Start dense vegetables first and add fast-cooking proteins like fish or shrimp partway through." },
+      { question: "Can I meal prep sheet pan dinners?", answer: "Yes. Roasted vegetables and chicken keep about 4 days in the fridge. Fish is best cooked fresh since it doesn't reheat as well." },
+      { question: "Is turmeric anti-inflammatory?", answer: "Turmeric contains curcumin, which has been studied for anti-inflammatory effects. Pairing it with black pepper improves absorption. In food amounts it's a flavorful addition rather than a treatment." }
+    ]
+  },
+  {
+    slug: "high-protein-slow-cooker-dump-dinners",
+    title: "10 High-Protein Slow Cooker Dump Dinners (30g+ Protein, No Prep)",
+    excerpt: "Ten no-prep slow cooker dump dinners with 28–44g protein per serving — salsa chicken, white chicken chili, lean beef chili and more, plus freezer-bag tips.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "Nov 22, 2026",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: slowCookerDumpDinners,
+    keywords: "high protein slow cooker recipes, slow cooker dump dinners, high protein crockpot meals, healthy dump dinners, crockpot chicken high protein",
+    author: "FitJourney Team",
+    tags: ["slow cooker", "high protein", "dump dinners", "meal prep"],
+    difficulty: "beginner",
+    seoDescription: "10 high-protein slow cooker dump dinners with 30g+ protein and under 450 calories per serving. No browning, no prep — plus freezer dump bag instructions.",
+    faqs: [
+      { question: "What is a dump dinner?", answer: "A dump dinner is a slow cooker meal where raw ingredients go straight into the pot with no browning or pre-cooking — you add everything, set the timer, and walk away." },
+      { question: "Can I put frozen chicken in a slow cooker?", answer: "No. USDA guidance is to thaw meat first, because frozen meat can stay too long in the unsafe temperature range in a slow cooker." },
+      { question: "How do I make slow cooker meals higher in protein?", answer: "Use chicken breast or 93%+ lean ground meat, add beans or lentils, and stir in Greek yogurt at the end in place of sour cream or cream." },
+      { question: "Can you freeze dump dinners?", answer: "Yes. Bag everything except dairy, freeze up to 3 months, thaw overnight in the fridge, then cook as normal and add dairy at the end." }
+    ]
+  },
+  {
+    slug: "protein-fiber-dinners-fibermaxxing",
+    title: "Protein + Fiber Dinners: 12 Fibermaxxing Meals That Actually Fill You Up",
+    excerpt: "Twelve dinners with at least 25g protein and 10g fiber each, plus easy fiber add-ons and a sample fibermaxxing day hitting 38g fiber.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "7 min read",
+    date: "Nov 22, 2026",
+    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&h=600&q=80",
+    content: proteinFiberDinners,
+    keywords: "fibermaxxing, high protein high fiber meals, protein and fiber dinners, high fiber dinner recipes, fiber rich meals, fibermaxxing meals",
+    author: "FitJourney Team",
+    tags: ["fiber", "high protein", "dinner", "fibermaxxing"],
+    difficulty: "beginner",
+    seoDescription: "12 high-protein, high-fiber dinners (25g+ protein, 10g+ fiber each) for fibermaxxing, with fiber add-ons and a sample 38g-fiber day.",
+    faqs: [
+      { question: "What is fibermaxxing?", answer: "Fibermaxxing is a 2026 trend of deliberately increasing daily fiber toward or above recommended levels (about 25–34g for most adults) using beans, whole grains, vegetables, fruit and seeds." },
+      { question: "How much fiber should I eat per day?", answer: "The Dietary Guidelines for Americans recommend about 14g per 1,000 calories — roughly 25g for many women and 31–34g for many men." },
+      { question: "Why combine protein and fiber?", answer: "Both nutrients support satiety: protein slows digestion and fiber adds bulk, so meals with both tend to keep you full longer than either alone." },
+      { question: "Can too much fiber cause bloating?", answer: "Yes, especially if you increase it quickly. Add about 5g per day each week and drink more water to let your gut adjust." }
     ]
   },
 ];
