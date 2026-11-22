@@ -25,6 +25,16 @@ import emotionalEating from "@/content/blog/emotional-eating-stress-weight-gain.
 import lowCalorieRestaurant from "@/content/blog/low-calorie-restaurant-meals-guide.txt?raw";
 import metabolismMyths from "@/content/blog/metabolism-myths-weight-loss-facts.txt?raw";
 
+// TASK 1 — New high-traffic articles
+import proteinMealPlan100g from "@/content/blog/100g-protein-a-day-meal-plan.txt?raw";
+import cabbageRecipes from "@/content/blog/cabbage-recipes-weight-loss.txt?raw";
+import cottageCheese from "@/content/blog/cottage-cheese-recipes-high-protein.txt?raw";
+import highFiberFoods from "@/content/blog/high-fiber-foods-list.txt?raw";
+import sevenDayProteinPlan from "@/content/blog/7-day-high-protein-meal-plan.txt?raw";
+import lowCalorieSoups from "@/content/blog/low-calorie-soup-recipes.txt?raw";
+import volumeEating from "@/content/blog/volume-eating-meals-guide.txt?raw";
+import highProteinBreakfastPrep from "@/content/blog/high-protein-breakfast-meal-prep.txt?raw";
+
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -518,6 +528,183 @@ export const blogArticles: BlogArticle[] = [
       { question: "Does eating small frequent meals boost metabolism?", answer: "No. The thermic effect of food depends on total calories consumed, not meal frequency. Six small meals or three larger meals with the same total calories produce identical metabolic effects." },
       { question: "Is starvation mode real?", answer: "True adaptive thermogenesis only occurs with severe calorie restriction (>40% below maintenance) for extended periods. It reduces metabolism by 10-15% at most and doesn't stop weight loss entirely." },
       { question: "Do certain foods boost metabolism?", answer: "Green tea and caffeine temporarily increase metabolism by 3-11%, but the effect is small and temporary. Protein has the highest thermic effect (20-30% of its calories), but no food can replace a calorie deficit for weight loss." }
+    ]
+  },
+  // TASK 1 — 8 new high-traffic articles
+  {
+    slug: "100g-protein-a-day-meal-plan",
+    title: "How to Get 100g Protein a Day: Full Meal Plan, 3-Day Variations & Grocery List",
+    excerpt: "A complete day-by-day menu showing exactly how to get 100g protein a day using whole foods, with a 3-day variation table and full grocery list.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "9 min read",
+    date: "May 01, 2026",
+    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&h=600&q=80",
+    content: proteinMealPlan100g,
+    keywords: "how to get 100g protein a day, 100g protein meal plan, high protein meal plan, protein meal plan for weight loss, daily protein plan",
+    author: "FitJourney Team",
+    tags: ["protein", "meal plan", "nutrition"],
+    difficulty: "beginner",
+    seoDescription: "Learn how to get 100g protein a day with a full meal plan, breakfast to dinner. Includes a 3-day variation table and complete grocery list.",
+    faqs: [
+      { question: "How do I get 100g of protein a day?", answer: "Aim for 25–35g of protein at each main meal using chicken, fish, eggs, Greek yogurt, or cottage cheese, then fill the gap with a protein-rich snack like jerky or cottage cheese." },
+      { question: "Can I get 100g protein without meat?", answer: "Yes. Combine Greek yogurt (17g), cottage cheese (14g), eggs (6g each), edamame (17g/cup), lentils (18g/cup), and tofu (10g/3.5 oz) to reach 100g from plant and dairy sources." },
+      { question: "Is 100g of protein too much?", answer: "For most adults, 100g is a moderate, safe intake. Research supports intakes up to 1.6g/kg body weight for active individuals without adverse effects in healthy people." },
+      { question: "Do I need protein powder to hit 100g?", answer: "No. All the menus in this guide use whole foods. Protein powder is a convenient option but not required if you eat enough eggs, dairy, meat, and legumes." }
+    ]
+  },
+  {
+    slug: "cabbage-recipes-weight-loss",
+    title: "Cabbage Recipes for Weight Loss: Dumplings, Soup, Alfredo & More (With Calories)",
+    excerpt: "Six trending cabbage recipes with calories per serving — including cabbage dumplings, cabbage alfredo, and classic cabbage soup. Pinterest's top food trend for 2026.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "May 02, 2026",
+    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&h=600&q=80",
+    content: cabbageRecipes,
+    keywords: "cabbage recipes, cabbage recipes for weight loss, cabbage soup recipe, cabbage dumplings, cabbage alfredo, low calorie cabbage recipes",
+    author: "FitJourney Team",
+    tags: ["cabbage", "recipes", "low calorie", "meal prep"],
+    difficulty: "beginner",
+    seoDescription: "Six cabbage recipes with calories per serving — cabbage dumplings (35 cal each), cabbage alfredo (280 cal), cabbage soup (80 cal/bowl), and more.",
+    faqs: [
+      { question: "Is cabbage good for weight loss?", answer: "Cabbage is one of the most calorie-efficient vegetables available — 22 calories per cup raw. Its high water and fiber content helps you feel full, making it ideal for calorie-controlled eating." },
+      { question: "How many calories are in cabbage soup?", answer: "A standard homemade cabbage soup runs 70–100 calories per bowl depending on ingredients. Adding beans or lean protein increases calories but also significantly boosts satiety." },
+      { question: "What is cabbage alfredo?", answer: "Cabbage alfredo replaces pasta with thinly shredded cabbage and uses a lightened cream sauce. It runs about 280 calories per serving vs. 600+ for traditional fettuccine alfredo." },
+      { question: "How do I make cabbage dumplings?", answer: "Blanch large cabbage leaves for 2 minutes, fill with a seasoned lean meat and vegetable mixture, roll up, and steam for 12–15 minutes. Each dumpling is about 35 calories." }
+    ]
+  },
+  {
+    slug: "cottage-cheese-recipes-high-protein",
+    title: "Cottage Cheese Recipes High Protein: 10 Ideas with Protein Grams Each",
+    excerpt: "Ten high-protein cottage cheese recipes from scrambled eggs to pasta sauce to smoothies — each with protein grams and calories so you can hit your daily targets.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "May 03, 2026",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&h=600&q=80",
+    content: cottageCheese,
+    keywords: "cottage cheese recipes high protein, high protein cottage cheese, cottage cheese meal ideas, cottage cheese protein, cottage cheese for weight loss",
+    author: "FitJourney Team",
+    tags: ["cottage cheese", "high protein", "recipes", "meal prep"],
+    difficulty: "beginner",
+    seoDescription: "Ten cottage cheese recipes high protein enough to move the needle on your daily goals. Each recipe includes protein grams and calories.",
+    faqs: [
+      { question: "How much protein is in cottage cheese?", answer: "Low-fat cottage cheese provides approximately 14g of protein per ½ cup (113g). A full cup delivers ~28g of protein for ~180 calories." },
+      { question: "Is cottage cheese better than Greek yogurt for protein?", answer: "They're comparable. Greek yogurt (non-fat) has ~17g protein per 6 oz vs. cottage cheese at ~14g per ½ cup. Greek yogurt is slightly higher per serving, but cottage cheese is more versatile in savory cooking." },
+      { question: "Can I eat cottage cheese every day?", answer: "Yes. Cottage cheese is a nutritious whole food. Eating it daily is safe and beneficial for most people. Vary your other protein sources to ensure a broad nutrient intake." },
+      { question: "What does cottage cheese taste like?", answer: "Plain cottage cheese has a mild, slightly tangy, creamy flavor. When blended, it becomes almost neutral — which is why it works so well in sauces, smoothies, and baked goods." }
+    ]
+  },
+  {
+    slug: "high-fiber-foods-list",
+    title: "High Fiber Foods List: 25 Foods with Fiber Grams + How to Build a 15g Fiber Lunch",
+    excerpt: "A complete high fiber foods list with 25 foods ranked by fiber grams per serving, plus a practical template for building a 15g-fiber lunch. The fibermaxxing guide you need.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "May 04, 2026",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: highFiberFoods,
+    keywords: "high fiber foods list, high fiber foods, fiber foods chart, fibermaxxing, foods high in fiber, fiber grams per serving, high fiber diet",
+    author: "FitJourney Team",
+    tags: ["fiber", "nutrition", "food list", "fibermaxxing"],
+    difficulty: "beginner",
+    seoDescription: "High fiber foods list with 25 foods and fiber grams per serving. Includes a step-by-step guide to building a 15g-fiber lunch for better digestion and satiety.",
+    faqs: [
+      { question: "How much fiber should I eat per day?", answer: "The USDA recommends 25g per day for women and 38g per day for men. Most Americans average only 10–15g. Aim to increase gradually to avoid digestive discomfort." },
+      { question: "What is the highest-fiber food?", answer: "Split peas and lentils top the list at 15–16g per cooked cup. Chia seeds are the highest per tablespoon at ~5g per tablespoon." },
+      { question: "Does fiber help with weight loss?", answer: "Fiber supports weight management by increasing satiety, slowing digestion, and reducing calorie absorption slightly. High-fiber diets are consistently associated with lower body weight in research." },
+      { question: "What is fibermaxxing?", answer: "Fibermaxxing is the trend of intentionally maximizing daily fiber intake by building meals around high-fiber foods like legumes, vegetables, fruits, and whole grains." }
+    ]
+  },
+  {
+    slug: "7-day-high-protein-meal-plan",
+    title: "7-Day High Protein Meal Plan: 1,500–1,800 Calories with Full Grocery List",
+    excerpt: "A complete 7-day high protein meal plan with day-by-day tables, 120–150g protein per day, 1,500–1,800 calories, and a full weekly grocery list.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "10 min read",
+    date: "May 05, 2026",
+    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&h=600&q=80",
+    content: sevenDayProteinPlan,
+    keywords: "7 day high protein meal plan, high protein meal plan, weekly protein meal plan, high protein diet plan, meal plan for muscle, protein meal plan grocery list",
+    author: "FitJourney Team",
+    tags: ["meal plan", "high protein", "7 day", "grocery list"],
+    difficulty: "beginner",
+    seoDescription: "Complete 7-day high protein meal plan with 120–150g protein per day, 1,500–1,800 calories, day-by-day tables, and a full weekly grocery list.",
+    faqs: [
+      { question: "How much protein do I need per day?", answer: "Most active adults benefit from 0.7–1g of protein per pound of body weight. For a 150 lb person, that's 105–150g per day. This plan delivers 120–133g, which fits most people in that range." },
+      { question: "Can I swap meals between days?", answer: "Yes. All meals in this plan are interchangeable. The key is keeping total daily protein above 100g and calories within your target range." },
+      { question: "Is this plan suitable for vegetarians?", answer: "The plan as written is not vegetarian, but you can substitute animal proteins with lentils, chickpeas, tofu, tempeh, edamame, and cottage cheese while hitting the same protein totals." },
+      { question: "Do I need to count calories exactly?", answer: "Not necessarily. Use the plan as a template and adjust portions based on hunger and energy. Hitting your protein target most days matters more than exact calorie counts." }
+    ]
+  },
+  {
+    slug: "low-calorie-soup-recipes",
+    title: "Low Calorie Soup Recipes: 7 Soups Under 200 Calories Per Bowl",
+    excerpt: "Seven low calorie soups with calories per bowl — from 70-calorie miso soup to 200-calorie black bean soup. All filling, all easy to make, all under 200 calories.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "9 min read",
+    date: "May 06, 2026",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&h=600&q=80",
+    content: lowCalorieSoups,
+    keywords: "low calorie soups, low calorie soup recipes, healthy soup recipes, weight loss soups, low calorie dinner, filling low calorie meals",
+    author: "FitJourney Team",
+    tags: ["soup", "low calorie", "recipes", "meal prep"],
+    difficulty: "beginner",
+    seoDescription: "Seven low calorie soup recipes with calories per bowl. Cabbage soup (80 cal), chicken vegetable (150 cal), lentil (180 cal), and more — all filling and easy to make.",
+    faqs: [
+      { question: "Are soups good for weight loss?", answer: "Soups are excellent for calorie-controlled eating because their high water content creates volume and satiety at low calorie cost. Broth-based soups are significantly better than cream-based soups for this purpose." },
+      { question: "What's the lowest-calorie soup?", answer: "Miso soup (~70 cal/bowl) and cabbage soup (~80 cal/bowl) are the lowest-calorie options. Both are filling due to their high water and fiber content." },
+      { question: "Can I freeze homemade soup?", answer: "Yes. Most soups freeze well for up to 3 months. Let cool completely, portion into freezer-safe containers, and label with the date." },
+      { question: "How do I add more protein to vegetable soup?", answer: "Add 1 cup cooked white beans (+15g protein), 1 cup shredded chicken (+35g protein), or 4 oz firm tofu (+10g protein) to any vegetable soup." }
+    ]
+  },
+  {
+    slug: "volume-eating-meals-guide",
+    title: "Volume Eating Meals: Big Plates, Low Calories — 5 Example Plates with Calories",
+    excerpt: "Volume eating lets you eat large amounts of food while staying in a calorie deficit. Learn the principles and see 5 example plates with full calorie counts.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "8 min read",
+    date: "May 07, 2026",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&h=600&q=80",
+    content: volumeEating,
+    keywords: "volume eating meals, volume eating, volumetrics diet, low calorie density foods, big meals low calories, volume eating food list, how to eat more and lose weight",
+    author: "FitJourney Team",
+    tags: ["volume eating", "low calorie", "meal ideas", "satiety"],
+    difficulty: "beginner",
+    seoDescription: "Volume eating meals: eat large plates of food while staying in a calorie deficit. Five example plates with full calorie counts and the science behind why it works.",
+    faqs: [
+      { question: "What is volume eating?", answer: "Volume eating is a strategy of choosing foods with low calorie density — high water and fiber content — so you can eat large amounts of food while staying within your calorie budget." },
+      { question: "Does volume eating actually work?", answer: "Yes. Multiple studies show that people who eat lower-calorie-density diets consume fewer total calories without feeling more hungry. Physical volume in the stomach triggers satiety signals regardless of calorie content." },
+      { question: "What are the best volume eating foods?", answer: "Non-starchy vegetables are the foundation: broccoli, zucchini, cucumber, spinach, mushrooms, and cabbage. Broth-based soups, lean proteins, and fruits like berries and watermelon are also excellent volume foods." },
+      { question: "Can I do volume eating on a 1,200 calorie diet?", answer: "Yes. Volume eating is especially useful at lower calorie targets because it allows you to eat more food within a tight budget. Focus on vegetables, lean proteins, and broth-based soups as your primary foods." }
+    ]
+  },
+  {
+    slug: "high-protein-breakfast-meal-prep",
+    title: "High Protein Breakfast Meal Prep: Egg Muffins, Overnight Oats & More (30g+ Protein)",
+    excerpt: "Five high protein breakfast meal prep recipes — egg muffins, overnight oats, yogurt jars, burritos, and cottage cheese bowls — each with macros and storage instructions.",
+    category: "Nutrition",
+    categorySlug: "nutrition",
+    readTime: "9 min read",
+    date: "May 08, 2026",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&h=600&q=80",
+    content: highProteinBreakfastPrep,
+    keywords: "high protein breakfast meal prep, protein breakfast prep, egg muffins meal prep, overnight oats protein, high protein breakfast ideas, 30g protein breakfast",
+    author: "FitJourney Team",
+    tags: ["breakfast", "meal prep", "high protein", "egg muffins"],
+    difficulty: "beginner",
+    seoDescription: "High protein breakfast meal prep recipes with 30g+ protein each. Egg muffins, overnight oats, yogurt jars, burritos — all with macros and storage instructions.",
+    faqs: [
+      { question: "How long do egg muffins last in the fridge?", answer: "Egg muffins keep well for 5 days in an airtight container in the refrigerator. They can also be frozen for up to 2 months — reheat from frozen for 2–3 minutes." },
+      { question: "Can I make overnight oats without protein powder?", answer: "Yes. Replace protein powder with an extra ½ cup Greek yogurt (+9g protein) or 2 tbsp hemp seeds (+10g protein). You'll still get a nutritious, filling breakfast." },
+      { question: "How do I hit 30g protein at breakfast without eggs?", answer: "Greek yogurt (17g/cup) + protein powder (25g/scoop) in overnight oats easily hits 30g+. Cottage cheese (28g/cup) with hemp seeds is another egg-free option." },
+      { question: "Is high-protein breakfast important for weight loss?", answer: "Research supports it. A high-protein breakfast reduces ghrelin (hunger hormone) levels more effectively than high-carb breakfasts, leading to lower calorie intake throughout the day." }
     ]
   },
 ];
