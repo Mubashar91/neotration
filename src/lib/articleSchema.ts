@@ -27,9 +27,10 @@ export function getArticleSchemas(article: BlogArticle) {
         { '@type': 'ListItem', position: 3, name: article.title, item: url },
       ],
     },
-    ...recipes.map((recipe, i) => ({
+    ...recipes.flatMap((recipe, i) => recipe.image ? [{
       '@context': 'https://schema.org', '@type': 'Recipe', '@id': `${url}#recipe-${i + 1}`,
       name: recipe.name, description: recipe.description, url: `${url}#recipe-${i + 1}`,
+      image: [absoluteUrl(recipe.image)],
       author, datePublished: new Date(article.date).toISOString(),
       // Nutrition and ratings are intentionally omitted without measured recipe data.
       // Add a representative finished-dish photograph before claiming rich-result eligibility.
@@ -38,10 +39,10 @@ export function getArticleSchemas(article: BlogArticle) {
       recipeYield: `${recipe.servings} servings`, recipeCategory: article.tags?.includes('dessert') ? 'Dessert' : article.tags?.includes('snacks') ? 'Snack' : 'Meal',
       recipeIngredient: recipe.ingredients,
       recipeInstructions: recipe.instructions.map((text, index) => ({ '@type': 'HowToStep', position: index + 1, text })),
-    })),
-    ...(recipes.length > 1 ? [{
+    }] : []),
+    ...(recipes.filter(recipe => recipe.image).length > 1 ? [{
       '@context': 'https://schema.org', '@type': 'ItemList',
-      itemListElement: recipes.map((recipe, i) => ({ '@type': 'ListItem', position: i + 1, name: recipe.name, url: `${url}#recipe-${i + 1}` })),
+      itemListElement: recipes.map((recipe, i) => ({ recipe, index: i })).filter(item => item.recipe.image).map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.recipe.name, url: `${url}#recipe-${item.index + 1}` })),
     }] : []),
     ...(article.faqs?.length ? [{
       '@context': 'https://schema.org', '@type': 'FAQPage',

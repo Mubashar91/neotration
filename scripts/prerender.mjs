@@ -19,6 +19,10 @@ for (const route of paths) {
   await mkdir(directory, { recursive: true });
   await writeFile(path.join(directory, 'index.html'), output);
 }
+const missing = render('/page-not-found');
+await writeFile(path.join(root, 'dist/404.html'), template
+  .replace(/<!--app-head-start-->[\s\S]*?<!--app-head-end-->/, () => missing.head)
+  .replace('<div id="root"></div>', () => `<div id="root">${missing.html}</div>`));
 
 // Keep committed discovery files and deployment output in sync with the catalog.
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(route => {
