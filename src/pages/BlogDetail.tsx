@@ -1,461 +1,167 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useEffect, useMemo, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowLeft, Clock, Share2, Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
-import { blogArticles } from "@/data/blogArticles";
+import { useEffect, useMemo, useState } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
+import NotFound from '@/pages/NotFound';
+import ArticleRecipes from '@/components/ArticleRecipes';
+import { renderArticleContent } from '@/components/ArticleContent';
+import { blogArticles, type BlogArticle } from '@/data/blogArticles';
+import { articleRecipes } from '@/data/articleRecipes';
+import { getArticleSchemas, SITE_URL, absoluteUrl } from '@/lib/articleSchema';
+import { articleDate } from '@/lib/articleDate';
+import { ArrowLeft, Clock, Link as LinkIcon, Share2 } from 'lucide-react';
 
-const BlogDetail = () => {
-  const { slug } = useParams();
-  const article = blogArticles.find((a) => a.slug === slug);
-
-  // Note: do NOT early-return before hooks are declared to avoid conditional hook calls.
-
-  const siteUrl = "https://neotration.vercel.app";
-  const fullUrl = `${siteUrl}/blog/${article.slug}`;
-  const wordCount = article.content.split(/\s+/).filter(Boolean).length;
-  const idx = blogArticles.findIndex((a) => a.slug === article.slug);
-  const prev = idx > 0 ? blogArticles[idx - 1] : undefined;
-  const next = idx < blogArticles.length - 1 ? blogArticles[idx + 1] : undefined;
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: article.title,
-    description: article.excerpt,
-    datePublished: new Date(article.date).toISOString(),
-    dateModified: new Date(article.updatedAt || article.date).toISOString(),
-    url: fullUrl,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
-    image: [article.image],
-    keywords: article.keywords,
-    articleSection: article.category,
-    inLanguage: 'en-US',
-    wordCount,
-    author: article.author && article.author !== 'FitJourney Team'
-      ? { '@type': 'Person', name: article.author }
-      : { '@type': 'Organization', name: 'FitJourney USA' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'FitJourney USA',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/placeholder.svg`
-      }
-    }
-  };
-  const imageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ImageObject',
-    url: article.image,
-    width: 1200,
-    height: 630,
-  };
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: '/blog' },
-      { '@type': 'ListItem', position: 3, name: article.title, item: `/blog/${article.slug}` }
-    ]
-  };
-
-  // slugify helper for heading anchors
-  const slugify = (text: string) =>
-    text
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-");
-
-  // Basic markdown-ish renderer for headings and lists (returns elements and heading anchors)
-  const renderContent = (content: string) => {
-    const lines = content.split(/\r?\n/);
-    const elements: JSX.Element[] = [];
-    const headings: { id: string; text: string; level: 2 | 3 }[] = [];
-    let listBuffer: string[] = [];
-    let isOrdered = false;
-
-    const flushList = () => {
-      if (listBuffer.length === 0) return;
-      const items = listBuffer.map((item, idx) => (
-        <li key={`li-${elements.length}-${idx}`} className="ml-6 list-disc marker:text-primary">
-          {item}
-        </li>
-      ));
-      elements.push(
-        <ul key={`ul-${elements.length}`} className="space-y-1 my-2">
-          {items}
-        </ul>
-      );
-      listBuffer = [];
-      isOrdered = false;
-    };
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed === "") {
-        flushList();
-        elements.push(<div key={`sp-${elements.length}`} className="h-2" />);
-        continue;
-      }
-
-      if (trimmed.startsWith("## ")) {
-        flushList();
-        const text = trimmed.replace(/^##\s+/, "");
-        const id = slugify(text);
-        headings.push({ id, text, level: 2 });
-        elements.push(
-          <h2 id={id} key={`h2-${elements.length}`} className="group font-poppins text-xl sm:text-2xl font-bold text-foreground mt-6 mb-3 scroll-mt-24">
-            <a href={`#${id}`} className="no-underline hover:underline">{text}</a>
-            <a href={`#${id}`} aria-label="Copy link to section" className="opacity-0 group-hover:opacity-100 inline-flex items-center ml-2 text-muted-foreground hover:text-primary transition-opacity">
-              <LinkIcon className="h-4 w-4" />
-            </a>
-          </h2>
-        );
-        continue;
-      }
-
-      if (trimmed.startsWith("### ")) {
-        flushList();
-        const text = trimmed.replace(/^###\s+/, "");
-        const id = slugify(text);
-        headings.push({ id, text, level: 3 });
-        elements.push(
-          <h3 id={id} key={`h3-${elements.length}`} className="group font-poppins text-lg sm:text-xl font-semibold text-foreground mt-4 mb-2 scroll-mt-24">
-            <a href={`#${id}`} className="no-underline hover:underline">{text}</a>
-            <a href={`#${id}`} aria-label="Copy link to subsection" className="opacity-0 group-hover:opacity-100 inline-flex items-center ml-2 text-muted-foreground hover:text-primary transition-opacity">
-              <LinkIcon className="h-4 w-4" />
-            </a>
-          </h3>
-        );
-        continue;
-      }
-
-      if (/^\d+\./.test(trimmed)) {
-        // ordered list -> treat as bullets for simplicity
-        listBuffer.push(trimmed.replace(/^\d+\.\s*/, ""));
-        isOrdered = true;
-        continue;
-      }
-
-      if (trimmed.startsWith("- ")) {
-        listBuffer.push(trimmed.slice(2));
-        continue;
-      }
-
-      // paragraph
-      flushList();
-      elements.push(
-        <p key={`p-${elements.length}`} className="font-lato text-base text-muted-foreground leading-relaxed">
-          {trimmed}
-        </p>
-      );
-    }
-    flushList();
-    return { elements, headings };
-  };
-
-  // Build FAQ schema if content contains an H2 "FAQs" and bullet lines
-  const faqSchema = useMemo(() => {
-    const contentStr = article?.content ?? "";
-    const lines = contentStr.split(/\r?\n/);
-    const faqs: { question: string; answer: string }[] = [];
-    let inFaq = false;
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith("## ") && line.replace(/^##\s+/, "").toLowerCase().includes("faq")) {
-        inFaq = true;
-        continue;
-      }
-      if (inFaq && line.startsWith("## ")) break; // next section ends FAQ
-      if (inFaq && (line.startsWith("-") || /^\d+\./.test(line))) {
-        const q = line.replace(/^(-|\d+\.)\s*/, "");
-        const parts = q.split("?");
-        if (parts.length > 1) {
-          const question = parts[0].trim() + "?";
-          const answer = parts.slice(1).join("?").trim() || "";
-          faqs.push({ question, answer: answer || "See article section for details." });
-        }
-      }
-    }
-    const merged = [...faqs, ...((article?.faqs ?? []))];
-    if (merged.length === 0) return null;
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: merged.map((f: { question: string; answer: string }) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } }))
-    } as const;
-  }, [article?.content, article?.faqs]);
-
-  // Reading progress bar
+function ArticlePage({ article }: { article: BlogArticle }) {
   const [progress, setProgress] = useState(0);
+  const [copyStatus, setCopyStatus] = useState('');
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const image = absoluteUrl(article.image);
+  const recipes = articleRecipes[article.slug] ?? [];
+  const { elements, headings } = useMemo(() => renderArticleContent(article.content), [article.content]);
+  const related = useMemo(() => blogArticles
+    .filter(a => a.slug !== article.slug && a.categorySlug === article.categorySlug)
+    .map((a, index) => ({ article: a, index, score: (a.tags ?? []).filter(tag => article.tags?.includes(tag)).length }))
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, 4).map(a => a.article), [article]);
+  const index = blogArticles.findIndex(a => a.slug === article.slug);
+  const previous = blogArticles[index - 1];
+  const next = blogArticles[index + 1];
+
   useEffect(() => {
+    setCopyStatus('');
     const onScroll = () => {
-      const doc = document.documentElement;
-      const total = doc.scrollHeight - doc.clientHeight;
-      const scrolled = window.scrollY;
-      setProgress(total > 0 ? Math.min(100, Math.max(0, (scrolled / total) * 100)) : 0);
+      const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      setProgress(total > 0 ? Math.min(100, Math.max(0, window.scrollY / total * 100)) : 0);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [article.slug]);
 
-  return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        {prev && (<link rel="prev" href={`/blog/${prev.slug}`} />)}
-        {next && (<link rel="next" href={`/blog/${next.slug}`} />)}
-        <meta name="author" content={article.author || 'FitJourney USA'} />
-        <meta property="article:published_time" content={new Date(article.date).toISOString()} />
-        <meta property="article:modified_time" content={new Date(article.updatedAt || article.date).toISOString()} />
-      </Helmet>
-      <SEO
-        title={`${article.title} | ${article.category} Tips`}
-        description={article.seoDescription ?? article.excerpt}
-        keywords={article.keywords}
-        canonicalUrl={`/blog/${article.slug}`}
-        ogType="article"
-        ogImage={article.image}
-        structuredData={[articleSchema, breadcrumbSchema, imageSchema, ...(faqSchema ? [faqSchema] : [])]}
-      />
-      {/* Reading progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 z-40 bg-transparent">
-        <div className="h-full bg-primary transition-[width] duration-150" style={{ width: `${progress}%` }} />
-      </div>
-      <Navbar />
-      <main className="py-10 sm:py-14 md:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          {/* Visual breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-muted-foreground flex flex-wrap items-center gap-2">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
-            <span>/</span>
-            <span className="text-foreground line-clamp-1">{article.title}</span>
-          </nav>
-          <Link to="/blog" className="inline-flex items-center gap-2 font-lato text-sm sm:text-base font-medium text-primary hover:text-primary/80 transition-colors mb-6">
-            <ArrowLeft className="h-4 w-4" /> Back to Blog
-          </Link>
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopyStatus('Link copied');
+    } catch {
+      setCopyStatus('Copy is unavailable. Use your browser address bar to copy the link.');
+    }
+  }
 
-          <Card className="overflow-hidden border border-border/70 shadow-card rounded-2xl">
-            <div className="relative h-56 sm:h-72 md:h-[26rem] overflow-hidden">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="h-full w-full object-cover scale-[1.01]"
-                width={1200}
-                height={630}
-                onError={(e) => { (e.currentTarget as HTMLImageElement).onerror = null; (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'; }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                <span className="inline-flex font-poppins text-xs font-semibold text-white bg-white/15 backdrop-blur px-3 py-1 rounded-full border border-white/30">
-                  {article.category}
-                </span>
-              </div>
-            </div>
-            
-            <CardHeader className="pb-3">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                <span>{article.date}</span>
-                <span>•</span>
-                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {article.readTime}</span>
-              </div>
-              <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mt-2 leading-tight">
-                {article.title}
-              </h1>
-              <div className="font-lato text-xs sm:text-sm text-muted-foreground mt-2">
-                <span>By {article.author ?? 'FitJourney USA'}</span>
-                {article.updatedAt && <span> • Updated {article.updatedAt}</span>}
-              </div>
-              {/* Tag chips */}
-              {article.tags && article.tags.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {article.tags.map((t) => (
-                    <Link key={t} to={`/blog?tag=${encodeURIComponent(t)}`} className="text-xs px-2.5 py-1 border border-border/70 bg-muted/30 rounded-full hover:border-primary hover:text-primary transition-colors">
-                      #{t}
-                    </Link>
-                  ))}
-                </div>
-              )}
-
-              {/* Share buttons */}
-              <div className="mt-4 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground mr-1"><Share2 className="h-3.5 w-3.5" /> Share</span>
-                <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Twitter className="h-3.5 w-3.5" /> X</a>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Facebook className="h-3.5 w-3.5" /> Facebook</a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://neotration.vercel.app/blog/${article.slug}`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><Linkedin className="h-3.5 w-3.5" /> LinkedIn</a>
-                <button type="button" onClick={() => navigator.clipboard.writeText(`https://neotration.vercel.app/blog/${article.slug}`)} className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-border/70 hover:border-primary hover:text-primary transition-colors"><LinkIcon className="h-3.5 w-3.5" /> Copy link</button>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-7 pt-1">
-              {/* Summary box */}
-              <div className="rounded-xl border bg-gradient-to-br from-muted/45 to-background p-4 sm:p-5">
-                <h2 className="font-poppins text-base sm:text-lg font-semibold mb-2">Quick Summary</h2>
-                <p className="font-lato text-sm sm:text-base text-muted-foreground leading-relaxed">{article.seoDescription ?? article.excerpt}</p>
-              </div>
-
-              {/* Author bio */}
-              <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 border rounded-xl bg-card/50">
-                <div className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-primary/10 flex items-center justify-center font-poppins text-sm font-bold text-primary">
-                  {article.author?.split(' ').map(w => w[0]).join('').slice(0,2)}
-                </div>
-                <div>
-                  <div className="font-poppins font-semibold text-foreground">{article.author ?? 'FitJourney USA'}</div>
-                  <p className="font-lato text-sm text-muted-foreground">
-                    {(() => {
-                      switch (article.author) {
-                        case 'Coach Alex':
-                          return 'Strength & fat-loss coach focused on simple, evidence-based strategies for busy people.';
-                        case 'Coach Mia':
-                          return 'Behavior and habit coach helping clients build sustainable routines without burnout.';
-                        case 'Chef Leo':
-                          return 'Recipe creator specializing in quick, high-protein meals that taste great.';
-                        default:
-                          return 'The FitJourney editorial team brings practical, science-backed guidance for everyday Americans.';
-                      }
-                    })()}
-                  </p>
-                </div>
-              </div>
-              {/* Table of contents + content layout */}
-              {(() => {
-                const { elements, headings } = renderContent(article.content);
-                return (
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                    {headings.length > 0 && (
-                      <aside className="lg:col-span-4 lg:sticky lg:top-24">
-                        <div className="rounded-xl border bg-muted/20 p-4 shadow-sm">
-                          <h2 className="font-poppins text-sm font-semibold uppercase tracking-wide text-foreground/80 mb-3">
-                            Table of contents
-                          </h2>
-                          <ul className="space-y-1.5 max-h-[50vh] overflow-auto pr-1">
-                            {headings.map((h, idx) => (
-                              <li key={`toc-${idx}`} className={h.level === 3 ? "ml-3" : ""}>
-                                <a
-                                  href={`#${h.id}`}
-                                  className="block text-sm text-primary/90 hover:text-primary hover:underline leading-snug"
-                                >
-                                  {h.text}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </aside>
-                    )}
-                    <div className={headings.length > 0 ? "lg:col-span-8 space-y-4" : "lg:col-span-12 space-y-4"}>
-                      {elements}
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Inline tool CTAs */}
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <Link to="/calculator" className="block group border rounded-xl p-4 hover:border-primary hover:shadow-sm transition">
-                  <div className="font-poppins font-semibold text-foreground group-hover:text-primary">Calculate Your Daily Calories</div>
-                  <p className="text-sm text-muted-foreground">Use our free calorie calculator to set your target in minutes.</p>
-                </Link>
-                <Link to="/food" className="block group border rounded-xl p-4 hover:border-primary hover:shadow-sm transition">
-                  <div className="font-poppins font-semibold text-foreground group-hover:text-primary">Explore the Food Guide</div>
-                  <p className="text-sm text-muted-foreground">Find protein-rich foods and meal ideas to hit your goals.</p>
-                </Link>
-              </div>
-              {/* Related Articles */}
-              <div className="mt-8 pt-6 border-t">
-                <h2 className="font-poppins text-xl font-semibold mb-3">Related Articles</h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {blogArticles
-                    .filter((a) => a.slug !== article.slug && a.categorySlug === article.categorySlug)
-                    .slice(0, 2)
-                    .map((a) => (
-                      <Link key={a.slug} to={`/blog/${a.slug}`} className="group border rounded-xl overflow-hidden hover:border-primary hover:shadow-sm transition">
-                        <div className="h-28 overflow-hidden">
-                          <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                        </div>
-                        <div className="p-3">
-                          <div className="font-poppins font-semibold text-foreground group-hover:text-primary line-clamp-2">{a.title}</div>
-                          <div className="text-xs text-muted-foreground mt-1">{a.readTime}</div>
-                        </div>
-                      </Link>
-                    ))}
-                </div>
-              </div>
-
-              {/* External Helpful Resources */}
-              <div className="mt-6">
-                <h2 className="font-poppins text-xl font-semibold mb-3">Helpful Resources</h2>
-                <ul className="list-disc ml-6 space-y-2">
-                  <li>
-                    <a href="https://www.cdc.gov/healthyweight/index.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      CDC Healthy Weight
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/index.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      NIH Weight Management
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://ods.od.nih.gov/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      NIH Office of Dietary Supplements
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Next/Previous navigation */}
-              <div className="mt-8 pt-6 border-t grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {(() => {
-                  const idx = blogArticles.findIndex((a) => a.slug === article.slug);
-                  const prev = idx > 0 ? blogArticles[idx - 1] : undefined;
-                  const next = idx < blogArticles.length - 1 ? blogArticles[idx + 1] : undefined;
-                  return (
-                    <>
-                      <div>
-                        {prev && (
-                          <Link to={`/blog/${prev.slug}`} className="block group">
-                            <span className="text-xs text-muted-foreground">Previous</span>
-                            <div className="font-poppins font-semibold text-foreground group-hover:text-primary">{prev.title}</div>
-                          </Link>
-                        )}
-                      </div>
-                      <div className="text-right">
-                        {next && (
-                          <Link to={`/blog/${next.slug}`} className="block group">
-                            <span className="text-xs text-muted-foreground">Next</span>
-                            <div className="font-poppins font-semibold text-foreground group-hover:text-primary">{next.title}</div>
-                          </Link>
-                        )}
-                      </div>
-                    </>
-                  );
-                })()}
-              </div>
-
-              {/* Newsletter CTA */}
-              <div className="mt-8 border rounded-xl p-5 bg-primary/5">
-                <h2 className="font-poppins text-xl font-semibold mb-2">Get weekly nutrition & workout tips</h2>
-                <p className="font-lato text-sm text-muted-foreground mb-3">No spam. One practical email to keep you consistent.</p>
-                <form action="https://formspree.io/f/xbldqrkg" method="POST" className="flex flex-col sm:flex-row gap-2">
-                  <input type="email" name="email" required placeholder="Your email" className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/30" />
-                  <button type="submit" className="px-4 py-2 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">Subscribe</button>
-                </form>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </main>
-      <Footer />
+  return <div className="min-h-screen bg-background">
+    <SEO title={article.title} description={article.seoDescription ?? article.excerpt}
+      keywords={article.keywords} canonicalUrl={`/blog/${article.slug}`} ogType="article"
+      ogImage={article.image} author={article.author === 'FitJourney Team' ? 'FitJourney USA' : article.author}
+      structuredData={getArticleSchemas(article)} />
+    <Helmet>
+      <meta property="article:published_time" content={articleDate(article.date).toISOString()} />
+      <meta property="article:modified_time" content={articleDate(article.updatedAt ?? article.date).toISOString()} />
+      <meta property="article:author" content={article.author === 'FitJourney Team' ? 'FitJourney USA' : article.author} />
+      <meta property="article:section" content={article.category} />
+      {previous && <link rel="prev" href={`${SITE_URL}/blog/${previous.slug}`} />}
+      {next && <link rel="next" href={`${SITE_URL}/blog/${next.slug}`} />}
+    </Helmet>
+    <div aria-hidden="true" className="fixed top-0 left-0 right-0 h-1 z-[60] print:hidden">
+      <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
     </div>
-  );
-};
+    <Navbar />
+    <main className="py-10 sm:py-14">
+      <article className="container mx-auto px-4 max-w-5xl">
+        <nav aria-label="Breadcrumb" className="mb-4 text-sm text-muted-foreground flex flex-wrap gap-2 print:hidden">
+          <Link to="/">Home</Link><span>/</span><Link to="/blog">Blog</Link><span>/</span><span>{article.title}</span>
+        </nav>
+        <Link to="/blog" className="inline-flex gap-2 items-center text-primary mb-6 print:hidden"><ArrowLeft className="h-4 w-4" /> Back to Blog</Link>
+        <div className="rounded-2xl border shadow-card overflow-hidden">
+          <img src={article.image} alt={article.imageAlt ?? article.title} width={1200} height={630}
+            loading="eager" decoding="async" className="w-full max-h-[26rem] object-cover print:hidden"
+            onError={event => { event.currentTarget.onerror = null; event.currentTarget.src = '/placeholder.svg'; }} />
+          <header className="p-5 sm:p-8 space-y-4">
+            <p className="text-sm text-muted-foreground">{article.category} · <time dateTime={articleDate(article.date).toISOString()}>{article.date}</time></p>
+            <h1 className="font-poppins text-2xl sm:text-4xl font-bold leading-tight">{article.title}</h1>
+            <p className="text-sm text-muted-foreground">
+              By <Link to="/about" className="text-primary underline">{article.author === 'FitJourney Team' ? 'FitJourney editorial team' : article.author}</Link>
+              {article.updatedAt && <> · Updated <time dateTime={articleDate(article.updatedAt).toISOString()}>{article.updatedAt}</time></>}
+              <span className="inline-flex items-center gap-1 ml-3"><Clock className="w-4 h-4" />{article.readTime}</span>
+            </p>
+            <div className="flex flex-wrap gap-2 print:hidden">
+              {article.tags?.map(tag => <Link key={tag} to={`/blog?tag=${encodeURIComponent(tag)}`} className="rounded-full border px-3 py-2 text-sm hover:text-primary">{tag}</Link>)}
+            </div>
+            <div className="flex flex-wrap items-center gap-3 print:hidden">
+              <span className="inline-flex gap-1 items-center text-sm"><Share2 className="w-4 h-4" /> Share</span>
+              <a className="rounded-lg bg-[#bd081c] text-white px-4 py-2 text-sm font-semibold"
+                href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(image)}&description=${encodeURIComponent(article.title + ' — ' + article.excerpt)}`}
+                target="_blank" rel="noopener noreferrer">Save to Pinterest</a>
+              <a className="text-primary underline" href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer">X</a>
+              <a className="text-primary underline" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a className="text-primary underline" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <button type="button" onClick={copyLink} className="inline-flex gap-2 items-center rounded-lg border px-3 py-2 text-sm"><LinkIcon className="w-4 h-4" />Copy link</button>
+            </div>
+            <p role="status" className="text-sm text-muted-foreground print:hidden">{copyStatus}</p>
+            {recipes.length > 0 && <a href="#recipe-cards" className="inline-block rounded-lg border px-4 py-2 font-semibold text-primary print:hidden">Jump to printable recipes</a>}
+          </header>
+          <div className="px-5 pb-8 sm:px-8 space-y-8">
+            <section aria-label="Quick summary" className="rounded-xl border bg-muted/30 p-5">
+              <h2 className="font-poppins text-lg font-semibold mb-2">Quick summary</h2>
+              <p>{article.seoDescription ?? article.excerpt}</p>
+            </section>
+            <aside className="rounded-xl border p-5 text-sm space-y-2">
+              <p><strong>General information:</strong> Meal ideas and nutrition estimates are educational and do not replace individual medical or dietary advice. Adjust portions to your needs.</p>
+              <p>Clinical review is not claimed for this article. <Link to="/disclaimer" className="text-primary underline">Read our health disclaimer</Link> and <Link to="/about" className="text-primary underline">about the site</Link>.</p>
+              {recipes.length > 0 && <p>Cover photography is illustrative. These recipes do not claim first-hand kitchen testing; calculated nutrition and current store prices should be checked against your ingredients.</p>}
+            </aside>
+            <div className="grid lg:grid-cols-12 gap-7 items-start">
+              {headings.length > 0 && <aside className="lg:col-span-4 lg:sticky lg:top-24 print:hidden">
+                <nav aria-label="Table of contents" className="rounded-xl border bg-muted/20 p-4">
+                  <h2 className="font-semibold mb-3">In this article</h2>
+                  <ul className="space-y-2 max-h-[60vh] overflow-auto">
+                    {headings.map(heading => <li key={heading.id} className={heading.level === 3 ? 'ml-3' : ''}>
+                      <a href={`#${heading.id}`} className="text-sm text-primary hover:underline">{heading.text.replace(/\*\*/g, '')}</a>
+                    </li>)}
+                    {recipes.length > 0 && <li><a href="#recipe-cards" className="text-sm text-primary hover:underline">Printable recipes</a></li>}
+                  </ul>
+                </nav>
+              </aside>}
+              <div className={headings.length ? 'lg:col-span-8 min-w-0 space-y-4' : 'lg:col-span-12 min-w-0 space-y-4'}>{elements}</div>
+            </div>
+            {recipes.length > 0 && <ArticleRecipes recipes={recipes} />}
+            {!!article.faqs?.length && <section className="space-y-4" aria-label="More questions and answers">
+              <h2 className="font-poppins text-xl font-semibold">More questions and answers</h2>
+              {article.faqs.map(faq => <div key={faq.question}><h3 className="font-semibold">{faq.question}</h3><p className="text-muted-foreground">{faq.answer}</p></div>)}
+            </section>}
+            <div className="grid sm:grid-cols-2 gap-4 print:hidden">
+              <Link to="/calculator" className="rounded-xl border p-4 text-primary font-semibold">Estimate your daily calorie needs</Link>
+              <Link to="/food" className="rounded-xl border p-4 text-primary font-semibold">Explore food nutrition facts</Link>
+            </div>
+            <section className="border-t pt-6 print:hidden">
+              <h2 className="font-poppins text-xl font-semibold mb-4">Related articles</h2>
+              <div className="grid sm:grid-cols-2 gap-4">{related.map(item => <Link key={item.slug} to={`/blog/${item.slug}`} className="rounded-xl border overflow-hidden hover:border-primary">
+                <img src={item.image} alt={item.imageAlt ?? item.title} width={600} height={315} loading="lazy" decoding="async" className="h-32 w-full object-cover" />
+                <div className="p-4 font-semibold">{item.title}</div>
+              </Link>)}</div>
+            </section>
+            <nav aria-label="Article navigation" className="grid sm:grid-cols-2 gap-4 border-t pt-6 print:hidden">
+              <div>{previous && <Link to={`/blog/${previous.slug}`} className="text-primary">Previous: {previous.title}</Link>}</div>
+              <div>{next && <Link to={`/blog/${next.slug}`} className="text-primary">Next: {next.title}</Link>}</div>
+            </nav>
+            <section className="rounded-xl border p-5 bg-primary/5 print:hidden">
+              <h2 className="font-poppins text-xl font-semibold mb-2">Get weekly nutrition & workout tips</h2>
+              <p className="mb-3">One practical email to help you stay consistent.</p>
+              <form action="https://formspree.io/f/xbldqrkg" method="POST" className="flex flex-col sm:flex-row gap-2">
+                <label className="flex-1"><span className="sr-only">Email address</span><input type="email" name="email" required placeholder="Your email" className="w-full border rounded-lg px-3 py-2" /></label>
+                <button type="submit" className="px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold">Subscribe</button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </div>;
+}
 
-export default BlogDetail;
+export default function BlogDetail() {
+  const { slug } = useParams();
+  const article = blogArticles.find(item => item.slug === slug);
+  return article ? <ArticlePage key={article.slug} article={article} /> : <NotFound />;
+}

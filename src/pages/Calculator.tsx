@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator as CalcIcon, Utensils, Plus, Trash2, Download, FileText, Edit, Sparkles, Search, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { foodData } from "@/data/foodData";
-import jsPDF from 'jspdf';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const Calculator = () => {
@@ -374,7 +373,7 @@ const Calculator = () => {
   };
 
   // Download prescription as PDF with design
-  const downloadPrescription = () => {
+  const downloadPrescription = async () => {
     if (!result) {
       toast({
         title: "Calculate First",
@@ -389,7 +388,12 @@ const Calculator = () => {
     const fats = Math.round(result * 0.3 / 9);
 
     // Create simple & attractive PDF
-    const doc = new jsPDF();
+    const pdfModule = await import('jspdf').catch(() => null);
+    if (!pdfModule) {
+      toast({ title: 'Download unavailable', description: 'Please check your connection and try again.', variant: 'destructive' });
+      return;
+    }
+    const doc = new pdfModule.default();
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     const margin = 25;
@@ -989,6 +993,48 @@ const Calculator = () => {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* Next Steps funnel */}
+                {result !== null && (
+                  <Card className="border-2 border-primary/40 shadow-card bg-primary-light/20">
+                    <CardHeader>
+                      <CardTitle className="font-poppins text-xl">Next Steps — Put Your Numbers to Work</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <p className="font-lato text-sm text-muted-foreground">Now that you have your calorie target, these guides will help you build meals around it:</p>
+                      <div className="space-y-2">
+                        <Link to="/blog/7-day-high-protein-meal-plan" className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-primary-light/40 transition-colors">
+                          <span className="text-xl">📅</span>
+                          <div>
+                            <p className="font-poppins text-sm font-semibold text-foreground">7-Day High Protein Meal Plan</p>
+                            <p className="font-lato text-xs text-muted-foreground">Day-by-day meals at 1,500–1,800 cal with grocery list</p>
+                          </div>
+                        </Link>
+                        <Link to="/blog/100g-protein-a-day-meal-plan" className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-primary-light/40 transition-colors">
+                          <span className="text-xl">💪</span>
+                          <div>
+                            <p className="font-poppins text-sm font-semibold text-foreground">How to Get 100g Protein a Day</p>
+                            <p className="font-lato text-xs text-muted-foreground">Full menu with protein grams per meal + grocery list</p>
+                          </div>
+                        </Link>
+                        <Link to="/blog/high-protein-foods-list" className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-primary-light/40 transition-colors">
+                          <span className="text-xl">🥩</span>
+                          <div>
+                            <p className="font-poppins text-sm font-semibold text-foreground">High-Protein Foods List</p>
+                            <p className="font-lato text-xs text-muted-foreground">Ranked table of 20+ foods with protein grams per serving</p>
+                          </div>
+                        </Link>
+                        <Link to="/blog/volume-eating-meals-guide" className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-primary-light/40 transition-colors">
+                          <span className="text-xl">🥗</span>
+                          <div>
+                            <p className="font-poppins text-sm font-semibold text-foreground">Volume Eating: Big Plates, Low Calories</p>
+                            <p className="font-lato text-xs text-muted-foreground">5 example plates that fill you up within your calorie budget</p>
+                          </div>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
 
                 {/* Recommended Foods */}
                 {result !== null && getRecommendedFoods().length > 0 && (

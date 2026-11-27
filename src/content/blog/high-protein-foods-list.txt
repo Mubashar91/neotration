@@ -2,6 +2,35 @@
 
 First, know your target. Most nutrition experts recommend 0.7–1 gram of protein per pound of body weight for active people. Use the FitJourney USA calculator to find your personal daily protein target based on your weight and goals.
 
+## Ranked: Top 20 High-Protein Foods by Protein Per Serving
+
+This cheat-sheet table ranks the best protein sources by grams of protein per standard serving, so you can quickly see which foods give you the most protein for your calories.
+
+| Rank | Food | Serving | Protein | Calories | Protein/Calorie |
+|------|------|---------|---------|----------|-----------------|
+| 1 | Chicken breast (cooked) | 3.5 oz | 31g | 165 | Excellent |
+| 2 | Canned tuna (in water) | 3.5 oz | 30g | 132 | Excellent |
+| 3 | Turkey breast (cooked) | 3.5 oz | 29g | 157 | Excellent |
+| 4 | Shrimp (cooked) | 3.5 oz | 24g | 99 | Excellent |
+| 5 | Salmon (cooked) | 3.5 oz | 25g | 208 | Very Good |
+| 6 | Tilapia (cooked) | 3.5 oz | 23g | 128 | Excellent |
+| 7 | Lean ground beef 93% | 3.5 oz | 22g | 218 | Very Good |
+| 8 | Pork tenderloin | 3.5 oz | 22g | 143 | Excellent |
+| 9 | Tempeh | 3.5 oz | 19g | 193 | Very Good |
+| 10 | Lentils (cooked) | 1 cup | 18g | 230 | Good |
+| 11 | Non-fat Greek yogurt | 6 oz | 17g | 100 | Excellent |
+| 12 | Edamame (shelled) | 1 cup | 17g | 188 | Very Good |
+| 13 | Skyr (Icelandic yogurt) | 5 oz | 17g | 100 | Excellent |
+| 14 | Low-fat cottage cheese | ½ cup | 14g | 90 | Excellent |
+| 15 | Part-skim ricotta | ½ cup | 14g | 171 | Good |
+| 16 | Black beans (cooked) | 1 cup | 15g | 227 | Good |
+| 17 | Chickpeas (cooked) | 1 cup | 15g | 269 | Good |
+| 18 | Egg whites | 3.5 oz | 11g | 52 | Excellent |
+| 19 | Eggs (whole) | 2 large | 12g | 140 | Very Good |
+| 20 | Firm tofu | 3.5 oz | 10g | 76 | Very Good |
+
+**How to read this table:** "Excellent" protein-to-calorie ratio means you get more than 1g of protein per 10 calories. These are the most efficient protein sources for calorie-controlled eating.
+
 ## Animal-Based Protein Sources
 
 ### 1. Chicken breast

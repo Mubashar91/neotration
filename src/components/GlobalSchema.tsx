@@ -9,19 +9,8 @@ const GlobalSchema = () => {
     "@type": "Organization",
     name: "FitJourney USA",
     url: siteUrl,
-    logo: `${siteUrl}/favicon.ico`,
-    sameAs: [
-      "https://www.facebook.com/fitjourneyusa",
-      "https://www.instagram.com/fitjourneyusa",
-      "https://twitter.com/fitjourneyusa"
-    ],
-    contactPoint: [{
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      email: "mmubasharshahzad40@gamil.com",
-      telephone: "+1-800-348-5687",
-      areaServed: "US"
-    }]
+    '@id': `${siteUrl}/#organization`,
+    logo: `${siteUrl}/favicon.svg`,
   };
 
   const webSite = {
@@ -29,11 +18,8 @@ const GlobalSchema = () => {
     "@type": "WebSite",
     name: "FitJourney USA",
     url: siteUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+    '@id': `${siteUrl}/#website`,
+    publisher: { '@id': `${siteUrl}/#organization` },
   };
 
   return (

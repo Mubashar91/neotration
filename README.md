@@ -1,5 +1,15 @@
 # Welcome to your Lovable project
 
+## Articles and search metadata
+
+Run `npm run build` to create the client bundle and prerender every registered route. The build also regenerates `public/sitemap.xml` and `public/feed.xml` from the article catalog. Run `npm run check:content` after building to verify article coverage, metadata, internal links, discovery files, and unknown-article handling.
+
+The November 2026 research topics are registered in `src/data/researchArticles.ts`, with text under `src/content/blog/`. The existing `high-protein-breakfast-meal-prep` URL was expanded rather than duplicated. Recipe cards live in `src/data/articleRecipes.ts`; their content is printable and visible without JavaScript in production output.
+
+Add a representative finished-dish photo to a recipe's optional `image` field to enable its Recipe JSON-LD. Stock cover images are illustrative and do not enable recipe rich-result markup. Nutrition estimates, illustrative grocery prices, and general meal-planning education do not claim clinical review or kitchen testing.
+
+Vercel serves the generated HTML directly, including `404.html`. No crawler-specific middleware or SPA rewrite is needed. The output contains the same article content for readers and crawlers.
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/0694879e-5b1b-4df0-99b3-41ac66b13b7c

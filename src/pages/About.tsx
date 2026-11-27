@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Users, Heart, Award } from "lucide-react";
+import { Target, Users, Heart, Award } from "lucide-react";      
 
 const About = () => {
   const aboutSchema = {

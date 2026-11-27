@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@media print {
+  body { background: white; color: black; }
+  body > #root header.sticky, footer, form { display: none !important; }
+  main { padding: 0 !important; }
+  .shadow-card { box-shadow: none !important; }
+  aside { position: static !important; }
+  table { break-inside: avoid; }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

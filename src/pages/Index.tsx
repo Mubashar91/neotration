@@ -38,8 +38,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-lato">
       <SEO
-        title="Free Calorie Calculator USA – Lose Weight & Track Nutrition | FitJourney USA 2025"
-        description="America's free calorie calculator. Get your personalized daily calorie target, macro breakdown, and weight loss plan in 60 seconds. Trusted by 50,000+ Americans."
+        title="Free Calorie Calculator USA & Meal Planning | FitJourney USA"
+        description="Estimate daily calorie needs and macros, explore food nutrition facts, and find practical recipes and meal-planning guides."
         keywords="free calorie calculator USA, calorie calculator, weight loss calculator USA, daily calorie needs, TDEE calculator, nutrition calculator, calorie deficit, macro calculator, meal plan USA, how many calories to lose weight, calorie counter app USA"
         canonicalUrl="/"
         structuredData={[homePageSchema, itemListSchema]}
@@ -80,7 +80,7 @@ const Index = () => {
                   <Link to={`/blog/${blogArticles[0].slug}`} className="h-48 sm:h-64 md:h-auto overflow-hidden block">
                     <img
                       src={blogArticles[0].image}
-                      alt={blogArticles[0].title}
+                      alt={blogArticles[0].imageAlt ?? blogArticles[0].title}
                       className="h-full w-full object-cover"
                       loading="eager"
                       decoding="async"

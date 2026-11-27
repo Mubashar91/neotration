@@ -26,6 +26,32 @@ import FoodDetail from "./pages/FoodDetail";
 
 const queryClient = new QueryClient();
 
+export const AppRoutes = () => (
+  <>
+    <GoogleAnalytics />
+    <GlobalSchema />
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/calculator" element={<Calculator />} />
+      <Route path="/weight-loss-calorie-calculator" element={<WeightLossCalculator />} />
+      <Route path="/maintenance-calorie-calculator" element={<MaintenanceCalculator />} />
+      <Route path="/daily-calorie-calculator" element={<DailyCalorieCalculator />} />
+      <Route path="/food" element={<FoodGuide />} />
+      <Route path="/food/:slug" element={<FoodDetail />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogDetail />} />
+      <Route path="/success-stories" element={<SuccessStories />} />
+      <Route path="/success-stories/:id" element={<SuccessStoryDetail />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/disclaimer" element={<Disclaimer />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </>
+);
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -33,28 +59,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <GoogleAnalytics />
-          <GlobalSchema />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/calculator" element={<Calculator />} />
-            <Route path="/weight-loss-calorie-calculator" element={<WeightLossCalculator />} />
-            <Route path="/maintenance-calorie-calculator" element={<MaintenanceCalculator />} />
-            <Route path="/daily-calorie-calculator" element={<DailyCalorieCalculator />} />
-            <Route path="/food" element={<FoodGuide />} />
-            <Route path="/food/:slug" element={<FoodDetail />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
-            <Route path="/success-stories" element={<SuccessStories />} />
-            <Route path="/success-stories/:id" element={<SuccessStoryDetail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/disclaimer" element={<Disclaimer />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
