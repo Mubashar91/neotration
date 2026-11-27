@@ -10,53 +10,26 @@ interface SEOProps {
   twitterCard?: string;
   noindex?: boolean;
   structuredData?: object[];
+  author?: string;
 }
 
 const SEO = ({
   title = 'FitJourney USA - Your Personal Nutrition & Calorie Calculator',
   description = 'Find your perfect nutrition plan with our smart calorie calculator and personalized food recommendations. Real success stories from everyday Americans.',
-  keywords = 'calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator, American diet plan 2025',
+  keywords = 'calorie calculator USA, healthy meal plan, weight loss calculator, nutrition calculator',
   canonicalUrl,
   ogType = 'website',
   ogImage,
   twitterCard = 'summary_large_image',
   noindex = false,
   structuredData = [],
+  author = 'FitJourney USA',
 }: SEOProps) => {
   const siteUrl = 'https://neotration.vercel.app';
-  const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
+  const fullCanonicalUrl = new URL(canonicalUrl ?? '/', `${siteUrl}/`).href;
   const fullTitle = title.includes('FitJourney USA') ? title : `${title} | FitJourney USA`;
   const resolvedOgImage = /^https?:\/\//.test(ogImage ?? "") ? ogImage! : `${siteUrl}${ogImage ?? '/og-image.svg'}`;
 
-  // Default Organization Structured Data
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'FitJourney USA',
-    url: siteUrl,
-    logo: `${siteUrl}/favicon.svg`,
-    description: 'Your trusted partner for personalized nutrition and calorie tracking',
-    sameAs: [
-      'https://www.facebook.com/fitjourneyusa',
-      'https://www.instagram.com/fitjourneyusa',
-      'https://twitter.com/fitjourneyusa'
-    ],
-  };
-
-  // Website Structured Data
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'FitJourney USA',
-    url: siteUrl,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${siteUrl}/food?search={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
-  };
-
-  const allStructuredData = [organizationSchema, websiteSchema, ...structuredData];
 
   return (
     <Helmet>
@@ -96,7 +69,7 @@ const SEO = ({
       <meta name="twitter:image:height" content="630" />
       
       {/* Additional Meta */}
-      <meta name="author" content="FitJourney USA" />
+      <meta name="author" content={author} />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       <meta name="distribution" content="global" />
@@ -107,9 +80,9 @@ const SEO = ({
       <meta name="google-adsense-account" content="ca-pub-8497285724891966" />
       
       {/* Structured Data */}
-      {allStructuredData.map((schema, index) => (
+      {structuredData.map((schema, index) => (
         <script key={index} type="application/ld+json">
-          {JSON.stringify(schema)}
+          {JSON.stringify(schema).replace(/</g, '\\u003c')}
         </script>
       ))}
     </Helmet>

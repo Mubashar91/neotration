@@ -697,24 +697,24 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "high-protein-breakfast-meal-prep",
-    title: "High Protein Breakfast Meal Prep: Egg Muffins, Overnight Oats & More (30g+ Protein)",
-    excerpt: "Five high protein breakfast meal prep recipes — egg muffins, overnight oats, yogurt jars, burritos, and cottage cheese bowls — each with macros and storage instructions.",
+    title: "High-Protein Breakfast Meal Prep: 5 Days of Egg Bites, Oats & Yogurt Jars",
+    excerpt: "A five-day breakfast prep system with three measured recipes, estimated protein, a shopping list, and a safe midweek top-up.",
     category: "Nutrition",
     categorySlug: "nutrition",
-    readTime: "9 min read",
+    readTime: "4 min read",
     date: "May 08, 2026",
-    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&h=600&q=80",
+    updatedAt: "Nov 27, 2026",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageAlt: "An illustrative egg breakfast on a plate; not a photograph of the recipes below",
     content: highProteinBreakfastPrep,
     keywords: "high protein breakfast meal prep, protein breakfast prep, egg muffins meal prep, overnight oats protein, high protein breakfast ideas, 30g protein breakfast",
     author: "FitJourney Team",
     tags: ["breakfast", "meal prep", "high protein", "egg muffins"],
     difficulty: "beginner",
-    seoDescription: "High protein breakfast meal prep recipes with 30g+ protein each. Egg muffins, overnight oats, yogurt jars, burritos — all with macros and storage instructions.",
+    seoDescription: "Prep five breakfasts with egg bites, overnight oats, and yogurt jars, plus a shared shopping list, estimated protein, and safe storage instructions.",
     faqs: [
-      { question: "How long do egg muffins last in the fridge?", answer: "Egg muffins keep well for 5 days in an airtight container in the refrigerator. They can also be frozen for up to 2 months — reheat from frozen for 2–3 minutes." },
-      { question: "Can I make overnight oats without protein powder?", answer: "Yes. Replace protein powder with an extra ½ cup Greek yogurt (+9g protein) or 2 tbsp hemp seeds (+10g protein). You'll still get a nutritious, filling breakfast." },
-      { question: "How do I hit 30g protein at breakfast without eggs?", answer: "Greek yogurt (17g/cup) + protein powder (25g/scoop) in overnight oats easily hits 30g+. Cottage cheese (28g/cup) with hemp seeds is another egg-free option." },
-      { question: "Is high-protein breakfast important for weight loss?", answer: "Research supports it. A high-protein breakfast reduces ghrelin (hunger hormone) levels more effectively than high-carb breakfasts, leading to lower calorie intake throughout the day." }
+      { question: "How long do egg bites last in the fridge?", answer: "Use refrigerated cooked leftovers within 3–4 days. Freeze later portions promptly and reheat leftovers to 165°F." },
+      { question: "Do these breakfasts need protein powder?", answer: "No. The recipes use eggs, cottage cheese, Greek yogurt, milk, oats, and seeds. Check package labels for your actual protein intake." }
     ]
   },
   {
