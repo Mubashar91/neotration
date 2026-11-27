@@ -1,3 +1,4 @@
+import { researchArticles } from './researchArticles';
 import calorieDeficit from "@/content/blog/calorie-deficit-weight-loss.txt?raw";
 import macroCalculator from "@/content/blog/macro-calculator-weight-loss-muscle-gain.txt?raw";
 import mealPlans from "@/content/blog/1200-1500-calorie-meal-plan-weight-loss.txt?raw";
@@ -51,6 +52,7 @@ export interface BlogArticle {
   readTime: string;
   date: string;
   image: string;
+  imageAlt?: string;
   content: string;
   keywords: string;
   author: string;
@@ -68,6 +70,7 @@ export const blogCategories = [
 ] as const;
 
 export const blogArticles: BlogArticle[] = [
+  ...researchArticles,
   {
     slug: "calorie-deficit-weight-loss",
     title: "What Is a Calorie Deficit and How Does It Help You Lose Weight?",
