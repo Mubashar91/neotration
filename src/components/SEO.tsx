@@ -29,6 +29,9 @@ const SEO = ({
   const fullCanonicalUrl = new URL(canonicalUrl ?? '/', `${siteUrl}/`).href;
   const fullTitle = title.includes('FitJourney USA') ? title : `${title} | FitJourney USA`;
   const resolvedOgImage = /^https?:\/\//.test(ogImage ?? "") ? ogImage! : `${siteUrl}${ogImage ?? '/og-image.svg'}`;
+  const imageParams = new URL(resolvedOgImage).searchParams;
+  const imageWidth = imageParams.get('w') ?? '1200';
+  const imageHeight = imageParams.get('h') ?? '630';
 
 
   return (
@@ -53,8 +56,8 @@ const SEO = ({
       <meta property="og:site_name" content="FitJourney USA" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:image" content={resolvedOgImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content={imageWidth} />
+      <meta property="og:image:height" content={imageHeight} />
       <meta property="og:image:alt" content={fullTitle} />
       
       {/* Twitter */}
@@ -65,8 +68,8 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={resolvedOgImage} />
       <meta name="twitter:image:alt" content={fullTitle} />
-      <meta name="twitter:image:width" content="1200" />
-      <meta name="twitter:image:height" content="630" />
+      <meta name="twitter:image:width" content={imageWidth} />
+      <meta name="twitter:image:height" content={imageHeight} />
       
       {/* Additional Meta */}
       <meta name="author" content={author} />

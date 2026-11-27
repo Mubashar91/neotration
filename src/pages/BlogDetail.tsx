@@ -10,6 +10,7 @@ import { renderArticleContent } from '@/components/ArticleContent';
 import { blogArticles, type BlogArticle } from '@/data/blogArticles';
 import { articleRecipes } from '@/data/articleRecipes';
 import { getArticleSchemas, SITE_URL, absoluteUrl } from '@/lib/articleSchema';
+import { articleDate } from '@/lib/articleDate';
 import { ArrowLeft, Clock, Link as LinkIcon, Share2 } from 'lucide-react';
 
 function ArticlePage({ article }: { article: BlogArticle }) {
@@ -54,8 +55,8 @@ function ArticlePage({ article }: { article: BlogArticle }) {
       ogImage={article.image} author={article.author === 'FitJourney Team' ? 'FitJourney USA' : article.author}
       structuredData={getArticleSchemas(article)} />
     <Helmet>
-      <meta property="article:published_time" content={new Date(article.date).toISOString()} />
-      <meta property="article:modified_time" content={new Date(article.updatedAt ?? article.date).toISOString()} />
+      <meta property="article:published_time" content={articleDate(article.date).toISOString()} />
+      <meta property="article:modified_time" content={articleDate(article.updatedAt ?? article.date).toISOString()} />
       <meta property="article:author" content={article.author === 'FitJourney Team' ? 'FitJourney USA' : article.author} />
       <meta property="article:section" content={article.category} />
       {previous && <link rel="prev" href={`${SITE_URL}/blog/${previous.slug}`} />}
@@ -73,14 +74,14 @@ function ArticlePage({ article }: { article: BlogArticle }) {
         <Link to="/blog" className="inline-flex gap-2 items-center text-primary mb-6 print:hidden"><ArrowLeft className="h-4 w-4" /> Back to Blog</Link>
         <div className="rounded-2xl border shadow-card overflow-hidden">
           <img src={article.image} alt={article.imageAlt ?? article.title} width={1200} height={630}
-            fetchPriority="high" decoding="async" className="w-full max-h-[26rem] object-cover print:hidden"
+            loading="eager" decoding="async" className="w-full max-h-[26rem] object-cover print:hidden"
             onError={event => { event.currentTarget.onerror = null; event.currentTarget.src = '/placeholder.svg'; }} />
           <header className="p-5 sm:p-8 space-y-4">
-            <p className="text-sm text-muted-foreground">{article.category} · <time dateTime={new Date(article.date).toISOString()}>{article.date}</time></p>
+            <p className="text-sm text-muted-foreground">{article.category} · <time dateTime={articleDate(article.date).toISOString()}>{article.date}</time></p>
             <h1 className="font-poppins text-2xl sm:text-4xl font-bold leading-tight">{article.title}</h1>
             <p className="text-sm text-muted-foreground">
               By <Link to="/about" className="text-primary underline">{article.author === 'FitJourney Team' ? 'FitJourney editorial team' : article.author}</Link>
-              {article.updatedAt && <> · Updated <time dateTime={new Date(article.updatedAt).toISOString()}>{article.updatedAt}</time></>}
+              {article.updatedAt && <> · Updated <time dateTime={articleDate(article.updatedAt).toISOString()}>{article.updatedAt}</time></>}
               <span className="inline-flex items-center gap-1 ml-3"><Clock className="w-4 h-4" />{article.readTime}</span>
             </p>
             <div className="flex flex-wrap gap-2 print:hidden">

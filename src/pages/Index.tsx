@@ -80,7 +80,7 @@ const Index = () => {
                   <Link to={`/blog/${blogArticles[0].slug}`} className="h-48 sm:h-64 md:h-auto overflow-hidden block">
                     <img
                       src={blogArticles[0].image}
-                      alt={blogArticles[0].title}
+                      alt={blogArticles[0].imageAlt ?? blogArticles[0].title}
                       className="h-full w-full object-cover"
                       loading="eager"
                       decoding="async"

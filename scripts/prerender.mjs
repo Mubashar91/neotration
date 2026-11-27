@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { articles, paths, render } from '../dist-ssr/prerender.js';
+import { articles, paths, render, articleDate } from '../dist-ssr/prerender.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const site = 'https://neotration.vercel.app';
@@ -27,18 +27,18 @@ await writeFile(path.join(root, 'dist/404.html'), template
 // Keep committed discovery files and deployment output in sync with the catalog.
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(route => {
   const article = articles.find(item => route === `/blog/${item.slug}`);
-  const modified = article ? `\n    <lastmod>${new Date(article.updatedAt ?? article.date).toISOString().slice(0, 10)}</lastmod>` : '';
+  const modified = article ? `\n    <lastmod>${articleDate(article.updatedAt ?? article.date).toISOString().slice(0, 10)}</lastmod>` : '';
   return `  <url>\n    <loc>${escapeXml(site + route)}</loc>${modified}\n  </url>`;
 }).join('\n')}\n</urlset>\n`;
-const newest = Math.max(...articles.map(article => Date.parse(article.updatedAt ?? article.date)));
+const newest = Math.max(...articles.map(article => articleDate(article.updatedAt ?? article.date).getTime()));
 const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>
   <title>FitJourney USA Blog</title><link>${site}/blog</link>
   <description>Practical nutrition, recipes, and meal-planning guides</description><language>en-us</language>
   <lastBuildDate>${new Date(newest).toUTCString()}</lastBuildDate>
-${[...articles].sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).map(article => `  <item>
+${[...articles].sort((a, b) => articleDate(b.date) - articleDate(a.date)).map(article => `  <item>
     <title>${escapeXml(article.title)}</title>
     <link>${site}/blog/${article.slug}</link><guid isPermaLink="true">${site}/blog/${article.slug}</guid>
-    <pubDate>${new Date(article.date).toUTCString()}</pubDate>
+    <pubDate>${articleDate(article.date).toUTCString()}</pubDate>
     <description>${escapeXml(article.excerpt)}</description>
   </item>`).join('\n')}
 </channel></rss>\n`;

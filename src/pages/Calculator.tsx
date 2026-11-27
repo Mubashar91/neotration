@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator as CalcIcon, Utensils, Plus, Trash2, Download, FileText, Edit, Sparkles, Search, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { foodData } from "@/data/foodData";
-import jsPDF from 'jspdf';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const Calculator = () => {
@@ -374,7 +373,7 @@ const Calculator = () => {
   };
 
   // Download prescription as PDF with design
-  const downloadPrescription = () => {
+  const downloadPrescription = async () => {
     if (!result) {
       toast({
         title: "Calculate First",
@@ -389,7 +388,12 @@ const Calculator = () => {
     const fats = Math.round(result * 0.3 / 9);
 
     // Create simple & attractive PDF
-    const doc = new jsPDF();
+    const pdfModule = await import('jspdf').catch(() => null);
+    if (!pdfModule) {
+      toast({ title: 'Download unavailable', description: 'Please check your connection and try again.', variant: 'destructive' });
+      return;
+    }
+    const doc = new pdfModule.default();
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     const margin = 25;

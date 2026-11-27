@@ -1,163 +1,312 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>FitJourney USA Blog</title>
-    <link>https://neotration.vercel.app/blog</link>
-    <description>Expert advice on nutrition, weight loss, and healthy living</description>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2026 00:00:00 GMT</lastBuildDate>
-
-    <item>
-      <title>The Ultimate Guide to Starting Your Health Journey in 2025</title>
-      <link>https://neotration.vercel.app/blog/ultimate-health-journey-2025</link>
-      <guid>https://neotration.vercel.app/blog/ultimate-health-journey-2025</guid>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Everything you need to know about setting realistic health goals, creating sustainable habits, and staying motivated throughout your fitness transformation.</description>
-    </item>
-
-    <item>
-      <title>How to Eat Healthy on a Budget in 2025</title>
-      <link>https://neotration.vercel.app/blog/eat-healthy-on-a-budget-2025</link>
-      <guid>https://neotration.vercel.app/blog/eat-healthy-on-a-budget-2025</guid>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Discover practical tips and strategies for maintaining a nutritious diet using a calorie calculator or nutrition tracker app without breaking the bank.</description>
-    </item>
-
-    <item>
-      <title>Top 10 U.S. Superfoods You Should Be Eating</title>
-      <link>https://neotration.vercel.app/blog/top-us-superfoods</link>
-      <guid>https://neotration.vercel.app/blog/top-us-superfoods</guid>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Learn about nutrient-dense foods that are easily available across America and how to incorporate them into your daily meals for maximum health benefits.</description>
-    </item>
-
-    <item>
-      <title>How to Lose Weight Safely and Sustainably</title>
-      <link>https://neotration.vercel.app/blog/lose-weight-safely-sustainably</link>
-      <guid>https://neotration.vercel.app/blog/lose-weight-safely-sustainably</guid>
-      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Evidence-based strategies for healthy, long-term weight management that actually work. Avoid fad diets and learn the science of sustainable weight loss.</description>
-    </item>
-
-    <item>
-      <title>The Complete Guide to Meal Prepping for Beginners</title>
-      <link>https://neotration.vercel.app/blog/meal-prep-for-beginners</link>
-      <guid>https://neotration.vercel.app/blog/meal-prep-for-beginners</guid>
-      <pubDate>Wed, 08 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Master the art of meal preparation with our step-by-step guide. Save time, money, and stay on track with your nutrition goals effortlessly.</description>
-    </item>
-
-    <item>
-      <title>Understanding Macros: Protein, Carbs, and Fats Explained</title>
-      <link>https://neotration.vercel.app/blog/macros-explained</link>
-      <guid>https://neotration.vercel.app/blog/macros-explained</guid>
-      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Demystify macronutrients and learn how to balance your diet for optimal health and performance.</description>
-    </item>
-
-    <item>
-      <title>Best Pre and Post-Workout Nutrition Strategies</title>
-      <link>https://neotration.vercel.app/blog/pre-post-workout-nutrition</link>
-      <guid>https://neotration.vercel.app/blog/pre-post-workout-nutrition</guid>
-      <pubDate>Fri, 03 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Maximize your workout results with proper nutrition timing. Learn what to eat before and after exercise for better performance and recovery.</description>
-    </item>
-
-    <item>
-      <title>Hydration Myths Debunked: How Much Water Do You Really Need?</title>
-      <link>https://neotration.vercel.app/blog/hydration-myths-debunked</link>
-      <guid>https://neotration.vercel.app/blog/hydration-myths-debunked</guid>
-      <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Forget the one-size-fits-all 8 cups rule. Learn how to personalize hydration based on body size, climate, and training.</description>
-    </item>
-
-    <item>
-      <title>Beginner Strength Training: A Simple 4‑Week Plan</title>
-      <link>https://neotration.vercel.app/blog/beginner-strength-training-4-weeks</link>
-      <guid>https://neotration.vercel.app/blog/beginner-strength-training-4-weeks</guid>
-      <pubDate>Wed, 22 Jan 2025 00:00:00 GMT</pubDate>
-      <description>Build confidence and momentum with three full-body sessions per week, progressive overload, and solid recovery.</description>
-    </item>  
-
-    <!-- NEW HIGH-VALUE BLOG POSTS (April 2026) -->
-    <item>
-      <title>Intermittent Fasting 16:8 Method: Complete Beginner's Guide for Weight Loss</title>
-      <link>https://neotration.vercel.app/blog/intermittent-fasting-guide-16-8-method</link>
-      <guid>https://neotration.vercel.app/blog/intermittent-fasting-guide-16-8-method</guid>
-      <pubDate>Sat, 05 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Learn how the 16:8 intermittent fasting method can help you lose weight naturally by timing your meals. Full schedule, what to eat, and results timeline included.</description>
-    </item>
-
-    <item>
-      <title>Best Weight Loss Supplements: Evidence-Based Guide 2026</title>
-      <link>https://neotration.vercel.app/blog/best-weight-loss-supplements-evidence-based</link>
-      <guid>https://neotration.vercel.app/blog/best-weight-loss-supplements-evidence-based</guid>
-      <pubDate>Sun, 06 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Which weight loss supplements actually work? Science-backed review of caffeine, green tea, protein powder, and more. What to avoid and how to choose quality products.</description>
-    </item>
-
-    <item>
-      <title>25 Healthy Snacks for Weight Loss Under 150 Calories</title>
-      <link>https://neotration.vercel.app/blog/healthy-snacks-weight-loss-low-calorie</link>
-      <guid>https://neotration.vercel.app/blog/healthy-snacks-weight-loss-low-calorie</guid>
-      <pubDate>Mon, 07 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Satisfying, nutrient-dense snacks that curb hunger without derailing your diet. Sweet and savory options with portion guides and nutrition breakdowns.</description>
-    </item>
-
-    <item>
-      <title>Portion Control Guide: Visual Cues and Serving Sizes for Weight Loss</title>
-      <link>https://neotration.vercel.app/blog/portion-control-guide-weight-loss</link>
-      <guid>https://neotration.vercel.app/blog/portion-control-guide-weight-loss</guid>
-      <pubDate>Tue, 08 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Master portion control without weighing every bite. Visual guides using your hand, plate method, and restaurant strategies to eat the right amount.</description>
-    </item>
-
-    <item>
-      <title>Walking for Weight Loss: 6-Week Beginner Plan with Results</title>
-      <link>https://neotration.vercel.app/blog/walking-for-weight-loss-beginner-plan</link>
-      <guid>https://neotration.vercel.app/blog/walking-for-weight-loss-beginner-plan</guid>
-      <pubDate>Wed, 09 Apr 2026 00:00:00 GMT</pubDate>
-      <description>The most underrated exercise for fat loss. Complete walking plan with calorie burn data, step goals, and how to combine walking with calorie control.</description>
-    </item>
-
-    <item>
-      <title>Sleep and Weight Loss: How Poor Sleep Sabotages Your Diet</title>
-      <link>https://neotration.vercel.app/blog/sleep-weight-loss-hormones-recovery</link>
-      <guid>https://neotration.vercel.app/blog/sleep-weight-loss-hormones-recovery</guid>
-      <pubDate>Thu, 10 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Sleep deprivation increases hunger hormones and decreases metabolism. Science-backed strategies to optimize sleep for faster fat loss and better recovery.</description>
-    </item>
-
-    <item>
-      <title>Protein Powder Guide for Beginners: Types, Benefits, and How to Choose</title>
-      <link>https://neotration.vercel.app/blog/protein-powder-guide-beginners</link>
-      <guid>https://neotration.vercel.app/blog/protein-powder-guide-beginners</guid>
-      <pubDate>Fri, 11 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Complete guide to whey, casein, plant proteins, and more. Learn which protein powder is best for your goals, budget, and dietary needs.</description>
-    </item>
-
-    <item>
-      <title>Emotional Eating: How to Stop Stress Eating and Break the Cycle</title>
-      <link>https://neotration.vercel.app/blog/emotional-eating-stress-weight-gain</link>
-      <guid>https://neotration.vercel.app/blog/emotional-eating-stress-weight-gain</guid>
-      <pubDate>Fri, 11 Apr 2026 12:00:00 GMT</pubDate>
-      <description>Identify your emotional eating triggers and develop healthy coping strategies. Break the cycle of stress, eating, and guilt that sabotages weight loss.</description>
-    </item>
-
-    <item>
-      <title>Low Calorie Restaurant Meals: Eat Out Without Gaining Weight</title>
-      <link>https://neotration.vercel.app/blog/low-calorie-restaurant-meals-guide</link>
-      <guid>https://neotration.vercel.app/blog/low-calorie-restaurant-meals-guide</guid>
-      <pubDate>Sat, 12 Apr 2026 00:00:00 GMT</pubDate>
-      <description>Best menu choices at popular chains. Ordering strategies, portion control tips, and how to track restaurant meals while staying in your calorie budget.</description>
-    </item>
-
-    <item>
-      <title>Metabolism Myths Debunked: Science-Based Facts About Your Metabolic Rate</title>
-      <link>https://neotration.vercel.app/blog/metabolism-myths-weight-loss-facts</link>
-      <guid>https://neotration.vercel.app/blog/metabolism-myths-weight-loss-facts</guid>
-      <pubDate>Sat, 12 Apr 2026 12:00:00 GMT</pubDate>
-      <description>Is your metabolism really slow? Learn the truth about starvation mode, metabolism-boosting foods, and why some people lose weight faster than others.</description>
-    </item>
-  </channel>
-</rss>
+<rss version="2.0"><channel>
+  <title>FitJourney USA Blog</title><link>https://neotration.vercel.app/blog</link>
+  <description>Practical nutrition, recipes, and meal-planning guides</description><language>en-us</language>
+  <lastBuildDate>Thu, 26 Nov 2026 19:00:00 GMT</lastBuildDate>
+  <item>
+    <title>GLP-1-Friendly Meal Plan: 7 Days of Small, Protein-First Meals</title>
+    <link>https://neotration.vercel.app/blog/glp-1-friendly-meal-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/glp-1-friendly-meal-plan</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>A flexible seven-day menu of small meals, with a shopping list, prep guidance, and questions to discuss with your prescriber or dietitian.</description>
+  </item>
+  <item>
+    <title>Fibermaxxing Meal Plan: 7 Days of Protein and Fiber</title>
+    <link>https://neotration.vercel.app/blog/fibermaxxing-meal-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/fibermaxxing-meal-plan</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Plan seven days of oats, lentils, beans, vegetables, and protein foods, with estimated fiber portions, a shopping list, and gradual swaps.</description>
+  </item>
+  <item>
+    <title>Dense Bean Salads: 5 No-Cook Lunches for Meal Prep</title>
+    <link>https://neotration.vercel.app/blog/dense-bean-salad-meal-prep</link><guid isPermaLink="true">https://neotration.vercel.app/blog/dense-bean-salad-meal-prep</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Five two-serving bean salads with measured ingredients, protein options, a shopping list, and a safe midweek prep schedule.</description>
+  </item>
+  <item>
+    <title>Budget High-Protein Meal Prep: 7 Dinners and an Aldi-Style List</title>
+    <link>https://neotration.vercel.app/blog/budget-high-protein-meal-prep</link><guid isPermaLink="true">https://neotration.vercel.app/blog/budget-high-protein-meal-prep</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Seven dinners from one shared shopping basket, with an illustrative under-$5 budget, portion instructions, and a receipt-based cost worksheet.</description>
+  </item>
+  <item>
+    <title>Ninja Creami Protein Ice Cream: 10 Flavors + No-Creami Method</title>
+    <link>https://neotration.vercel.app/blog/ninja-creami-protein-ice-cream</link><guid isPermaLink="true">https://neotration.vercel.app/blog/ninja-creami-protein-ice-cream</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Ten milk-and-yogurt protein ice cream flavors, a shared pint base, a no-Creami freezer method, and label-based nutrition guidance.</description>
+  </item>
+  <item>
+    <title>6 Air Fryer High-Protein Dinners with Simple Sides</title>
+    <link>https://neotration.vercel.app/blog/air-fryer-high-protein-dinners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/air-fryer-high-protein-dinners</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Six portioned air fryer dinners with chicken, salmon, shrimp, turkey, and tofu, plus safe cooking temperatures and prep tips.</description>
+  </item>
+  <item>
+    <title>7-Day Anti-Inflammatory, High-Protein Meal Plan</title>
+    <link>https://neotration.vercel.app/blog/anti-inflammatory-high-protein-meal-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/anti-inflammatory-high-protein-meal-plan</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>A Mediterranean-style week of protein foods, vegetables, whole grains, and beans, with no deliberately added sugar and flexible portions.</description>
+  </item>
+  <item>
+    <title>Chicken and Potato Meal Prep: 7 High-Protein Bowl Ideas</title>
+    <link>https://neotration.vercel.app/blog/chicken-potato-meal-prep-bowls</link><guid isPermaLink="true">https://neotration.vercel.app/blog/chicken-potato-meal-prep-bowls</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>One two-serving chicken-and-potato method with seven sauces, measured portions, an adaptable shopping list, and safe storage guidance.</description>
+  </item>
+  <item>
+    <title>No-Reheat High-Protein Lunches: 10 Work Lunch Boxes</title>
+    <link>https://neotration.vercel.app/blog/no-reheat-high-protein-lunches</link><guid isPermaLink="true">https://neotration.vercel.app/blog/no-reheat-high-protein-lunches</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Ten cold lunch boxes with chicken, tuna, tofu, eggs, and dairy, plus measured portions, shopping tips, and safe cold transport.</description>
+  </item>
+  <item>
+    <title>Rotisserie Chicken Meal Prep: 1 Chicken, 5 Different Meals</title>
+    <link>https://neotration.vercel.app/blog/rotisserie-chicken-meal-prep</link><guid isPermaLink="true">https://neotration.vercel.app/blog/rotisserie-chicken-meal-prep</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Turn at least 15 ounces of cooked rotisserie chicken into five meals, with a shared shopping list, cost guidance, and a freezer plan.</description>
+  </item>
+  <item>
+    <title>Freezer Meal Prep: 10 Make-Ahead Dinner Bags</title>
+    <link>https://neotration.vercel.app/blog/freezer-meal-prep-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/freezer-meal-prep-weight-loss</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Ten two-serving freezer bags with ingredient quantities, thawing instructions, cooking methods, and safe temperatures for easy dinners.</description>
+  </item>
+  <item>
+    <title>5-Ingredient High-Protein Dinners: 12 Simple Pantry Meals</title>
+    <link>https://neotration.vercel.app/blog/five-ingredient-high-protein-dinners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/five-ingredient-high-protein-dinners</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Twelve single-serving dinners with five main ingredients each, using cooked grains, canned beans, poultry, fish, eggs, or tofu.</description>
+  </item>
+  <item>
+    <title>January Reset Without a Diet: 14 Days of Dinners</title>
+    <link>https://neotration.vercel.app/blog/january-reset-dinner-rotation</link><guid isPermaLink="true">https://neotration.vercel.app/blog/january-reset-dinner-rotation</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>A flexible fourteen-day dinner rotation, week-one shopping list, midweek prep, and week-two top-up without detox or weight-loss promises.</description>
+  </item>
+  <item>
+    <title>Protein and Fiber Snack Boxes: 12 Easy Bento Ideas</title>
+    <link>https://neotration.vercel.app/blog/high-protein-high-fiber-snack-boxes</link><guid isPermaLink="true">https://neotration.vercel.app/blog/high-protein-high-fiber-snack-boxes</guid>
+    <pubDate>Thu, 26 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Twelve measured snack boxes with estimated calories and protein, a short shopping list, assembly tips, and safe storage for workdays.</description>
+  </item>
+  <item>
+    <title>Small High-Protein Meals for Low-Appetite Days: 12 Plates (GLP-1-Friendly)</title>
+    <link>https://neotration.vercel.app/blog/small-high-protein-meals-low-appetite</link><guid isPermaLink="true">https://neotration.vercel.app/blog/small-high-protein-meals-low-appetite</guid>
+    <pubDate>Sat, 21 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Twelve small, protein-first plates of 200–400 calories each for days when appetite is low, plus a sample day that reaches 120g protein in five small meals.</description>
+  </item>
+  <item>
+    <title>Mediterranean Diet for Beginners: A Simple 7-Day Starter Plan</title>
+    <link>https://neotration.vercel.app/blog/mediterranean-diet-beginners-7-day-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/mediterranean-diet-beginners-7-day-plan</guid>
+    <pubDate>Sat, 21 Nov 2026 19:00:00 GMT</pubDate>
+    <description>A plain-English intro to the Mediterranean diet with a pantry list and a 7-day starter meal plan at about 1,600–1,800 calories and 85–100g protein a day.</description>
+  </item>
+  <item>
+    <title>15 Anti-Inflammatory Sheet Pan Dinners (One Pan, 30 Minutes)</title>
+    <link>https://neotration.vercel.app/blog/anti-inflammatory-sheet-pan-dinners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/anti-inflammatory-sheet-pan-dinners</guid>
+    <pubDate>Sat, 21 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Fifteen one-pan anti-inflammatory dinners built on vegetables, fatty fish, beans, olive oil and spices — each with calories and protein per serving.</description>
+  </item>
+  <item>
+    <title>10 High-Protein Slow Cooker Dump Dinners (30g+ Protein, No Prep)</title>
+    <link>https://neotration.vercel.app/blog/high-protein-slow-cooker-dump-dinners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/high-protein-slow-cooker-dump-dinners</guid>
+    <pubDate>Sat, 21 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Ten no-prep slow cooker dump dinners with 28–44g protein per serving — salsa chicken, white chicken chili, lean beef chili and more, plus freezer-bag tips.</description>
+  </item>
+  <item>
+    <title>Protein + Fiber Dinners: 12 Fibermaxxing Meals That Actually Fill You Up</title>
+    <link>https://neotration.vercel.app/blog/protein-fiber-dinners-fibermaxxing</link><guid isPermaLink="true">https://neotration.vercel.app/blog/protein-fiber-dinners-fibermaxxing</guid>
+    <pubDate>Sat, 21 Nov 2026 19:00:00 GMT</pubDate>
+    <description>Twelve dinners with at least 25g protein and 10g fiber each, plus easy fiber add-ons and a sample fibermaxxing day hitting 38g fiber.</description>
+  </item>
+  <item>
+    <title>High-Protein Breakfast Meal Prep: 5 Days of Egg Bites, Oats &amp; Yogurt Jars</title>
+    <link>https://neotration.vercel.app/blog/high-protein-breakfast-meal-prep</link><guid isPermaLink="true">https://neotration.vercel.app/blog/high-protein-breakfast-meal-prep</guid>
+    <pubDate>Thu, 07 May 2026 19:00:00 GMT</pubDate>
+    <description>A five-day breakfast prep system with three measured recipes, estimated protein, a shopping list, and a safe midweek top-up.</description>
+  </item>
+  <item>
+    <title>Volume Eating Meals: Big Plates, Low Calories — 5 Example Plates with Calories</title>
+    <link>https://neotration.vercel.app/blog/volume-eating-meals-guide</link><guid isPermaLink="true">https://neotration.vercel.app/blog/volume-eating-meals-guide</guid>
+    <pubDate>Wed, 06 May 2026 19:00:00 GMT</pubDate>
+    <description>Volume eating lets you eat large amounts of food while staying in a calorie deficit. Learn the principles and see 5 example plates with full calorie counts.</description>
+  </item>
+  <item>
+    <title>Low Calorie Soup Recipes: 7 Soups Under 200 Calories Per Bowl</title>
+    <link>https://neotration.vercel.app/blog/low-calorie-soup-recipes</link><guid isPermaLink="true">https://neotration.vercel.app/blog/low-calorie-soup-recipes</guid>
+    <pubDate>Tue, 05 May 2026 19:00:00 GMT</pubDate>
+    <description>Seven low calorie soups with calories per bowl — from 70-calorie miso soup to 200-calorie black bean soup. All filling, all easy to make, all under 200 calories.</description>
+  </item>
+  <item>
+    <title>7-Day High Protein Meal Plan: 1,500–1,800 Calories with Full Grocery List</title>
+    <link>https://neotration.vercel.app/blog/7-day-high-protein-meal-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/7-day-high-protein-meal-plan</guid>
+    <pubDate>Mon, 04 May 2026 19:00:00 GMT</pubDate>
+    <description>A complete 7-day high protein meal plan with day-by-day tables, 120–150g protein per day, 1,500–1,800 calories, and a full weekly grocery list.</description>
+  </item>
+  <item>
+    <title>High Fiber Foods List: 25 Foods with Fiber Grams + How to Build a 15g Fiber Lunch</title>
+    <link>https://neotration.vercel.app/blog/high-fiber-foods-list</link><guid isPermaLink="true">https://neotration.vercel.app/blog/high-fiber-foods-list</guid>
+    <pubDate>Sun, 03 May 2026 19:00:00 GMT</pubDate>
+    <description>A complete high fiber foods list with 25 foods ranked by fiber grams per serving, plus a practical template for building a 15g-fiber lunch. The fibermaxxing guide you need.</description>
+  </item>
+  <item>
+    <title>Cottage Cheese Recipes High Protein: 10 Ideas with Protein Grams Each</title>
+    <link>https://neotration.vercel.app/blog/cottage-cheese-recipes-high-protein</link><guid isPermaLink="true">https://neotration.vercel.app/blog/cottage-cheese-recipes-high-protein</guid>
+    <pubDate>Sat, 02 May 2026 19:00:00 GMT</pubDate>
+    <description>Ten high-protein cottage cheese recipes from scrambled eggs to pasta sauce to smoothies — each with protein grams and calories so you can hit your daily targets.</description>
+  </item>
+  <item>
+    <title>Cabbage Recipes for Weight Loss: Dumplings, Soup, Alfredo &amp; More (With Calories)</title>
+    <link>https://neotration.vercel.app/blog/cabbage-recipes-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/cabbage-recipes-weight-loss</guid>
+    <pubDate>Fri, 01 May 2026 19:00:00 GMT</pubDate>
+    <description>Six trending cabbage recipes with calories per serving — including cabbage dumplings, cabbage alfredo, and classic cabbage soup. Pinterest&apos;s top food trend for 2026.</description>
+  </item>
+  <item>
+    <title>How to Get 100g Protein a Day: Full Meal Plan, 3-Day Variations &amp; Grocery List</title>
+    <link>https://neotration.vercel.app/blog/100g-protein-a-day-meal-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/100g-protein-a-day-meal-plan</guid>
+    <pubDate>Thu, 30 Apr 2026 19:00:00 GMT</pubDate>
+    <description>A complete day-by-day menu showing exactly how to get 100g protein a day using whole foods, with a 3-day variation table and full grocery list.</description>
+  </item>
+  <item>
+    <title>Low Calorie Restaurant Meals: Eat Out Without Gaining Weight</title>
+    <link>https://neotration.vercel.app/blog/low-calorie-restaurant-meals-guide</link><guid isPermaLink="true">https://neotration.vercel.app/blog/low-calorie-restaurant-meals-guide</guid>
+    <pubDate>Sat, 11 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Best menu choices at popular chains. Ordering strategies, portion control tips, and how to track restaurant meals while staying in your calorie budget.</description>
+  </item>
+  <item>
+    <title>Metabolism Myths Debunked: Science-Based Facts About Your Metabolic Rate</title>
+    <link>https://neotration.vercel.app/blog/metabolism-myths-weight-loss-facts</link><guid isPermaLink="true">https://neotration.vercel.app/blog/metabolism-myths-weight-loss-facts</guid>
+    <pubDate>Sat, 11 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Is your metabolism really slow? Learn the truth about starvation mode, metabolism-boosting foods, and why some people lose weight faster than others.</description>
+  </item>
+  <item>
+    <title>Protein Powder Guide for Beginners: Types, Benefits, and How to Choose</title>
+    <link>https://neotration.vercel.app/blog/protein-powder-guide-beginners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/protein-powder-guide-beginners</guid>
+    <pubDate>Fri, 10 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Complete guide to whey, casein, plant proteins, and more. Learn which protein powder is best for your goals, budget, and dietary needs.</description>
+  </item>
+  <item>
+    <title>Emotional Eating: How to Stop Stress Eating and Break the Cycle</title>
+    <link>https://neotration.vercel.app/blog/emotional-eating-stress-weight-gain</link><guid isPermaLink="true">https://neotration.vercel.app/blog/emotional-eating-stress-weight-gain</guid>
+    <pubDate>Fri, 10 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Identify your emotional eating triggers and develop healthy coping strategies. Break the cycle of stress, eating, and guilt that sabotages weight loss.</description>
+  </item>
+  <item>
+    <title>Sleep and Weight Loss: How Poor Sleep Sabotages Your Diet</title>
+    <link>https://neotration.vercel.app/blog/sleep-weight-loss-hormones-recovery</link><guid isPermaLink="true">https://neotration.vercel.app/blog/sleep-weight-loss-hormones-recovery</guid>
+    <pubDate>Thu, 09 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Sleep deprivation increases hunger hormones and decreases metabolism. Science-backed strategies to optimize sleep for faster fat loss and better recovery.</description>
+  </item>
+  <item>
+    <title>Walking for Weight Loss: 6-Week Beginner Plan with Results</title>
+    <link>https://neotration.vercel.app/blog/walking-for-weight-loss-beginner-plan</link><guid isPermaLink="true">https://neotration.vercel.app/blog/walking-for-weight-loss-beginner-plan</guid>
+    <pubDate>Wed, 08 Apr 2026 19:00:00 GMT</pubDate>
+    <description>The most underrated exercise for fat loss. Complete walking plan with calorie burn data, step goals, and how to combine walking with calorie control.</description>
+  </item>
+  <item>
+    <title>Portion Control Guide: Visual Cues and Serving Sizes for Weight Loss</title>
+    <link>https://neotration.vercel.app/blog/portion-control-guide-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/portion-control-guide-weight-loss</guid>
+    <pubDate>Tue, 07 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Master portion control without weighing every bite. Visual guides using your hand, plate method, and restaurant strategies to eat the right amount.</description>
+  </item>
+  <item>
+    <title>25 Healthy Snacks for Weight Loss Under 150 Calories</title>
+    <link>https://neotration.vercel.app/blog/healthy-snacks-weight-loss-low-calorie</link><guid isPermaLink="true">https://neotration.vercel.app/blog/healthy-snacks-weight-loss-low-calorie</guid>
+    <pubDate>Mon, 06 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Satisfying, nutrient-dense snacks that curb hunger without derailing your diet. Sweet and savory options with portion guides and nutrition breakdowns.</description>
+  </item>
+  <item>
+    <title>Best Weight Loss Supplements: Evidence-Based Guide 2026</title>
+    <link>https://neotration.vercel.app/blog/best-weight-loss-supplements-evidence-based</link><guid isPermaLink="true">https://neotration.vercel.app/blog/best-weight-loss-supplements-evidence-based</guid>
+    <pubDate>Sun, 05 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Which weight loss supplements actually work? Science-backed review of caffeine, green tea, protein powder, and more. What to avoid and how to choose quality products.</description>
+  </item>
+  <item>
+    <title>Intermittent Fasting 16:8 Method: Complete Beginner&apos;s Guide for Weight Loss</title>
+    <link>https://neotration.vercel.app/blog/intermittent-fasting-guide-16-8-method</link><guid isPermaLink="true">https://neotration.vercel.app/blog/intermittent-fasting-guide-16-8-method</guid>
+    <pubDate>Sat, 04 Apr 2026 19:00:00 GMT</pubDate>
+    <description>Learn how the 16:8 intermittent fasting method can help you lose weight naturally by timing your meals. Full schedule, what to eat, and results timeline included.</description>
+  </item>
+  <item>
+    <title>Weight Loss Mindset Psychology: How to Think for Long-Term Results</title>
+    <link>https://neotration.vercel.app/blog/weight-loss-mindset-psychology</link><guid isPermaLink="true">https://neotration.vercel.app/blog/weight-loss-mindset-psychology</guid>
+    <pubDate>Wed, 19 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Master the mindset shifts that help you bounce back from setbacks and stay consistent over time.</description>
+  </item>
+  <item>
+    <title>Why Am I Not Losing Weight? 10 Common Reasons and Fixes</title>
+    <link>https://neotration.vercel.app/blog/why-am-i-not-losing-weight</link><guid isPermaLink="true">https://neotration.vercel.app/blog/why-am-i-not-losing-weight</guid>
+    <pubDate>Mon, 17 Feb 2025 19:00:00 GMT</pubDate>
+    <description>If the scale is stuck, these common fat-loss mistakes and practical fixes can help you restart progress.</description>
+  </item>
+  <item>
+    <title>How to Stay Motivated During Weight Loss (Even on Tough Days)</title>
+    <link>https://neotration.vercel.app/blog/how-to-stay-motivated-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/how-to-stay-motivated-weight-loss</guid>
+    <pubDate>Sat, 15 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Use behavior-based strategies to stay on track with your weight loss goals when motivation drops.</description>
+  </item>
+  <item>
+    <title>How to Build Muscle for Beginners: Training and Nutrition Basics</title>
+    <link>https://neotration.vercel.app/blog/how-to-build-muscle-beginners</link><guid isPermaLink="true">https://neotration.vercel.app/blog/how-to-build-muscle-beginners</guid>
+    <pubDate>Thu, 13 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Learn the key training and nutrition rules beginners need to build muscle while minimizing fat gain.</description>
+  </item>
+  <item>
+    <title>Best Home Exercises for Weight Loss (No Gym Needed)</title>
+    <link>https://neotration.vercel.app/blog/best-exercises-weight-loss-home</link><guid isPermaLink="true">https://neotration.vercel.app/blog/best-exercises-weight-loss-home</guid>
+    <pubDate>Tue, 11 Feb 2025 19:00:00 GMT</pubDate>
+    <description>The best at-home fat-loss exercises you can do with little to no equipment for effective calorie burn.</description>
+  </item>
+  <item>
+    <title>How to Start Running for Weight Loss: Beginner Plan</title>
+    <link>https://neotration.vercel.app/blog/how-to-start-running-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/how-to-start-running-weight-loss</guid>
+    <pubDate>Sun, 09 Feb 2025 19:00:00 GMT</pubDate>
+    <description>A beginner-friendly run-walk approach to help you burn calories safely and build stamina for long-term fat loss.</description>
+  </item>
+  <item>
+    <title>Meal Prep for Beginners: Step-by-Step Guide for Busy Weeks</title>
+    <link>https://neotration.vercel.app/blog/meal-prep-beginners-guide</link><guid isPermaLink="true">https://neotration.vercel.app/blog/meal-prep-beginners-guide</guid>
+    <pubDate>Fri, 07 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Learn how to meal prep with a simple system that saves time, controls calories, and makes healthy eating easier.</description>
+  </item>
+  <item>
+    <title>High-Protein Foods List: Best Protein Sources for Weight Loss and Muscle</title>
+    <link>https://neotration.vercel.app/blog/high-protein-foods-list</link><guid isPermaLink="true">https://neotration.vercel.app/blog/high-protein-foods-list</guid>
+    <pubDate>Wed, 05 Feb 2025 19:00:00 GMT</pubDate>
+    <description>A complete high-protein foods list to help you hit your daily protein goals using simple, affordable options.</description>
+  </item>
+  <item>
+    <title>How Many Calories Should I Eat Per Day to Lose Weight?</title>
+    <link>https://neotration.vercel.app/blog/how-many-calories-should-i-eat</link><guid isPermaLink="true">https://neotration.vercel.app/blog/how-many-calories-should-i-eat</guid>
+    <pubDate>Mon, 03 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Understand BMR, TDEE, and calorie deficits so you can set the right daily calorie target for steady fat loss.</description>
+  </item>
+  <item>
+    <title>Weight Loss Tips 2025: 10 Proven Strategies That Actually Work</title>
+    <link>https://neotration.vercel.app/blog/weight-loss-tips-2025</link><guid isPermaLink="true">https://neotration.vercel.app/blog/weight-loss-tips-2025</guid>
+    <pubDate>Sat, 01 Feb 2025 19:00:00 GMT</pubDate>
+    <description>Discover practical, science-backed weight loss tips for 2025 to help you stay consistent and lose fat sustainably.</description>
+  </item>
+  <item>
+    <title>Keto vs Low Calorie Diet: Which Is Better for Weight Loss in 2025?</title>
+    <link>https://neotration.vercel.app/blog/keto-vs-low-calorie-diet</link><guid isPermaLink="true">https://neotration.vercel.app/blog/keto-vs-low-calorie-diet</guid>
+    <pubDate>Fri, 24 Jan 2025 19:00:00 GMT</pubDate>
+    <description>Keto vs low calorie diet — which one actually works better for weight loss? We break down the science, pros, cons, and what US nutritionists recommend.</description>
+  </item>
+  <item>
+    <title>1200 and 1500 Calorie Meal Plans for Weight Loss (Full Day Guide)</title>
+    <link>https://neotration.vercel.app/blog/1200-1500-calorie-meal-plan-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/1200-1500-calorie-meal-plan-weight-loss</guid>
+    <pubDate>Sun, 19 Jan 2025 19:00:00 GMT</pubDate>
+    <description>Complete 1200 and 1500 calorie meal plans for weight loss, designed for US women and men with full daily menus.</description>
+  </item>
+  <item>
+    <title>Macro Calculator: How to Count Macros for Weight Loss and Muscle Gain</title>
+    <link>https://neotration.vercel.app/blog/macro-calculator-weight-loss-muscle-gain</link><guid isPermaLink="true">https://neotration.vercel.app/blog/macro-calculator-weight-loss-muscle-gain</guid>
+    <pubDate>Tue, 14 Jan 2025 19:00:00 GMT</pubDate>
+    <description>Learn how to use a macro calculator to set your protein, carb, and fat targets for weight loss or muscle gain.</description>
+  </item>
+  <item>
+    <title>What Is a Calorie Deficit and How Does It Help You Lose Weight?</title>
+    <link>https://neotration.vercel.app/blog/calorie-deficit-weight-loss</link><guid isPermaLink="true">https://neotration.vercel.app/blog/calorie-deficit-weight-loss</guid>
+    <pubDate>Thu, 09 Jan 2025 19:00:00 GMT</pubDate>
+    <description>Learn what a calorie deficit is, how to calculate yours, and why it&apos;s the #1 science-backed method for weight loss in the USA.</description>
+  </item>
+</channel></rss>

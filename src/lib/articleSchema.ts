@@ -1,5 +1,6 @@
 import type { BlogArticle } from '@/data/blogArticles';
 import { articleRecipes } from '@/data/articleRecipes';
+import { articleDate } from './articleDate';
 
 export const SITE_URL = 'https://neotration.vercel.app';
 export const absoluteUrl = (path: string) => new URL(path, `${SITE_URL}/`).href;
@@ -14,7 +15,7 @@ export function getArticleSchemas(article: BlogArticle) {
     {
       '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${url}#article`,
       headline: article.title, description: article.seoDescription ?? article.excerpt,
-      datePublished: new Date(article.date).toISOString(), dateModified: new Date(article.updatedAt ?? article.date).toISOString(),
+      datePublished: articleDate(article.date).toISOString(), dateModified: articleDate(article.updatedAt ?? article.date).toISOString(),
       url, mainEntityOfPage: { '@type': 'WebPage', '@id': url }, image: [absoluteUrl(article.image)],
       keywords: article.keywords, articleSection: article.category, inLanguage: 'en-US',
       wordCount: article.content.split(/\s+/).filter(Boolean).length, author,
@@ -31,7 +32,7 @@ export function getArticleSchemas(article: BlogArticle) {
       '@context': 'https://schema.org', '@type': 'Recipe', '@id': `${url}#recipe-${i + 1}`,
       name: recipe.name, description: recipe.description, url: `${url}#recipe-${i + 1}`,
       image: [absoluteUrl(recipe.image)],
-      author, datePublished: new Date(article.date).toISOString(),
+      author, datePublished: articleDate(article.date).toISOString(),
       // Nutrition and ratings are intentionally omitted without measured recipe data.
       // Add a representative finished-dish photograph before claiming rich-result eligibility.
       prepTime: `PT${recipe.prepMinutes}M`, cookTime: `PT${recipe.cookMinutes}M`,

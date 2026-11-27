@@ -29,7 +29,7 @@ const Blog = () => {
     : '';
   const categoryDescription = activeCategoryInfo && activeCategory !== 'all'
     ? activeCategoryInfo.description
-    : 'Expert advice on nutrition, weight loss, muscle gain, and healthy living';
+    : 'Practical nutrition guides, recipes, and meal-planning ideas';
   const siteUrl = "https://neotration.vercel.app";
   const blogSchema = {
     '@context': 'https://schema.org',
@@ -89,6 +89,15 @@ const Blog = () => {
           </div>
 
           {/* Category Filter */}
+          <nav aria-label="Meal-planning topics" className="flex flex-wrap justify-center gap-3 mb-6">
+            {[
+              ['meal plans', 'Meal plans'], ['high protein', 'High-protein meals'],
+              ['lunch', 'Work lunches'], ['dinner', 'Dinner ideas'], ['budget', 'Budget cooking'],
+            ].map(([tag, label]) => <Link key={tag} to={`/blog?tag=${encodeURIComponent(tag)}`}
+              className={`rounded-full border px-4 py-2 text-sm font-semibold hover:border-primary ${activeTag === tag ? 'bg-primary text-primary-foreground' : 'text-primary'}`}>
+              {label}
+            </Link>)}
+          </nav>
           <CategoryFilter 
             categories={blogCategories}
             activeCategory={activeCategory}
@@ -117,7 +126,7 @@ const Blog = () => {
               <Link to={`/blog/${blogArticles[0].slug}`} className="h-48 sm:h-64 md:h-auto overflow-hidden block">
                 <img
                   src={blogArticles[0].image}
-                  alt={blogArticles[0].title}
+                  alt={blogArticles[0].imageAlt ?? blogArticles[0].title}
                   className="h-full w-full object-cover"
                   loading="eager"
                   decoding="async"
@@ -159,7 +168,7 @@ const Blog = () => {
                 <Link to={`/blog/${article.slug}`} className="h-40 sm:h-48 overflow-hidden block">
                   <img
                     src={article.image}
-                    alt={article.title}
+                      alt={article.imageAlt ?? article.title}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"

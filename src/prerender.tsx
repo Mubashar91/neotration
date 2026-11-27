@@ -1,6 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AppRoutes } from './App';
@@ -9,6 +9,7 @@ import { foodData } from '@/data/foodData';
 import { successStories } from '@/data/successStories';
 
 export const articles = blogArticles;
+export { articleDate } from '@/lib/articleDate';
 export const staticPaths = ['/', '/calculator', '/weight-loss-calorie-calculator', '/maintenance-calorie-calculator', '/daily-calorie-calculator', '/food', '/blog', '/success-stories', '/about', '/contact', '/privacy', '/terms', '/disclaimer'];
 export const paths = [
   ...staticPaths,
@@ -18,7 +19,7 @@ export const paths = [
 ];
 
 export function render(path: string) {
-  const context: { helmet?: Record<string, { toString(): string }> } = {};
+  const context: { helmet?: HelmetServerState } = {};
   const html = renderToString(
     <HelmetProvider context={context}>
       <QueryClientProvider client={new QueryClient()}>
